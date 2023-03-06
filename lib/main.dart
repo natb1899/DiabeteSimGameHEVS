@@ -71,7 +71,7 @@ Future<void> main() async {
           debugShowCheckedModeBanner: false,
           title: 'Serious Game Diabète',
           theme: ThemeData(
-            primarySwatch: Color.fromARGB(255, 110, 73, 116),
+            primarySwatch: Colors.purple,
           ),
           home: Scaffold(
             body: Center(
