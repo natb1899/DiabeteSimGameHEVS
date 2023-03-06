@@ -17,3 +17,4 @@ jobs:
         with:
           baseHref: /DiabeteSimGameHEVS/
           webRenderer: canvaskit
+      
