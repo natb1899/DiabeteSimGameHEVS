@@ -1,0 +1,136 @@
+\documentclass[a4paper, 12pt, oneside]{article}
+
+%****************packages**************
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[squaren,Gray]{SIunits}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{layout}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\graphicspath{ {./images/} }
+\frenchbsetup{StandardLists=true}
+\usepackage{epstopdf}
+\epstopdfsetup{outdir=images/converted_to_pdf} % Dossier de sortie des images converties
+\usepackage{fancyhdr}
+\usepackage{graphicx,lipsum,wrapfig}
+\usepackage{csquotes}
+\usepackage{biblatex}
+\usepackage{marvosym}
+\usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
+\addbibresource{sources.bib}
+
+% fichier perso (à adapter suivant le rapport)
+\input{source_files/perso.tex}
+
+
+%\setlength{\headheight}{27.06pt}
+\pagestyle{fancy}
+
+% Entête :
+\fancyhead{} %remove header
+\renewcommand{\headrulewidth}{0pt} % remove line
+
+% Pied de page
+\fancyfoot{} % clear all footer fields
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[R]{\scriptsize Page \thepage}
+\fancyfoot[L]{\scriptsize HEG-VS | \nomAuteur }
+
+%****************Document****************
+\begin{document}
+%\layout
+\input{source_files/titlepage}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\thispagestyle{empty}
+\listoffigures
+\newpage
+\pagenumbering{arabic}
+
+%============================================================
+%****************Intro*******************
+
+\section*{Introduction}
+%\label{chap:Introduction} je sais plus à quoi ça sert donc comment au cas ou besoin
+\addcontentsline{toc}{section}{Introduction}
+
+\input{source_files/intro.tex}
+
+%============================================================
+%****************Jeu*******************
+
+\section*{Le jeu}
+\addcontentsline{toc}{section}{Le jeu}
+
+%============================================================
+%****************L'accueil*******************
+
+\subsection*{L'accueil}
+\addcontentsline{toc}{subsection}{L'accueil}
+
+\input{source_files/startMenuandSetting.tex}
+
+
+%============================================================
+%****************Les deplacements*******************
+
+\subsection*{Les déplacements}
+\addcontentsline{toc}{subsection}{Les deplacements}
+
+\input{source_files/movement.tex}
+
+%============================================================
+%****************Le changement de scène*******************
+
+\subsection*{Le changement de scène}
+\addcontentsline{toc}{subsection}{Le changement de scène}
+
+\input{source_files/changeScene.tex}
+
+%============================================================
+%****************Le dialogue*******************
+
+\subsection*{Le dialogue}
+\addcontentsline{toc}{subsection}{Le dialogue}
+
+\input{source_files/dialog.tex}
+
+%============================================================
+%****************Le score*******************
+
+\subsection*{Le score}
+\addcontentsline{toc}{subsection}{Le score}
+
+\input{source_files/score.tex}
+
+%============================================================
+%****************Sac à dos*******************
+
+\subsection*{Le sac à dos}
+\addcontentsline{toc}{subsection}{Le sac à dos}
+
+\input{source_files/toolsMenu.tex}
+
+%============================================================
+%****************Bonnes pratiques*******************
+
+\subsection*{Bonnes pratiques}
+\addcontentsline{toc}{subsection}{Bonnes pratiques}
+
+\input{source_files/goodPractices.tex}
+
+\end{document}

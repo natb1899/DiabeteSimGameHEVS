@@ -1,0 +1,61 @@
+name: seriousgame
+description: A new Flutter project.
+
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flame: ^1.4.0
+  flame_audio: ^1.3.2
+  flame_tiled: ^1.8.0
+  animated_text_kit: ^4.2.1
+  responsive_framework: ^0.2.0
+  resize: ^1.0.0
+  universal_html: ^2.0.8
+  firebase_core: ^2.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flame_test: ^1.1.0
+  canvas_test: ^0.2.0
+  test: ^1.14.4
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/badges/
+    - assets/images/gameObjects/
+    - assets/images/changeScene/
+    - assets/images/contacts/
+    - assets/images/medicalTools/
+    - assets/images/people/
+    - assets/images/sprite/
+    - assets/tiles/
+    - assets/tiles/tiles_sets/
+    - assets/audio/
+
+  fonts:
+    - family: novem
+      fonts:
+        - asset: assets/fonts/novem.ttf
+    - family: pixel
+      fonts:
+        - asset: assets/fonts/pixel_sans_serif.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf

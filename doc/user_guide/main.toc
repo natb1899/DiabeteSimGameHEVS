@@ -1,0 +1,16 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{Introduction}{1}{section*.3}%
+\contentsline {section}{Le jeu}{1}{section*.4}%
+\contentsline {subsection}{L'accueil}{1}{section*.5}%
+\contentsline {subsection}{Les deplacements}{2}{section*.6}%
+\contentsline {subsection}{Le changement de scène}{3}{section*.7}%
+\contentsline {subsection}{Le dialogue}{4}{section*.8}%
+\contentsline {subsection}{Le score}{5}{section*.9}%
+\contentsline {subsection}{Le sac à dos}{5}{section*.10}%
+\contentsline {subsubsection}{Outils de mesure}{6}{section*.11}%
+\contentsline {subsubsection}{Planning de la journée}{7}{section*.12}%
+\contentsline {subsubsection}{Situation des patients}{8}{section*.13}%
+\contentsline {subsubsection}{Contacts}{9}{section*.14}%
+\contentsline {subsubsection}{Collection d'apprentissage}{10}{section*.15}%
+\contentsline {subsubsection}{Notes}{10}{section*.16}%
+\contentsline {subsection}{Bonnes pratiques}{11}{section*.17}%
