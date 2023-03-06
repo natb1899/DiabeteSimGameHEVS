@@ -15,3 +15,7 @@ jobs:
         with:
           baseHref: /DiabeteSimGameHEVS/
           webRenderer: canvaskit
+
+      # Flutter test
+      - name: Test
+        run: flutter test
