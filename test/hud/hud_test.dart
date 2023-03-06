@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flame/game.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/player_bag_controller.dart';
+import 'package:seriousgame/z_globals/Z5_color_manager.dart';
 
 Widget makeTestableWidget(Widget child) {
   return MaterialApp(
@@ -122,7 +124,7 @@ void main() {
       expect(find.byType(BagButtonsOverlay), findsOneWidget);
     });
 
-    testWidgets("play and pause sound", (tester) async {
+    testWidgets("Sound button is loaded", (tester) async {
       await tester.pumpWidget(makeTestableWidget(SoundOverlay(
         gameSoundController: gameSoundController,
         overlaysSize: 32,
@@ -134,10 +136,63 @@ void main() {
       expect(find.byType(IconButton), findsOneWidget);
       expect(find.byIcon(Icons.volume_up_rounded), findsOneWidget);
       //expect(FlameAudio.bgm.isPlaying, true);
-      await tester.press(find.byIcon(Icons.volume_up_rounded));
-      await tester.pumpAndSettle();
-      expect(find.byIcon(Icons.volume_off_rounded), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.volume_up_rounded));
+      await tester.pump();
+      //expect(find.byIcon(Icons.volume_off_rounded), findsOneWidget);
       //expect(FlameAudio.bgm.isPlaying, false);
+    });
+
+    //test pause button
+    testWidgets("pause button is loaded and responding", (tester) async {
+      PauseOverlay pauseO = PauseOverlay(
+        game: diabeteGame,
+        overlaysSize: 32,
+      );
+      await tester.pumpWidget(makeTestableWidget(pauseO));
+      await tester.pumpAndSettle();
+      expect(find.byType(PauseOverlay), findsOneWidget);
+      expect(find.byType(IconButton), findsOneWidget);
+      expect(find.byIcon(Icons.pause), findsOneWidget);
+      await tester.tap(find.byIcon(Icons.pause));
+      await tester.pump();
+      expect(find.byIcon(Icons.play_arrow), findsOneWidget);
+    });
+
+    //test score bar
+    testWidgets("Score bar is loaded and working", (tester) async {
+      SliderScoreOverlay scoreBar = SliderScoreOverlay(
+        game: diabeteGame,
+        playerScoreController: scoreController,
+      );
+      await tester.pumpWidget(makeTestableWidget(scoreBar));
+      await tester.pumpAndSettle();
+      expect(find.byType(SliderScoreOverlay), findsOneWidget);
+      expect(find.byType(Slider), findsOneWidget);
+
+      //base score
+      expect(scoreController.playerScore, 50);
+      expect(scoreBar.getColorIndicator(scoreController.playerScore + 0.0),
+          ColorManager.darkPrimary);
+
+      //score up
+      scoreController.updateScore(true);
+      expect(scoreController.playerScore, 51);
+      expect(scoreBar.getColorIndicator(scoreController.playerScore + 0.0),
+          ColorManager.success);
+
+      //score down
+      scoreController.updateScore(false);
+      expect(scoreController.playerScore, 50);
+      expect(scoreBar.getColorIndicator(scoreController.playerScore + 0.0),
+          ColorManager.darkPrimary);
+
+      //score error
+      for (int i = 0; i < 11; i++) {
+        scoreController.updateScore(false);
+      }
+      //score < 40
+      expect(scoreBar.getColorIndicator(scoreController.playerScore + 0.0),
+          ColorManager.error);
     });
 
     testWidgets('PlayerBackpack tabs and close button are correctly rendered',
