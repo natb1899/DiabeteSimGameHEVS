@@ -28,5 +28,47 @@ final dialogsMission2part1 = <DialogModel>[
 ];
 
 final dialogsMission2part2 = <DialogModel>[
-  //talk to housband
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: "Infirmière: \n\n"
+        "Hello Mme. Myrtille, je m'appelle Marie, je suis infirmière au CMS. Vous êtes le mari de Mme. Myrtille, n'est-ce pas?\n",
+    index: 0,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: "Mari: \n\n"
+        "Bonjour. Oui, je suis son époux.\n",
+    index: 1,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: "Infirmière: \n\n"
+        "Pouvez-vous me parler de votre femme?\n",
+    index: 1,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: "Infirmière: \n\n"
+        "Ma femme a eu des problèmes avec son hygiène depuis quelques mois.\n"
+        "Elle ne sens plus ses pieds et se plain de troubes visuels.\n"
+        "Mais j'aime m'occuper d'elle et j'ai le soutien de mes enfants.\n",
+    index: 1,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage:
+        "Les problèmes décrit par le mari de la patiente semblent liés à des complications à long terme du diabète.\n"
+        "Cherchez les coffres dans la maison pour répondre à des questions sur les complications du diabète.\n",
+    index: 1,
+  ),
+];
+
+final DialogueMission2part3 = <DialogModel>[
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage:
+        "Bien joué! Dans cette situation, vous avez identifié les complications du diabète à long terme\n"
+        "Vous pouvez maintenant vous rendre chez M. Moutarde.\n",
+    index: 1,
+  ),
 ];
