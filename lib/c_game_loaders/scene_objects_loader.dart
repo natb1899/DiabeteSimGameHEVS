@@ -179,6 +179,10 @@ class GameSceneLoader {
           game.myrtille.position = Vector2(spawnPoint.x, spawnPoint.y);
           game.addToScene(game.myrtille);
           break;
+        case TiledObjectName.myrtilleHusband:
+          game.myrtilleHusband.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.myrtilleHusband);
+          break;
         case TiledObjectName.brocoli:
           game.brocoli.position = Vector2(spawnPoint.x, spawnPoint.y);
           game.addToScene(game.brocoli);

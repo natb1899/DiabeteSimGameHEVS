@@ -2,7 +2,9 @@ import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/foundation.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/myrtilleHusband.dart';
 import 'package:seriousgame/z_globals/z10_dialog_mission_1_manager.dart';
+import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
@@ -16,6 +18,7 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
 
   // Mrs Myrtille
   late Myrtille myrtille;
+  late MyrtilleHusband myrtilleHusband;
 
   // Myrtille steps
   bool step1 = true;
@@ -49,19 +52,31 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   @override
   Future<void>? onLoad() async {
     initMyrtille();
+    initMyrtilleHusband();
     await super.onLoad();
     continueInitialisation();
   }
 
   /// Init the Myrtille in the scene
   void initMyrtille() {
-    myrtille = Myrtille()
+    myrtille = Myrtille(GameImageAssets.myrtille)
+      ..size = Vector2.all(GameParams.middleSize)
+      ..anchor = Anchor.center;
+  }
+
+  /// Init the MyrtilleHusband in the scene
+  void initMyrtilleHusband() {
+    myrtilleHusband = MyrtilleHusband(GameImageAssets.myrtilleHusband)
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
 
   void continueInitialisation() {
     myrtille
+      ..debugMode = kDebugMode // Only true on debug mode (dev work)
+      ..mapWidth = mapWidth
+      ..mapHeight = mapHeight;
+    myrtilleHusband
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
