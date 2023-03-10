@@ -48,7 +48,7 @@ final dialogsMission2part2 = <DialogModel>[
     hasNext: true,
     dialogMessage: "Infirmière: \n\n"
         "Pouvez-vous me parler de votre femme?\n",
-    index: 1,
+    index: 2,
   ),
   DialogModel(
     isShowDialog: true,
@@ -57,7 +57,7 @@ final dialogsMission2part2 = <DialogModel>[
         "Ma femme a eu des problèmes avec son hygiène depuis quelques mois.\n"
         "Elle ne sens plus ses pieds et se plain de troubes visuels.\n"
         "Mais j'aime m'occuper d'elle et j'ai le soutien de mes enfants.\n",
-    index: 1,
+    index: 3,
   ),
   DialogModel(
     isShowDialog: true,
@@ -65,7 +65,7 @@ final dialogsMission2part2 = <DialogModel>[
     dialogMessage:
         "Les problèmes décrit par le mari de la patiente semblent liés à des complications à long terme du diabète.\n"
         "Cherchez les coffres dans la maison pour répondre à des questions sur les complications du diabète.\n",
-    index: 1,
+    index: 4,
   ),
 ];
 

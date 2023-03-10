@@ -24,7 +24,7 @@ class Myrtille extends Perso with HasGameRef<DiabeteGameSceneMyrtille> {
           gameRef.gameScenesController.gameDialogController
               .onDialogList(dialogsMission2part1);
           gameRef.step1IsDone = true;
-        } else if (gameRef.step2) {
+        } /* else if (gameRef.step2) {
           gameRef.gameScenesController.gameDialogController
               .onDialogList(dialogsMission2part2);
           gameRef.step2IsDone = true;
@@ -32,7 +32,7 @@ class Myrtille extends Perso with HasGameRef<DiabeteGameSceneMyrtille> {
           gameRef.gameScenesController.gameDialogController
               .onDialog(dialogsMission2part3);
           gameRef.step4IsDone = true;
-        }
+        }*/
         _hasCollided = true;
       }
     }
