@@ -24,6 +24,9 @@ class TiledObjectName {
   // Characters (SpawnPoints -> SpawnPoint)
   static const String player = "Player";
   static const String moutarde = "Moutarde";
+
+  static const String myrtille = "Myrtille";
+
   static const String brocoli = "Brocoli";
   static const String brocoliHospital = "BrocoliHospital";
   static const String brocoliSon = "BrocoliSon";
@@ -46,6 +49,7 @@ class TiledObjectName {
   // CMS (Obstacles -> House)
   static const String brocoliHouse = "BrocoliHouse";
   static const String moutardeHouse = "MoutardeHouse";
+
   static const String myrtilleHouse = "MyrtilleHouse";
 
   // Interactive objects (Obstacles -> Interactive)
@@ -61,6 +65,9 @@ class TiledObjectName {
   static const String toVillageCMS = "ToVillageCMS";
   static const String toOutsideHospital = "ToOutsideHospital";
   static const String toMoutardeHouse = "ToMoutardeHouse";
+
+  static const String toMyrtilleHouse = "ToMyrtilleHouse";
+
   static const String toBrocoliHouse = "ToBrocoliHouse";
   static const String toBrocoliChamber = "ToBrocoliChamber";
   static const String toInsideHospital = "ToInsideHospital";

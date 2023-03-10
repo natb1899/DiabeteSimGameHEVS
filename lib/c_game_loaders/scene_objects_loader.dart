@@ -166,7 +166,6 @@ class GameSceneLoader {
       ObjectGroup spawnPointsGroup, DiabeteGameScene game) {
     for (var spawnPoint in spawnPointsGroup.objects) {
       switch (spawnPoint.name) {
-
         ///Player and NPC spawn points
         case TiledObjectName.player:
           game.player.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -175,6 +174,10 @@ class GameSceneLoader {
         case TiledObjectName.moutarde:
           game.moutarde.position = Vector2(spawnPoint.x, spawnPoint.y);
           game.addToScene(game.moutarde);
+          break;
+        case TiledObjectName.myrtille:
+          game.myrtille.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.myrtille);
           break;
         case TiledObjectName.brocoli:
           game.brocoli.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -259,6 +262,19 @@ class GameSceneLoader {
             initObject(
               ChangeScenePoint(
                 toScene: GameScenes.atMoutardeHome,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toMyrtilleHouse:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atMyrtilleHome,
                 isHavaingCollisionShapePolygone: false,
                 polygonePoints: changeScene.polygon,
                 gameScenesController: game.gameScenesController,

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:seriousgame/d_game_scenes/d_1_village_cms/game_scene_mission2.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_3_configuration/config_button_controller.dart';
@@ -77,6 +78,14 @@ class GameScenesController extends BaseController {
         sceneName: GameScenes.atMoutardeHome,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.moutardeHome,
+        gameScenesController: this,
+        soundTrackName: GameAudioAssets.adventure,
+        gameSoundController: gameSoundController,
+      ),
+      GameScenes.atMyrtilleHome: DiabeteGameSceneMyrtille(
+        sceneName: GameScenes.atMyrtilleHome,
+        previousMissionName: '',
+        sceneTmx: GameTilesAssets.myrtilleHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
         gameSoundController: gameSoundController,
@@ -232,6 +241,13 @@ class GameScenesController extends BaseController {
               dialogMessage: GameDialogs.returnToMoutardeHome),
         );
         break;
+      case GameScenes.atMyrtilleHome:
+        gameDialogController.onDialog(
+          DialogModel(
+              isShowDialog: true,
+              dialogMessage: GameDialogs.returnToMyrtilleHome),
+        );
+        break;
       case GameScenes.villageCMS:
         gameDialogController.onDialog(
           DialogModel(
@@ -276,6 +292,17 @@ class GameScenesController extends BaseController {
         break;
 
       case GameScenes.atMoutardeHome:
+        _currentScene = _sceneRouter[gameScene]!;
+        _moveToNextScene.add(_currentScene);
+        bagController.game = _currentScene;
+        gameSoundController.inputPlayMusic.add(true);
+        Future.delayed(const Duration(milliseconds: 1500), () {
+          gameDialogController.sendInitialMessage("test");
+        });
+        scene.soundState = true;
+        break;
+
+      case GameScenes.atMyrtilleHome:
         _currentScene = _sceneRouter[gameScene]!;
         _moveToNextScene.add(_currentScene);
         bagController.game = _currentScene;
