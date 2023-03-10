@@ -9,7 +9,7 @@ import '../../b1_characters/player.dart';
 class ChestQuest extends SpriteComponent
     with CollisionCallbacks, HasGameRef<DiabeteGameScene> {
   String questName;
-  String questMessage;
+  dynamic questMessage;
   String questType;
   bool isOpened = false;
   bool _hasCollided = false;
@@ -43,12 +43,38 @@ class ChestQuest extends SpriteComponent
     super.onCollisionStart(intersectionPoints, other);
     if (other is PlayerComponent) {
       if (!_hasCollided) {
-        gameRef.gameScenesController.gameDialogController.inputDialog.add(
-          DialogModel(
-            isShowDialog: true,
-            dialogMessage: questMessage,
-          ),
-        );
+        if (questType == "") {
+          gameRef.gameScenesController.gameDialogController.inputDialog.add(
+            DialogModel(
+              isShowDialog: true,
+              dialogMessage: questMessage,
+            ),
+          );
+        } else {
+          gameRef.gameScenesController.gameDialogController.inputDialog.add(
+            DialogModel(
+              isShowDialog: true,
+              hasQuestion: true,
+              dialogType: DialogType.questionInput,
+              questionTitle: questMessage["questionTitle"],
+              question: questMessage["question"],
+              questions: [
+                {
+                  "answer": questMessage["answer"],
+                }
+              ],
+              falseAswers: questMessage["falseAnswer"],
+              falseAswersContent: questMessage["falseAnswersContent"],
+              retry: questMessage["retry"],
+              trueAswers: questMessage["trueAnswers"],
+              trueAswersContent: questMessage["trueAswersContent"],
+              falseAswersContentbutnoLose:
+                  questMessage["falseAswersContentbutnoLose"],
+              hasNext: true,
+            ),
+          );
+        }
+
         gameRef.remove(this);
         isOpened = true;
 
