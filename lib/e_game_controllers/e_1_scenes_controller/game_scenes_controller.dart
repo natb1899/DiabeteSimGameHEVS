@@ -73,6 +73,14 @@ class GameScenesController extends BaseController {
         soundTrackName: GameAudioAssets.funday,
         gameSoundController: gameSoundController,
       ),
+      GameScenes.atMyrtilleHome: DiabeteGameSceneMoutarde(
+        sceneName: GameScenes.atMoutardeHome,
+        previousMissionName: "",
+        sceneTmx: GameTilesAssets.moutardeHome,
+        gameScenesController: this,
+        soundTrackName: GameAudioAssets.adventure,
+        gameSoundController: gameSoundController,
+      ),
       GameScenes.atMoutardeHome: DiabeteGameSceneMoutarde(
         sceneName: GameScenes.atMoutardeHome,
         previousMissionName: '',
