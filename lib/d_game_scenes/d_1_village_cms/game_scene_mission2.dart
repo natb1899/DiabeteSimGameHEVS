@@ -1,30 +1,35 @@
 import 'package:flame/components.dart';
+import 'package:flame/flame.dart';
 import 'package:flutter/foundation.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
-import 'package:seriousgame/z_globals/z4_assets_manager.dart';
-import 'package:universal_html/html.dart';
+import 'package:seriousgame/z_globals/z10_dialog_mission_1_manager.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import '../../z_globals/z1_game_manager.dart';
 import '../game_scene_generator.dart';
 
+/// Loader of the Mission 2 - Mrs Myrtille scene in the game
 class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   // Scene components list
   List<Component> sceneObjects = [];
 
-  // Myrtille
+  // Mrs Myrtille
   late Myrtille myrtille;
 
-  bool step1 = true; // Dialog Myrtille
-  bool step2 = false; // Dialog Housband
-  bool step3 = false; // find chest + questions
-  bool step4 = false; // End
+  // Myrtille steps
+  bool step1 = true; // Dialog Mrs Myrtille + question (choice 2)
+  bool step2 = false; // Find 6 chests
+  bool step3 = false;
+  bool step4 =
+      false; // Resolve 6 phrases + next step (choice 3) + Vital sign measurements + next step (choice 1) + Hypoglycemic state
+  bool step5 = false; // Went to fridge + question food
 
   bool step1IsDone = false;
   bool step2IsDone = false;
   bool step3IsDone = false;
   bool step4IsDone = false;
+  bool step5IsDone = false;
 
   // Scene component lifecycle handling section
   DiabeteGameSceneMyrtille({
@@ -47,32 +52,31 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   @override
   Future<void>? onLoad() async {
     initMyrtille();
-    //await initChest();
     await super.onLoad();
     continueInitialisation();
   }
 
-  /// Init the Moutarde in the scene
+  /// Init the Myrtille in the scene
   void initMyrtille() {
-    myrtille = Myrtille(GameImageAssets.myrtille)
+    myrtille = Myrtille()
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
 
   void continueInitialisation() {
-    moutarde
+    myrtille
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
   }
 
-  /// Init the chest in the scene
-  Future<void> initChest() async {
-    //create chests
-  }
-
   @override
   void update(double dt) {
-    // Update the scene components
+    super.update(dt);
+    if (step1IsDone) {
+      step1 = false;
+      step1IsDone = false;
+      step2 = true;
+    }
   }
 }

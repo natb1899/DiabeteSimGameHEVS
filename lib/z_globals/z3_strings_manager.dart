@@ -14,6 +14,10 @@ class GameDialogs {
       'Vous devez terminer la mission avant de sortir.';
   static const String returnToMoutardeHome =
       'Vous avez déjà rendu visite à Mr Moutarde.';
+
+  static const String returnToMyrtilleHome =
+      'Vous avez déjà rendu visite à Mrs Myrtille.';
+
   static const String returnToVillageCMS =
       'Vous avez déjà fini votre travail au CMS.';
   static const String finishCMSBefore =
