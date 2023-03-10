@@ -14,8 +14,6 @@ class GameImageAssets {
   static const String guy02 = "guy0248x48.png";
   static const String nurse01 = "nurse0148x48.png";
   static const String mew = "brocoli48x48.png";
-
-  static const String myrtille = "brocoli48x48.png";
 }
 
 /// It's in this class that audio assets were defined
