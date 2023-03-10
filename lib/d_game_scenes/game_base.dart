@@ -3,6 +3,7 @@ import 'package:flame/game.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/brocoliHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/myrtilleHusband.dart';
 
 import '../b_game_objects/b1_characters/brocoli.dart';
 import '../b_game_objects/b1_characters/brocoliSon.dart';
@@ -57,6 +58,7 @@ abstract class DiabeteGameBase extends FlameGame with SingleGameInstance {
   late final Moutarde moutarde;
 
   late final Myrtille myrtille;
+  late final MyrtilleHusband myrtilleHusband;
 
   late final Nurse01 nurse01;
   late final Guy01 guy01;

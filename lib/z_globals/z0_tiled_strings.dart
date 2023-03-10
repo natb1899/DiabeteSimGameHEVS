@@ -26,6 +26,7 @@ class TiledObjectName {
   static const String moutarde = "Moutarde";
 
   static const String myrtille = "Myrtille";
+  static const String myrtilleHusband = "MyrtilleHusband";
 
   static const String brocoli = "Brocoli";
   static const String brocoliHospital = "BrocoliHospital";

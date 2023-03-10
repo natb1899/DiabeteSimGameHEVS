@@ -8,7 +8,7 @@ import 'player.dart';
 
 /// This class manager M. Moutarde. Moutarde inherits from perso (perso_base.dart)
 class Myrtille extends Perso with HasGameRef<DiabeteGameSceneMyrtille> {
-  Myrtille() : super(fileNamePngCharacter: GameImageAssets.myrtille);
+  Myrtille(String user) : super(fileNamePngCharacter: GameImageAssets.myrtille);
 
   bool _hasCollided = false;
   late double mapWidth;
