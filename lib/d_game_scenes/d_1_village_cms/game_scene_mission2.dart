@@ -18,18 +18,15 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   late Myrtille myrtille;
 
   // Myrtille steps
-  bool step1 = true; // Dialog Mrs Myrtille + question (choice 2)
-  bool step2 = false; // Find 6 chests
-  bool step3 = false;
-  bool step4 =
-      false; // Resolve 6 phrases + next step (choice 3) + Vital sign measurements + next step (choice 1) + Hypoglycemic state
-  bool step5 = false; // Went to fridge + question food
+  bool step1 = true;
+  bool step2 = false; //housband
+  bool step3 = false; //chests
+  bool step4 = false;
 
   bool step1IsDone = false;
   bool step2IsDone = false;
   bool step3IsDone = false;
   bool step4IsDone = false;
-  bool step5IsDone = false;
 
   // Scene component lifecycle handling section
   DiabeteGameSceneMyrtille({
