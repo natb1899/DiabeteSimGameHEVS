@@ -166,6 +166,7 @@ class GameSceneLoader {
       ObjectGroup spawnPointsGroup, DiabeteGameScene game) {
     for (var spawnPoint in spawnPointsGroup.objects) {
       switch (spawnPoint.name) {
+
         ///Player and NPC spawn points
         case TiledObjectName.player:
           game.player.position = Vector2(spawnPoint.x, spawnPoint.y);

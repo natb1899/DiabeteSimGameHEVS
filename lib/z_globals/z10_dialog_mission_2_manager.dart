@@ -53,7 +53,7 @@ final dialogsMission2part2 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     hasNext: true,
-    dialogMessage: "Infirmière: \n\n"
+    dialogMessage: "Mari: \n\n"
         "Ma femme a eu des problèmes avec son hygiène depuis quelques mois.\n"
         "Elle ne sens plus ses pieds et se plain de troubes visuels.\n"
         "Mais j'aime m'occuper d'elle et j'ai le soutien de mes enfants.\n",
@@ -76,3 +76,147 @@ final dialogsMission2part3 = DialogModel(
       "Vous pouvez maintenant vous rendre chez M. Moutarde.\n",
   index: 1,
 );
+
+class QuestDialogsMission2 {
+  DialogModel neuropathy = DialogModel(
+    isShowDialog: true,
+    hasQuestion: true,
+    dialogType: DialogType.questionCheckbox,
+    questionTitle: "Question 1, mission2:",
+    question: "Quels sont les symptômes de la neuropathie diabétique ?",
+    questions: [
+      {
+        "result": true,
+        "answer": "Paresthesie",
+      },
+      {
+        "result": true,
+        "answer": "Faiblesse musculaire",
+      },
+      {
+        "result": true,
+        "answer": "Hyposensibilité",
+      },
+      {
+        "result": true,
+        "answer": "Douleurs nocturnes",
+      },
+      {
+        "result": false,
+        "answer": "Pieds froids",
+      },
+    ],
+    falseAswers: "Vous n'avez pas trouvé tous les symptômes, retentez !",
+    falseAswersContent:
+        "Vous perdez 1 point sur la barre de qualité des soins.",
+    retry: true,
+    trueAswers:
+        "Bravo!\n Vous avez trouvé tous les symptômes de la neuropathie!\n"
+        "Parce que la neuropathie n'est pas un symptôme cardiovasculaire, la température des membres ne change pas.\n",
+    trueAswersContent:
+        "Vous gagnez 1 point sur la barre de qualité des soins !",
+    falseAswersContentbutnoLose: "Encore une mauvaise réponse.",
+    index: 0,
+    hasNext: false,
+  );
+
+  DialogModel hyperglicemia = DialogModel(
+    isShowDialog: true,
+    hasQuestion: true,
+    dialogType: DialogType.questionRadioButton,
+    questionTitle: "Question 2, mission2:",
+    question:
+        "L’hyperglycemie peut causer des microangiopathies qui peuvent entraîner des complications renales.",
+    questions: [
+      {
+        "result": true,
+        "answer": "Vrai",
+      },
+      {
+        "result": false,
+        "answer": "Faux",
+      },
+    ],
+    falseAswers:
+        "Mauvaise réponse!\n30 % des patients des programmes de dialyse souffrent de néphropathie diabétique. \n",
+    falseAswersContent:
+        "Vous perdez 1 point sur la barre de qualité des soins.",
+    retry: false,
+    trueAswers:
+        "Bravo!\n 30 % des patients des programmes de dialyse souffrent de néphropathie diabétique. \n",
+    trueAswersContent:
+        "Vous gagnez 1 point sur la barre de qualité des soins !",
+    index: 1,
+    hasNext: false,
+  );
+
+  DialogModel visual = DialogModel(
+    isShowDialog: true,
+    hasQuestion: true,
+    dialogType: DialogType.questionRadioButton,
+    questionTitle: "Question 3, mission2:",
+    question:
+        "Il n'est pas necessaire de considerer les symptômes visuels parce que cela est normal à un âge avancé.",
+    questions: [
+      {
+        "result": false,
+        "answer": "Vrai",
+      },
+      {
+        "result": true,
+        "answer": "Faux",
+      },
+    ],
+    falseAswers:
+        "Mauvaise réponse!\n Entre 40 et 70% des patients atteints de diabète de type 2 développent un rétinopathie diabétique si ils ont été malade pendant plus de 20 ans. \n",
+    falseAswersContent:
+        "Vous perdez 1 point sur la barre de qualité des soins.",
+    retry: false,
+    trueAswers:
+        "Bravo!\n Entre 40 et 70% des patients atteints de diabète de type 2 développent un rétinopathie diabétique si ils ont été malade pendant plus de 20 ans.\n",
+    trueAswersContent:
+        "Vous gagnez 1 point sur la barre de qualité des soins !",
+    index: 2,
+    hasNext: false,
+  );
+
+  DialogModel cardiovascular = DialogModel(
+    isShowDialog: true,
+    hasQuestion: true,
+    dialogType: DialogType.questionCheckbox,
+    questionTitle: "Question 4, mission2:",
+    question:
+        "Selectionnez ce qui impacte négativement les fonctions cardiovasculaires.",
+    questions: [
+      {
+        "result": true,
+        "answer": "Hyperglycémie",
+      },
+      {
+        "result": false,
+        "answer": "Vitamine C",
+      },
+      {
+        "result": false,
+        "answer": "HDL",
+      },
+      {
+        "result": true,
+        "answer": "LDL",
+      },
+    ],
+    falseAswers:
+        "Vous n'avez pas trouvé tous les facteurs de risque, retentez !",
+    falseAswersContent:
+        "Vous perdez 1 point sur la barre de qualité des soins.",
+    retry: true,
+    trueAswers:
+        "Bravo!\n Vous avez trouvé un élément qui influe négativemment sur le système cardiovasculaire.\n"
+        "HDL est le 'bon cholestérol', donc il n'est pas un facteur de risque pour les maladies cardiovasculaires.\n",
+    trueAswersContent:
+        "Vous gagnez 1 point sur la barre de qualité des soins !",
+    falseAswersContentbutnoLose: "Encore une mauvaise réponse.",
+    index: 3,
+    hasNext: false,
+  );
+}
