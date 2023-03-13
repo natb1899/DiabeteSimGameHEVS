@@ -51,28 +51,42 @@ class ChestQuest extends SpriteComponent
             ),
           );
         } else {
-          gameRef.gameScenesController.gameDialogController.inputDialog.add(
-            DialogModel(
-              isShowDialog: true,
-              hasQuestion: true,
-              dialogType: DialogType.questionInput,
-              questionTitle: questMessage["questionTitle"],
-              question: questMessage["question"],
-              questions: [
-                {
-                  "answer": questMessage["answer"],
-                }
-              ],
-              falseAswers: questMessage["falseAnswer"],
-              falseAswersContent: questMessage["falseAnswersContent"],
-              retry: questMessage["retry"],
-              trueAswers: questMessage["trueAnswers"],
-              trueAswersContent: questMessage["trueAswersContent"],
-              falseAswersContentbutnoLose:
-                  questMessage["falseAswersContentbutnoLose"],
-              hasNext: true,
-            ),
-          );
+          gameRef.gameScenesController.gameDialogController
+              .onDialog(DialogModel(
+            isShowDialog: true,
+            dialogMessage: questMessage["questionTitle"],
+            hasQuestion: true,
+            dialogType: DialogType.questionRadioButton,
+            questionTitle: "Question 1, mission 1:",
+            question:
+                "Le patient se plaint de céphalées. Parmi ces quatre interventions, laquelle est prioritaire ?",
+            questions: [
+              {
+                "result": false,
+                "answer": "Prendre une glycémie",
+              },
+              {
+                "result": true,
+                "answer": "Effectuer un PQRSTU et AMPLE",
+              },
+              {
+                "result": false,
+                "answer": "Prendre les signes vitaux",
+              },
+              {
+                "result": false,
+                "answer": "Conseiller au patient de manger une banane",
+              }
+            ],
+            falseAswers: "Cette action n’est pas prioritaire, retentez !",
+            falseAswersContent:
+                "Vous perdez 1 point sur la barre de qualité des soins.",
+            retry: true,
+            trueAswers: "Félicitations !",
+            trueAswersContent:
+                "Vous gagnez 1 point sur la barre de qualité des soins !",
+            falseAswersContentbutnoLose: "Encore une mauvaise réponse.",
+          ));
         }
 
         gameRef.remove(this);
