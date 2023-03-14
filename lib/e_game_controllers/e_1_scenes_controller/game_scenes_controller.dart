@@ -58,6 +58,7 @@ class GameScenesController extends BaseController {
     _moveToNextScene = _gameScenesController.sink;
 
     _sceneRouter = {
+
       GameScenes.startPage: StartPage(
         gameScenesController: this,
         gameSoundController: gameSoundController,

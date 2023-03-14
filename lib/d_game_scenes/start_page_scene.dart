@@ -1,6 +1,8 @@
 import 'package:flame/components.dart';
 import 'package:flame/experimental.dart';
 import 'package:flutter/material.dart';
+import 'package:seriousgame/d_game_scenes/login_page.dart';
+import 'package:universal_html/js.dart';
 
 import '../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
@@ -9,6 +11,7 @@ import 'game_base.dart';
 
 /// Landing page.
 class StartPage extends DiabeteGameBase with HasTappableComponents {
+
   StartPage({
     required GameScenesController gameScenesController,
     required GameSoundController gameSoundController,
@@ -58,6 +61,14 @@ class StartPage extends DiabeteGameBase with HasTappableComponents {
           color: const Color(0xffdebe6c),
           borderColor: const Color(0xfffff4c7),
         ),
+        _loginButton = RoundedButton(
+          text: 'login', // Add this line
+          action: () {
+            
+          },
+          color: const Color(0xffdebe6c),
+          borderColor: const Color(0xfffff4c7),
+        ),
       ],
     );
   }
@@ -65,6 +76,7 @@ class StartPage extends DiabeteGameBase with HasTappableComponents {
   late final TextComponent _logo;
   late final RoundedButton _button1;
   late final RoundedButton _button2;
+  late final RoundedButton _loginButton;
 
   @override
   void onGameResize(Vector2 canvasSize) {
@@ -72,6 +84,7 @@ class StartPage extends DiabeteGameBase with HasTappableComponents {
     _logo.position = Vector2(canvasSize.x / 2, canvasSize.y / 3);
     _button1.position = Vector2(canvasSize.x / 2, _logo.y + 80);
     _button2.position = Vector2(canvasSize.x / 2, _logo.y + 140);
+    _loginButton.position = Vector2(canvasSize.x / 2, _logo.y + 220);
   }
 }
 

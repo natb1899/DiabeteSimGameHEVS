@@ -4,6 +4,7 @@ import 'package:resize/resize.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_controller.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_overlay.dart';
+import 'package:universal_html/js.dart';
 import 'a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import 'a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_3_configuration/config_button_controller.dart';
 import 'a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_controller.dart';
@@ -25,9 +26,9 @@ import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+  /*await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  );*/
   final GameScenesController gameController = GameScenesController();
   final GameSoundController gameSoundController = GameSoundController();
   final PlayerBagController bagController = PlayerBagController();
