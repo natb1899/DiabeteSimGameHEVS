@@ -92,7 +92,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atBrocoliHome: DiabeteGameSceneBrocoli(
         sceneName: GameScenes.atBrocoliHome,
-        previousMissionName: GameScenes.atMoutardeHome,
+        previousMissionName: '', //GameScenes.atMoutardeHome,
         sceneTmx: GameTilesAssets.brocoliHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -100,7 +100,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.outsideHospital: DiabeteGameSceneOutsideHospital(
         sceneName: GameScenes.outsideHospital,
-        previousMissionName: GameScenes.villageCMS,
+        previousMissionName: '', //GameScenes.villageCMS,
         // '', to go faster
         sceneTmx: GameTilesAssets.outsideHospital,
         gameScenesController: this,
