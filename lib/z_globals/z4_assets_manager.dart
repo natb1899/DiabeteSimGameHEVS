@@ -6,7 +6,7 @@ class GameImageAssets {
   static const String brocoli = "brocoli48x48.png";
 
   static const String myrtille = "myrtille48x48.png";
-  static const String myrtilleHusband = "brocoliSon48x48.png";
+  static const String myrtilleHusband = "husbandMyrtille48x48.png";
 
   static const String brocoliHospital = "brocoli48x48.png";
   static const String brocoliSon = "brocoliSon48x48.png";
