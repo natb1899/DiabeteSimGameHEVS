@@ -126,16 +126,42 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   @override
   void update(double dt) {
     super.update(dt);
+    //Done with myrtille
     if (step1IsDone) {
       step1 = false;
       step1IsDone = false;
+      step2 = true;
+    }
 
+    //Done with husband
+    if (step2IsDone) {
       add(chest1);
       add(chest2);
       add(chest3);
       add(chest4);
 
-      step2 = true;
+      step2 = false;
+      step2IsDone = false;
+      step3 = true;
+    }
+
+    //Done with chests
+    if ((chest1 as ChestQuest).isOpened &&
+        (chest2 as ChestQuest).isOpened &&
+        (chest3 as ChestQuest).isOpened &&
+        (chest4 as ChestQuest).isOpened &&
+        step3) {
+      step3 = false;
+      step3IsDone = false;
+      step4 = true;
+    }
+
+    //Done with all
+    if (step4IsDone) {
+      step4 = false;
+      step4IsDone = false;
+      isDone = true;
+      canChangeScene = true;
     }
   }
 }

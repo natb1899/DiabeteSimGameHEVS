@@ -69,10 +69,10 @@ final dialogsMission2part2 = <DialogModel>[
   ),
 ];
 
-final dialogsMission2part3 = DialogModel(
+final dialogsMission2part4 = DialogModel(
   isShowDialog: true,
   dialogMessage:
-      "Bien joué! Dans cette situation, vous avez identifié les complications du diabète à long terme\n"
+      "Bien joué! Dans cette situation, vous avez identifié les complications du diabète à long terme.\n"
       "Vous pouvez maintenant vous rendre chez M. Moutarde.\n",
   index: 1,
 );
@@ -109,7 +109,7 @@ class QuestDialogsMission2 {
     falseAswers: "Vous n'avez pas trouvé tous les symptômes, retentez !",
     falseAswersContent:
         "Vous perdez 1 point sur la barre de qualité des soins.",
-    retry: true,
+    retry: false, ///////////////////////////////////////////////To change
     trueAswers:
         "Bravo!\n Vous avez trouvé tous les symptômes de la neuropathie!\n"
         "Parce que la neuropathie n'est pas un symptôme cardiovasculaire, la température des membres ne change pas.\n",
@@ -209,7 +209,8 @@ class QuestDialogsMission2 {
         "Vous n'avez pas trouvé tous les facteurs de risque, retentez !",
     falseAswersContent:
         "Vous perdez 1 point sur la barre de qualité des soins.",
-    retry: true,
+    retry:
+        false, ////////////////////////////////////////////////////////////To change
     trueAswers:
         "Bravo!\n Vous avez trouvé un élément qui influe négativemment sur le système cardiovasculaire.\n"
         "HDL est le 'bon cholestérol', donc il n'est pas un facteur de risque pour les maladies cardiovasculaires.\n",
