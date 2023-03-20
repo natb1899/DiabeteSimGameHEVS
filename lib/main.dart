@@ -2,6 +2,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:resize/resize.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_controller.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_overlay.dart';
 import 'package:universal_html/js.dart';
@@ -32,6 +33,7 @@ Future<void> main() async {
   final GameScenesController gameController = GameScenesController();
   final GameSoundController gameSoundController = GameSoundController();
   final PlayerBagController bagController = PlayerBagController();
+  final LoginButtonController loginButtonController = LoginButtonController();
   final PlayerScoreController scoreController = PlayerScoreController();
   final GameDialogController gameDialogController = GameDialogController();
   final FeedBackController feedBackController = FeedBackController();
@@ -47,6 +49,7 @@ Future<void> main() async {
   gameController.gameDialogController = gameDialogController;
   gameController.configButtonController = configButtonController;
   gameController.notesController = notesController;
+  gameController.loginButtonController = loginButtonController;
   gameController.measureToolController = measureToolController;
   gameDialogController.gameSceneController = gameController;
   gameController.contactsController = contactsController;
@@ -105,6 +108,7 @@ Future<void> main() async {
                             gameDialogController: gameDialogController,
                             gameSoundController: gameSoundController,
                             configButtonController: configButtonController,
+                            loginButtonController: loginButtonController
                           );
                         },
                         GameOverlaysRoutes.playerBag: (

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
-
+import '../../a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_3_configuration/config_button_controller.dart';
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_controller.dart';
@@ -32,6 +32,7 @@ class GameScenesController extends BaseController {
   late PlayerScoreController scoreController;
   late GameDialogController gameDialogController;
   late ConfigButtonController configButtonController;
+  late LoginButtonController loginButtonController;
   late MeasureToolController measureToolController;
   late ContactsController contactsController;
   late NotesController notesController;
@@ -58,6 +59,8 @@ class GameScenesController extends BaseController {
     _moveToNextScene = _gameScenesController.sink;
 
     _sceneRouter = {
+
+
 
       GameScenes.startPage: StartPage(
         gameScenesController: this,
