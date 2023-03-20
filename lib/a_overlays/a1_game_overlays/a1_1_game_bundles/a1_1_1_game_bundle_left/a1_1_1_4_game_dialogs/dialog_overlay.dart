@@ -174,6 +174,7 @@ class DialogOverlay extends StatelessWidget {
 
   /// get a radioButton question
   _getRadioButtonQuestion() {
+    gameDialogController.answersTracker = [];
     return [
       Text(
         dialog.question!,
@@ -193,6 +194,7 @@ class DialogOverlay extends StatelessWidget {
 
   /// manage the answer of a radio button question
   _getRadioAnswerSubmissionRegime(BuildContext context) {
+    gameDialogController.answersTracker = [];
     bool scoreFlag = true;
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -441,6 +443,7 @@ class DialogOverlay extends StatelessWidget {
   }
 
   _getCheckBoxAnswersElement() {
+    gameDialogController.answersTracker = [];
     return dialog.questions?.asMap().entries.map((answer) {
       gameDialogController.answersTracker.add(false);
       return Row(

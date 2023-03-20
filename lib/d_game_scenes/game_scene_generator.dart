@@ -116,17 +116,10 @@ class DiabeteGameScene extends DiabeteGameBase
     RawKeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-    print("key pressed" +
-        keysPressed
-            .toString()); ///////////////////////////////////////////////////////////////////
     try {
       if (player.canMove) {
-        print(
-            "player can move"); ///////////////////////////////////////////////////////////////////////
         final isKeyDown = event is RawKeyDownEvent;
         if (isKeyDown) {
-          print(
-              "player is moving"); ///////////////////////////////////////////////////////////////////////
           player.setOnMovePlayerDirection(keysPressed);
           return material.KeyEventResult.handled;
         } else {

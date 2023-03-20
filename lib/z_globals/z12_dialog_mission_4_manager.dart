@@ -4,8 +4,8 @@ import '../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left
 final dialogsMission4Part1 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
-    dialogMessage: "Infirmier : \n\n"
-        "Bonjour, je m’appelle Marco, je suis infirmier, comment allez-vous ce matin ?\n",
+    dialogMessage: "Infirmière : \n\n"
+        "Bonjour, je m’appelle Margot, je suis infirmière, comment allez-vous ce matin ?\n",
     hasNext: true,
     index: 0,
   ),

@@ -2,7 +2,7 @@ import 'package:flame/components.dart';
 import 'package:seriousgame/d_game_scenes/d_1_village_cms/game_scene_mission2.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
-import '../../z_globals/z11_dialog_mission_3_manager.dart';
+import '../../z_globals/z10_dialog_mission_2_manager.dart';
 import '../../z_globals/z4_assets_manager.dart';
 import 'perso_base.dart';
 import 'player.dart';
@@ -24,21 +24,18 @@ class MyrtilleHusband extends Perso with HasGameRef<DiabeteGameSceneMyrtille> {
           gameRef.gameScenesController.gameDialogController.onDialog(
             DialogModel(
               isShowDialog: true,
-              dialogMessage: "Bonjour je suis le HUSBAND",
+              dialogMessage: "Bonjour, je suis le mari de Myrtille.",
             ),
           );
         } else if (gameRef.step2) {
           gameRef.gameScenesController.gameDialogController
-              .onDialogList(dialogsMission3Part2);
+              .onDialogList(dialogsMission2part2);
 
           gameRef.step2IsDone = true;
-        } else if (gameRef.step3) {
-          gameRef.gameScenesController.gameDialogController.onDialog(
-            DialogModel(
-              isShowDialog: true,
-              dialogMessage: "Aidez mon père svp !",
-            ),
-          );
+        } else if (gameRef.step4) {
+          gameRef.gameScenesController.gameDialogController
+              .onDialog(dialogsMission2part4);
+          gameRef.step4IsDone = true;
         }
         _hasCollided = true;
       }

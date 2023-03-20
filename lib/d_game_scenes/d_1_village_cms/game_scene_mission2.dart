@@ -5,9 +5,11 @@ import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtilleHusband.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
 import 'package:seriousgame/z_globals/z10_dialog_mission_1_manager.dart';
+import 'package:seriousgame/z_globals/z10_dialog_mission_2_manager.dart';
 import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
+import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import '../../z_globals/z1_game_manager.dart';
 import '../game_scene_generator.dart';
@@ -22,18 +24,15 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   late MyrtilleHusband myrtilleHusband;
 
   // Myrtille steps
-  bool step1 = true; // Dialog Mrs Myrtille + question (choice 2)
-  bool step2 = false; // Find 6 chests
-  bool step3 = false;
-  bool step4 =
-      false; // Resolve 6 phrases + next step (choice 3) + Vital sign measurements + next step (choice 1) + Hypoglycemic state
-  bool step5 = false; // Went to fridge + question food
+  bool step1 = true;
+  bool step2 = false; //housband
+  bool step3 = false; //chests
+  bool step4 = false;
 
   bool step1IsDone = false;
   bool step2IsDone = false;
   bool step3IsDone = false;
   bool step4IsDone = false;
-  bool step5IsDone = false;
 
   // Scene component lifecycle handling section
   DiabeteGameSceneMyrtille({
@@ -89,36 +88,37 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
 
   Future<void> initChest() async {
     final image = await Flame.images.load('gameObjects/bigChest.png');
+    QuestDialogsMission2 questDialogsMission2 = QuestDialogsMission2();
     chest1 = ChestQuest(
       sprite: Sprite(image),
       size: Vector2.all(32),
       anchor: Anchor.center,
-      questName: "Letter P",
-      questMessage: QuestDialogsMission2.question1,
+      questName: "Neuropathy",
+      questMessage: questDialogsMission2.neuropathy,
       questType: "question",
     );
     chest2 = ChestQuest(
       sprite: Sprite(image),
       size: Vector2.all(32),
       anchor: Anchor.center,
-      questName: "Letter Q",
-      questMessage: QuestDialogsMission2.question2,
+      questName: "hypoglycemia",
+      questMessage: questDialogsMission2.hyperglicemia,
       questType: "question",
     );
     chest3 = ChestQuest(
       sprite: Sprite(image),
       size: Vector2.all(32),
       anchor: Anchor.center,
-      questName: "Letter R",
-      questMessage: QuestDialogsMission2.question3,
+      questName: "visual",
+      questMessage: questDialogsMission2.visual,
       questType: "question",
     );
     chest4 = ChestQuest(
       sprite: Sprite(image),
       size: Vector2.all(32),
       anchor: Anchor.center,
-      questName: "Letter S",
-      questMessage: QuestDialogsMission2.question4,
+      questName: "cardiovascular",
+      questMessage: questDialogsMission2.cardiovascular,
       questType: "question",
     );
   }
@@ -126,82 +126,43 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   @override
   void update(double dt) {
     super.update(dt);
+
+    //Done with myrtille
     if (step1IsDone) {
       step1 = false;
       step1IsDone = false;
+      step2 = true;
+    }
 
+    //Done with husband
+    if (step2IsDone) {
       add(chest1);
       add(chest2);
       add(chest3);
       add(chest4);
 
-      step2 = true;
+      step2 = false;
+      step2IsDone = false;
+      step3 = true;
     }
-  }
-}
 
-class QuestDialogsMission2 {
-  static Map<String, dynamic> question1 = getQuestion(
-      'Question 7 mission 1:',
-      'Phrase 6 :\n\nMa douleur à la tête est forte. Je la situe à 6/10. C’est comme si quelqu’un me comprimait la tête. Je ressens également comme une sensation de fatigue générale.',
-      'q',
-      'Ce n’est pas la bonne réponse. Retentez !',
-      'Vous perdez 1 point sur la barre de qualité des soins.',
-      true,
-      'Félicitations !',
-      'Vous gagnez 1 point sur la barre de qualité des soins !',
-      'Encore une mauvaise réponse.');
-  static Map<String, dynamic> question2 = getQuestion(
-      'Question 7 mission 1:',
-      'Phrase 6 :\n\nMa douleur à la tête est forte. Je la situe à 6/10. C’est comme si quelqu’un me comprimait la tête. Je ressens également comme une sensation de fatigue générale.',
-      'q',
-      'Ce n’est pas la bonne réponse. Retentez !',
-      'Vous perdez 1 point sur la barre de qualité des soins.',
-      true,
-      'Félicitations !',
-      'Vous gagnez 1 point sur la barre de qualité des soins !',
-      'Encore une mauvaise réponse.');
-  static Map<String, dynamic> question3 = getQuestion(
-      'Question 7 mission 1:',
-      'Phrase 6 :\n\nMa douleur à la tête est forte. Je la situe à 6/10. C’est comme si quelqu’un me comprimait la tête. Je ressens également comme une sensation de fatigue générale.',
-      'q',
-      'Ce n’est pas la bonne réponse. Retentez !',
-      'Vous perdez 1 point sur la barre de qualité des soins.',
-      true,
-      'Félicitations !',
-      'Vous gagnez 1 point sur la barre de qualité des soins !',
-      'Encore une mauvaise réponse.');
-  static Map<String, dynamic> question4 = getQuestion(
-      'Question 7 mission 1:',
-      'Phrase 6 :\n\nMa douleur à la tête est forte. Je la situe à 6/10. C’est comme si quelqu’un me comprimait la tête. Je ressens également comme une sensation de fatigue générale.',
-      'q',
-      'Ce n’est pas la bonne réponse. Retentez !',
-      'Vous perdez 1 point sur la barre de qualité des soins.',
-      true,
-      'Félicitations !',
-      'Vous gagnez 1 point sur la barre de qualité des soins !',
-      'Encore une mauvaise réponse.');
+    //Done with chests
+    if ((chest1 as ChestQuest).isOpened &&
+        (chest2 as ChestQuest).isOpened &&
+        (chest3 as ChestQuest).isOpened &&
+        (chest4 as ChestQuest).isOpened &&
+        step3) {
+      step3 = false;
+      step3IsDone = false;
+      step4 = true;
+    }
 
-  static Map<String, dynamic> getQuestion(
-      String questionTitle,
-      String question,
-      String questionAnswer,
-      String falseAnswer,
-      String falseAswersContent,
-      bool retry,
-      String trueAswers,
-      String trueAswersContent,
-      String falseAswersContentbutnoLose) {
-    return {
-      "questionTitle": questionTitle,
-      "question": question,
-      "answer": questionAnswer,
-      "falseAswers": falseAnswer,
-      "falseAswersContent": falseAswersContent,
-      "retry": retry,
-      "trueAswers": trueAswers,
-      "trueAswersContent": trueAswersContent,
-      "falseAswersContentbutnoLose": falseAswersContentbutnoLose,
-    };
+    //Done with all
+    if (step4IsDone) {
+      step4 = false;
+      step4IsDone = false;
+      isDone = true;
+      canChangeScene = true;
+    }
   }
 }
