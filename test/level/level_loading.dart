@@ -2,6 +2,7 @@ import 'package:flame/components.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_3_configuration/config_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_controller.dart';
@@ -34,12 +35,14 @@ void main() {
     final MeasureToolController measureToolController = MeasureToolController();
     final ContactsController contactsController = ContactsController();
     final NotesController notesController = NotesController();
+    final LoginButtonController loginButtonController = LoginButtonController();
 
     gameController.gameSoundController = gameSoundController;
     gameController.bagController = bagController;
     gameController.scoreController = scoreController;
     gameController.gameDialogController = gameDialogController;
     gameController.configButtonController = configButtonController;
+    gameController.loginButtonController = loginButtonController;
     gameController.notesController = notesController;
     gameController.measureToolController = measureToolController;
     gameDialogController.gameSceneController = gameController;
@@ -53,6 +56,7 @@ void main() {
     gameSoundController.start();
     configButtonController.start();
     feedBackController.start();
+    loginButtonController.start();
 
     /* DiabeteGameScene diabeteGame = DiabeteGameScene(
       sceneTmx: 'assets/tmx/villageCMS.tmx',

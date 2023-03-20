@@ -5,6 +5,7 @@ import 'package:flame_audio/flame_audio.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_2_pause/pause_game.dart';
@@ -43,6 +44,7 @@ void main() {
     final PlayerBagController bagController = PlayerBagController();
     final PlayerScoreController scoreController = PlayerScoreController();
     final GameDialogController gameDialogController = GameDialogController();
+    final LoginButtonController loginButtonController = LoginButtonController();
     final FeedBackController feedBackController = FeedBackController();
     final ConfigButtonController configButtonController =
         ConfigButtonController();
@@ -55,6 +57,7 @@ void main() {
     gameController.scoreController = scoreController;
     gameController.gameDialogController = gameDialogController;
     gameController.configButtonController = configButtonController;
+    gameController.loginButtonController = loginButtonController;
     gameController.notesController = notesController;
     gameController.measureToolController = measureToolController;
     gameDialogController.gameSceneController = gameController;
@@ -68,6 +71,7 @@ void main() {
     gameSoundController.start();
     configButtonController.start();
     feedBackController.start();
+    loginButtonController.start();
 
     DiabeteGameScene diabeteGame = DiabeteGameScene(
       sceneTmx: 'assets/tmx/scene_1.tmx',
@@ -85,6 +89,7 @@ void main() {
       gameDialogController: gameDialogController,
       gameSoundController: gameSoundController,
       configButtonController: configButtonController,
+      loginButtonController: loginButtonController,
     );
 
     testWidgets('Hud manager is loaded', (tester) async {
