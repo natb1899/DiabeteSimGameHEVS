@@ -126,6 +126,7 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   @override
   void update(double dt) {
     super.update(dt);
+
     //Done with myrtille
     if (step1IsDone) {
       step1 = false;

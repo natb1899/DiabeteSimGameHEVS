@@ -74,18 +74,8 @@ class GameScenesController extends BaseController {
         soundTrackName: GameAudioAssets.funday,
         gameSoundController: gameSoundController,
       ),
-      GameScenes.atMyrtilleHome: DiabeteGameSceneMoutarde(
-        sceneName: GameScenes.atMoutardeHome,
-        previousMissionName: "",
-        sceneTmx: GameTilesAssets.moutardeHome,
-        gameScenesController: this,
-        soundTrackName: GameAudioAssets.adventure,
-        gameSoundController: gameSoundController,
-      ),
       GameScenes.atMoutardeHome: DiabeteGameSceneMoutarde(
         sceneName: GameScenes.atMoutardeHome,
-        //TODO : change previous mission name
-        // previousMissionName: GameScenes.atMoustardHome,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.moutardeHome,
         gameScenesController: this,
@@ -94,6 +84,8 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atMyrtilleHome: DiabeteGameSceneMyrtille(
         sceneName: GameScenes.atMyrtilleHome,
+        //TODO : change previous mission name
+        // previousMissionName: GameScenes.atMoustardHome,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.myrtilleHome,
         gameScenesController: this,
