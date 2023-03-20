@@ -4,6 +4,10 @@
 class GameImageAssets {
   static const String user = "player48x48.png";
   static const String brocoli = "brocoli48x48.png";
+
+  static const String myrtille = "myrtille48x48.png";
+  static const String myrtilleHusband = "husbandMyrtille48x48.png";
+
   static const String brocoliHospital = "brocoli48x48.png";
   static const String brocoliSon = "brocoliSon48x48.png";
   static const String moutarde = "moutarde48x48.png";
@@ -31,6 +35,9 @@ class GameTilesAssets {
   static const String villageCMS = "villageCMS.tmx";
   static const String village2 = "village2.tmx";
   static const String moutardeHome = "moutarde_home.tmx";
+
+  static const String myrtilleHome = "myrtille_home.tmx";
+
   static const String brocoliHome = "brocoli_home.tmx";
   static const String brocoliChamber = "brocoli_chamber.tmx";
   static const String outsideHospital = "outside_hospital.tmx";
