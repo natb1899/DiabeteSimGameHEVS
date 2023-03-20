@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:resize/resize.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
+import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_page.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_controller.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_overlay.dart';
 import 'package:universal_html/js.dart';
@@ -61,6 +62,7 @@ Future<void> main() async {
   gameDialogController.start();
   gameSoundController.start();
   configButtonController.start();
+  loginButtonController.start();
   feedBackController.start();
 
   runApp(
@@ -101,15 +103,14 @@ Future<void> main() async {
                           DiabeteGameBase game,
                         ) {
                           return GameBundlesManager(
-                            game: game,
-                            overlaysSize: 32,
-                            playerBagController: bagController,
-                            playerScoreController: scoreController,
-                            gameDialogController: gameDialogController,
-                            gameSoundController: gameSoundController,
-                            configButtonController: configButtonController,
-                            loginButtonController: loginButtonController
-                          );
+                              game: game,
+                              overlaysSize: 32,
+                              playerBagController: bagController,
+                              playerScoreController: scoreController,
+                              gameDialogController: gameDialogController,
+                              gameSoundController: gameSoundController,
+                              configButtonController: configButtonController,
+                              loginButtonController: loginButtonController);
                         },
                         GameOverlaysRoutes.playerBag: (
                           BuildContext context,
@@ -133,6 +134,31 @@ Future<void> main() async {
                                 );
                               },
                             ),
+                        //#########################################################################################33
+
+                        GameOverlaysRoutes.login: (
+                          BuildContext context,
+                          DiabeteGameBase game,
+                        ) =>
+                            StreamBuilder<bool>(
+                              stream: loginButtonController.outputScore,
+                              initialData: loginButtonController.openConfig,
+                              builder: (
+                                context,
+                                openConfig,
+                              ) {
+                                return Visibility(
+                                  visible: openConfig.hasError
+                                      ? false
+                                      : openConfig.data!,
+                                  child: LoginPage(
+                                    gameScenesController: gameController,
+                                  ),
+                                );
+                              },
+                            ),
+                        //#########################################################################################33
+
                         //#########################################################################################33
 
                         GameOverlaysRoutes.settings: (
@@ -190,6 +216,7 @@ Future<void> main() async {
                           scene.data!.sceneName == GameScenes.startPage
                               ? [
                                   GameOverlaysRoutes.settings,
+                                  GameOverlaysRoutes.login
                                 ]
                               : const [
                                   GameOverlaysRoutes.gameBundelManager,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 
 class LoginPage extends StatelessWidget {
-  
+  LoginPage({super.key, required this.gameScenesController});
+  final GameScenesController gameScenesController;
 
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
