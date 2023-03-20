@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 
 import '../../../d_game_scenes/game_base.dart';
 import '../../../e_game_controllers/e_2_score_controller/player_score_controller.dart';
@@ -14,6 +15,7 @@ class GameBundlesManager extends StatelessWidget {
   final double overlaysSize;
   final DiabeteGameBase game;
   final PlayerBagController playerBagController;
+  final LoginButtonController loginButtonController;
   final PlayerScoreController playerScoreController;
   final GameDialogController gameDialogController;
   final GameSoundController gameSoundController;
@@ -23,6 +25,7 @@ class GameBundlesManager extends StatelessWidget {
     required this.game,
     required this.overlaysSize,
     required this.playerBagController,
+    required this.loginButtonController,
     required this.playerScoreController,
     required this.gameDialogController,
     required this.gameSoundController,

@@ -5,6 +5,7 @@ class GameOverlaysRoutes {
   static const String home = "home";
   static const String credit = "credit";
   static const String settings = "settings";
+  static const String login = "login";
   static const String pause = "pause";
   static const String feedback = "feedback";
 }
