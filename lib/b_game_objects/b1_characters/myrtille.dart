@@ -1,4 +1,5 @@
 import 'package:flame/components.dart';
+import 'package:seriousgame/z_globals/z10_dialog_mission_2_manager.dart';
 
 import '../../d_game_scenes/d_1_village_cms/game_scene_mission2.dart';
 import '../../z_globals/z10_dialog_mission_1_manager.dart';
@@ -20,22 +21,12 @@ class Myrtille extends Perso with HasGameRef<DiabeteGameSceneMyrtille> {
     if (other is PlayerComponent) {
       if (!_hasCollided) {
         if (gameRef.step1) {
-          // Choice 2 -> Letter PQRSTU
           gameRef.gameScenesController.gameDialogController
-              .onDialogList(dialogsMission1Part1);
+              .onDialogList(dialogsMission2part1);
           gameRef.step1IsDone = true;
-        } else if (gameRef.step2) {
-          // Can found the 6 chests
-          gameRef.gameScenesController.gameDialogController
-              .onDialog(dialogsMission1Part2);
-          gameRef.step2IsDone = true;
         } else if (gameRef.step4) {
-          // 6 chests found, input questions for each letter
-          // Choice 3 -> vitals signes (take 4 tools in bag)
-          // Choice 1 -> check glycemy (take glycometer in bag)
-          // Indicate to move to fridge
           gameRef.gameScenesController.gameDialogController
-              .onDialogList(dialogsMission1Part3);
+              .onDialog(dialogsMission2part4);
           gameRef.step4IsDone = true;
         }
         _hasCollided = true;

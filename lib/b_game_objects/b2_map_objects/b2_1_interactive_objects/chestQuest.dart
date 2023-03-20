@@ -1,5 +1,6 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 import '../../../d_game_scenes/game_scene_generator.dart';
@@ -50,43 +51,10 @@ class ChestQuest extends SpriteComponent
               dialogMessage: questMessage,
             ),
           );
-        } else {
-          gameRef.gameScenesController.gameDialogController
-              .onDialog(DialogModel(
-            isShowDialog: true,
-            dialogMessage: questMessage["questionTitle"],
-            hasQuestion: true,
-            dialogType: DialogType.questionRadioButton,
-            questionTitle: "Question 1, mission 1:",
-            question:
-                "Le patient se plaint de céphalées. Parmi ces quatre interventions, laquelle est prioritaire ?",
-            questions: [
-              {
-                "result": false,
-                "answer": "Prendre une glycémie",
-              },
-              {
-                "result": true,
-                "answer": "Effectuer un PQRSTU et AMPLE",
-              },
-              {
-                "result": false,
-                "answer": "Prendre les signes vitaux",
-              },
-              {
-                "result": false,
-                "answer": "Conseiller au patient de manger une banane",
-              }
-            ],
-            falseAswers: "Cette action n’est pas prioritaire, retentez !",
-            falseAswersContent:
-                "Vous perdez 1 point sur la barre de qualité des soins.",
-            retry: true,
-            trueAswers: "Félicitations !",
-            trueAswersContent:
-                "Vous gagnez 1 point sur la barre de qualité des soins !",
-            falseAswersContentbutnoLose: "Encore une mauvaise réponse.",
-          ));
+        } else if (questType == "question") {
+          gameRef.gameScenesController.gameDialogController.inputDialog.add(
+            questMessage,
+          );
         }
 
         gameRef.remove(this);

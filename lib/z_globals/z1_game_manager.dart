@@ -33,10 +33,10 @@ class GameScenes {
 
   //Level 1 - VillageScene
   static const String villageCMS = "CMS - Village1 -";
+  static const String atMyrtilleHome =
+      "Mission 2 : CMS - Village1 - Myrtille Home";
   static const String atMoutardeHome =
       "Mission 1 : CMS - Village1 - Moutarde Home";
-  static const String atMyrtilleHome =
-      "Mission 2 : CMS - Village2 - Myrtille Home";
   static const String atBrocoliHome =
       "Mission 3 : CMS - Village1 - Brocoli Home";
 

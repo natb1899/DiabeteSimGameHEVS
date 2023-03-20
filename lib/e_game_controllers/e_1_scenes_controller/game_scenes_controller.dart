@@ -84,6 +84,8 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atMyrtilleHome: DiabeteGameSceneMyrtille(
         sceneName: GameScenes.atMyrtilleHome,
+        //TODO : change previous mission name
+        // previousMissionName: GameScenes.atMoustardHome,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.myrtilleHome,
         gameScenesController: this,
@@ -92,7 +94,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atBrocoliHome: DiabeteGameSceneBrocoli(
         sceneName: GameScenes.atBrocoliHome,
-        previousMissionName: '', //GameScenes.atMoutardeHome,
+        previousMissionName: GameScenes.atMyrtilleHome,
         sceneTmx: GameTilesAssets.brocoliHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,

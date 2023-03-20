@@ -31,6 +31,9 @@ class ChangeScenePoint extends MapObject {
     super.onCollisionStart(intersectionPoints, other);
     if (other is PlayerComponent) {
       if (!_hasCollided) {
+        print(
+            "Trying to change scene ////////////////////////////////////////////////");
+
         if (gameRef.canChangeScene) {
           loadNextScene();
         } else {
