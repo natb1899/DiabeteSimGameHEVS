@@ -69,25 +69,19 @@ void main() {
   );
 
   group('Scene 2 tests', () {
-    testWithGame<DiabeteGameSceneMyrtille>(
-        'Load Ms. and Mr. Myrtille to game', () => diabeteGame,
-        (DiabeteGameSceneMyrtille game) async {
+    testWithFlameGame('Load Ms. and Mr. Myrtille to game', (game) async {
       final msMyrtille = Myrtille('Test')..addToParent(game);
       final mrMyrtille = MyrtilleHusband('Test')..addToParent(game);
       await game.ready();
       expect(msMyrtille.isMounted, true);
       expect(mrMyrtille.isMounted, true);
     });
-    /*testWithGame<DiabeteGameSceneMyrtille>(
-        'Load player in scene 2', () => diabeteGame,
-        (DiabeteGameSceneMyrtille game) async {
+    /*testWithFlameGame('Load player in scene 2', (game) async {
       var player = PlayerComponent('player48x48.png')..addToParent(game);
       await game.ready();
       expect(player.isMounted, true);
     });
-    testWithGame<DiabeteGameSceneMyrtille>(
-        'Collide with Mr. Myrtille', () => diabeteGame,
-        (DiabeteGameSceneMyrtille game) async {
+    testWithFlameGame('Collide with Mr. Myrtille', (game) async {
       final component = MyrtilleHusband('Test')..addToParent(game);
       var vector = Vector2(704, 361.34559999999965);
       var vector1 = Vector2(708.1709999999991, 388);
