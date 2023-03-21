@@ -20,6 +20,8 @@ import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/player_bag_controller.dart';
 import 'package:seriousgame/z_globals/z10_dialog_mission_2_manager.dart';
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -56,11 +58,11 @@ void main() {
   feedBackController.start();
 
   DiabeteGameSceneMyrtille diabeteGame = DiabeteGameSceneMyrtille(
-    sceneTmx: 'myrtille_home.tmx',
-    sceneName: 'scene_2',
-    previousMissionName: 'mission_2',
+    sceneTmx: GameTilesAssets.myrtilleHome,
+    sceneName: GameScenes.atMyrtilleHome,
+    previousMissionName: GameScenes.atMoutardeHome,
     gameScenesController: gameController,
-    soundTrackName: 'funday.mp3',
+    soundTrackName: GameAudioAssets.funday,
     gameSoundController: gameSoundController,
   );
 
@@ -70,7 +72,7 @@ void main() {
         (DiabeteGameSceneMyrtille game) async {
       await game.ready();
       expect(game.sceneTmx, 'myrtille_home.tmx');
-      expect(game.sceneName, 'scene_2');
+      expect(game.sceneName, GameScenes.atMyrtilleHome);
     });
     testWithFlameGame('Load player to game', (game) async {
       var player = PlayerComponent('player48x48.png')..addToParent(game);
