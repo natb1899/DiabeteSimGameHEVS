@@ -45,6 +45,9 @@ class GameScenes {
   static const String atHospitalInterior = "HospitalInterior - ";
   static const String atBrocoliChamber =
       "Mission 4 : Hospital - Hospital1 - Brocoli Chamber";
+
+  static const String atNurseOffice =
+      "Mission 7 : Hospital - Hospital1 - Nurse Office";
 }
 
 /// It's in this class that the bag menu strings are managed

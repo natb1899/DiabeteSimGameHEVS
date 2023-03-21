@@ -166,7 +166,6 @@ class GameSceneLoader {
       ObjectGroup spawnPointsGroup, DiabeteGameScene game) {
     for (var spawnPoint in spawnPointsGroup.objects) {
       switch (spawnPoint.name) {
-
         ///Player and NPC spawn points
         case TiledObjectName.player:
           game.player.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -207,6 +206,30 @@ class GameSceneLoader {
         case TiledObjectName.guy02:
           game.guy02.position = Vector2(spawnPoint.x, spawnPoint.y);
           game.addToScene(game.guy02);
+          break;
+
+        //Situation 7
+        case TiledObjectName.apricotHospital:
+          game.apricotHospital.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.apricotHospital);
+          break;
+        case TiledObjectName.doctorHospital:
+          game.doctorHospital.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.doctorHospital);
+          break;
+        case TiledObjectName.asscHospital:
+          game.asscHospital.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.asscHospital);
+          break;
+        case TiledObjectName.nurseDiabetesHospital:
+          game.nurseDiabetesHospital.position =
+              Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.nurseDiabetesHospital);
+          break;
+        case TiledObjectName.nurseWoundCareHospital:
+          game.nurseWoundCareHospital.position =
+              Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.nurseWoundCareHospital);
           break;
 
         /// Object
@@ -328,6 +351,19 @@ class GameSceneLoader {
             ),
           );
           break;
+        case TiledObjectName.toNurseOffice:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atNurseOffice,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
         case TiledObjectName.toHospitalInterior:
           game.addToScene(
             initObject(
@@ -342,6 +378,19 @@ class GameSceneLoader {
           );
           break;
         case TiledObjectName.toOutsideBrocoliChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atHospitalInterior,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toOutsideNurseOffice:
           game.addToScene(
             initObject(
               ChangeScenePoint(
