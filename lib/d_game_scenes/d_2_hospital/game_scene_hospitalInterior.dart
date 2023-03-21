@@ -1,6 +1,5 @@
 import 'package:flame/components.dart';
 import 'package:flutter/foundation.dart';
-import 'package:seriousgame/b_game_objects/b1_characters/brocoliHospital.dart';
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../b_game_objects/b1_characters/guy01.dart';
 import '../../b_game_objects/b1_characters/guy02.dart';
@@ -52,17 +51,18 @@ class DiabeteGameSceneHospitalInterior extends DiabeteGameScene {
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
+
   void initGuy01() {
     guy01 = Guy01(GameImageAssets.guy01)
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
+
   void initGuy02() {
     guy02 = Guy02(GameImageAssets.guy02)
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
-
 
   void continueInitialisation() {
     nurse01
@@ -85,5 +85,4 @@ class DiabeteGameSceneHospitalInterior extends DiabeteGameScene {
     canChangeScene = true;
   }
   //#####################################
-
 }
