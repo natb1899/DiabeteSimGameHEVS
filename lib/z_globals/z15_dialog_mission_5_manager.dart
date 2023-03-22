@@ -74,26 +74,59 @@ final dialogsMission5part3 = <DialogModel>{
     hasNext: true,
     index: 0,
   ),
-  /*DialogModel(
+  DialogModel(
     isShowDialog: true,
-    index: 3,
-    dialogMessage:
-        "Vous devez maintenant organiser la départ de M. Fraiseux. Ouvrez votre agenda et selectionnez la personne appropriée pour assurer la continuité des soins à domicile.\n",
-    hasInteraction: true,
-    hasNext: false,
-    dialogInteractions: [
-      [
-        GameInteractionTypes.contacts,
-        "Médecin traitant",
-        [
-          true,
-          DialogModel(
-              isShowDialog: true,
-              dialogMessage: "Vous utilisez le Glycomètre : \n\n3.1 mmol/L.",
-              hasNext: true,
-              index: 0)
-        ],
-      ],
+    hasQuestion: true,
+    index: 1,
+    dialogType: DialogType.questionRadioButton,
+    questionTitle: "Question 1, mission 5:",
+    question:
+        "M. Fraiseux va bientôt sortir de l'hôpital. Qui contacter pour organiser un suivi à domicile ?",
+    questions: [
+      {
+        "result": false,
+        "answer": "Les urgences",
+      },
+      {
+        "result": true,
+        "answer": "Son médecin traitant",
+      },
+      {
+        "result": false,
+        "answer": "Le bureau du CMS",
+      },
+      {
+        "result": true,
+        "answer": "La diététicienne",
+      },
+      {
+        "result": true,
+        "answer": "Le physiothérapeute en réadaptation cardiovasculaire",
+      },
+      {
+        "result": true,
+        "answer": "Le tabacologue",
+      },
+      {
+        "result": false,
+        "answer": "L'aumônier",
+      }
     ],
-  ),*/
+    falseAswers: "Ce n'est pas la bonne réponse. Vous auriiez dû choisir:\n"
+        "Son médecin traitant, La diététicienne, Le physiothérapeute en réadaptation cardiovasculaire et Le tabacologue",
+    falseAswersContent:
+        "Vous perdez 1 point sur la barre de qualité des soins.",
+    retry: false,
+    trueAswers:
+        "Félicitations! Vous avez identifié tous les professionnels de santé qui peuvent aider M. Fraiseux.",
+    trueAswersContent:
+        "Vous gagnez 1 point sur la barre de qualité des soins !",
+    hasNext: true,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: "Vous pouvez maitenant aller voir M.Choux. \n",
+    hasNext: true,
+    index: 0,
+  ),
 };
