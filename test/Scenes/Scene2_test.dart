@@ -6,7 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_3_configuration/config_button_controller.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_controller.dart';
-import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 import 'package:seriousgame/a_overlays/a2_bag_overlay/measure_tool_controller.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_controller.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
@@ -71,11 +70,11 @@ void main() {
         'Load correct tile', () => diabeteGame,
         (DiabeteGameSceneMyrtille game) async {
       await game.ready();
-      expect(game.sceneTmx, 'myrtille_home.tmx');
+      expect(game.sceneTmx, GameTilesAssets.myrtilleHome);
       expect(game.sceneName, GameScenes.atMyrtilleHome);
     });
     testWithFlameGame('Load player to game', (game) async {
-      var player = PlayerComponent('player48x48.png')..addToParent(game);
+      final player = PlayerComponent('player48x48.png')..addToParent(game);
       await game.ready();
       expect(player.isMounted, true);
     });
