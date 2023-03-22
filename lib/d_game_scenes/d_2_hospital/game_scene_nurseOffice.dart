@@ -1,39 +1,46 @@
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/foundation.dart';
+
 import 'package:seriousgame/b_game_objects/b1_characters/apricotHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/asscHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/doctorHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/nurseDiabetesHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/nurseWoundCareHospital.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
-import 'package:seriousgame/z_globals/z10_dialog_mission_2_manager.dart';
+import 'package:seriousgame/d_game_scenes/game_scene_generator.dart';
+import 'package:seriousgame/z_globals/z14_dialog_mission_7_manager.dart';
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z4_assets_manager.dart';
+
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
-import '../../z_globals/z1_game_manager.dart';
-import '../../z_globals/z4_assets_manager.dart';
-import '../game_scene_generator.dart';
 
-/// Loader of the different scenes in the game
+/// Loader of the Mission 7 - Mr Apricot in the hospital
 class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
-  // Scene components list
   List<Component> sceneObjects = [];
 
-  late ApricotHospital apricotHospital;
+  // Characters
   late DoctorHospital doctorHospital;
   late AsscHospital asscHospital;
   late NurseDiabetesHospital nurseDiabetesHospital;
   late NurseWoundCareHospital nurseWoundCareHospital;
+  late ApricotHospital apricotHospital;
 
-  //brocoliscène
-  bool BroHopStep1 = true;
-  bool BroHopStep2 = false;
+  // Mission steps
+  bool step1 = true;
+  bool step2 = false;
+  bool step3 = false;
+  bool step4 = false;
+  bool step5 = false;
 
-  bool BroHopStep1IsDone = false;
-  bool BroHopStep2IsDone = false;
+  bool step1IsDone = false;
+  bool step2IsDone = false;
+  bool step3IsDone = false;
+  bool step4IsDone = false;
+  bool step5IsDone = false;
 
-  // SCENE COMPONENT LIFECYCLE HANDLING SECTION
-
+  // Scene component lifecycle handling section
   DiabeteGameSceneNurseOffice({
     required String sceneTmx,
     required String sceneName,
@@ -53,58 +60,54 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
   /// Initiate the scene loader
   @override
   Future<void>? onLoad() async {
-    initApricot();
-    initDoctor();
-    initAssc();
-    initNurseDiabetes();
-    initNurseWoundCare();
+    initDoctorHospital();
+    initAsscHospital();
+    initNurseDiabetesHospital();
+    initNurseWoundCareHospital();
+    initApricotHospital();
     await initChest();
     await super.onLoad();
     continueInitialisation();
   }
 
-  /// Init the apricot in the scene
-  void initApricot() {
-    apricotHospital = ApricotHospital(GameImageAssets.apricotHospital)
-      ..size = Vector2.all(GameParams.middleSize)
-      ..anchor = Anchor.center;
-  }
-
-  /// Init the Doctor in the scene
-  void initDoctor() {
+  /// Init Doctor in the scene
+  void initDoctorHospital() {
     doctorHospital = DoctorHospital(GameImageAssets.doctorHospital)
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
 
-  /// Init the ASSC in the scene
-  void initAssc() {
+  /// Init Assc in the scene
+  void initAsscHospital() {
     asscHospital = AsscHospital(GameImageAssets.asscHospital)
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
 
-  /// Init the nurse diabetes in the scene
-  void initNurseDiabetes() {
+  /// Init Diabetes Nurse in the scene
+  void initNurseDiabetesHospital() {
     nurseDiabetesHospital =
         NurseDiabetesHospital(GameImageAssets.nurseDiabetesHospital)
           ..size = Vector2.all(GameParams.middleSize)
           ..anchor = Anchor.center;
   }
 
-  /// Init the nurse wound care in the scene
-  void initNurseWoundCare() {
+  /// Init Woundcare Nurse in the scene
+  void initNurseWoundCareHospital() {
     nurseWoundCareHospital =
         NurseWoundCareHospital(GameImageAssets.nurseWoundCareHospital)
           ..size = Vector2.all(GameParams.middleSize)
           ..anchor = Anchor.center;
   }
 
+  /// Init Mr. Apricot in the scene
+  void initApricotHospital() {
+    apricotHospital = ApricotHospital(GameImageAssets.apricotHospital)
+      ..size = Vector2.all(GameParams.middleSize)
+      ..anchor = Anchor.center;
+  }
+
   void continueInitialisation() {
-    apricotHospital
-      ..debugMode = kDebugMode // Only true on debug mode (dev work)
-      ..mapWidth = mapWidth
-      ..mapHeight = mapHeight;
     doctorHospital
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
@@ -121,48 +124,70 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
+    apricotHospital
+      ..debugMode = kDebugMode // Only true on debug mode (dev work)
+      ..mapWidth = mapWidth
+      ..mapHeight = mapHeight;
   }
 
   Future<void> initChest() async {
     final image = await Flame.images.load('gameObjects/bigChest.png');
-    QuestDialogsMission2 questDialogsMission2 = QuestDialogsMission2();
+    QuestDialogsMission7 questDialogsMission7 = QuestDialogsMission7();
     chest1 = ChestQuest(
-      sprite: Sprite(image),
-      size: Vector2.all(32),
-      anchor: Anchor.center,
-      questName: "Neuropathy",
-      questMessage: questDialogsMission2.neuropathy,
-      questType: "question",
-    );
+        sprite: Sprite(image),
+        size: Vector2.all(32),
+        anchor: Anchor.center,
+        questName: 'Prevention',
+        questMessage: questDialogsMission7.prevention,
+        questType: '');
     chest2 = ChestQuest(
-      sprite: Sprite(image),
-      size: Vector2.all(32),
-      anchor: Anchor.center,
-      questName: "hypoglycemia",
-      questMessage: questDialogsMission2.hyperglicemia,
-      questType: "question",
-    );
+        sprite: Sprite(image),
+        size: Vector2.all(32),
+        anchor: Anchor.center,
+        questName: 'Treatment',
+        questMessage: questDialogsMission7.traitement,
+        questType: '');
   }
-
-  //#####################################
 
   @override
   void update(double dt) {
     super.update(dt);
 
-    //add(chest1);
-    //add(chest2);
-
-    if (BroHopStep1IsDone) {
-      BroHopStep1 = false;
-      BroHopStep2 = true;
-      BroHopStep1IsDone = false;
-      canChangeScene = true;
-      isDone = true;
+    if (step1IsDone) {
+      step1 = false;
+      step1IsDone = false;
+      step2 = true;
     }
-    if (BroHopStep2IsDone) {
-      BroHopStep2 = false;
-      BroHopStep2IsDone = false;
+
+    if (step2IsDone) {
+      step2 = false;
+      step2IsDone = false;
+      step3 = true;
+    }
+
+    if (step3IsDone) {
+      add(chest1);
+      add(chest2);
+
+      step3 = false;
+      step3IsDone = false;
+      step4 = true;
+    }
+
+    if ((chest1 as ChestQuest).isOpened &&
+        (chest2 as ChestQuest).isOpened &&
+        step4) {
+      step4 = false;
+      step4IsDone = false;
+      step5 = true;
+    }
+
+    // Done with all
+    if (step5IsDone) {
+      step5 = false;
+      step5IsDone = false;
+      isDone = true;
+      canChangeScene = true;
     }
   }
 }

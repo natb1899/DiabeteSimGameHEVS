@@ -22,7 +22,7 @@ final dialogsMission7part1 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     dialogMessage: "Allez voir M. Abricot dans sa chambre.\n",
-    hasNext: true,
+    hasNext: false,
     index: 2,
   ),
 ];
