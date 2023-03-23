@@ -10,7 +10,7 @@ class GameImageAssets {
 
   //Situation 7
   static const String apricotHospital = "myrtille48x48.png";
-  static const String doctorHospital = "husbandMyrtille48x48.png";
+  static const String doctorHospital = "doctor48x48.png";
   static const String asscHospital = "myrtille48x48.png";
   static const String nurseDiabetesHospital = "myrtille48x48.png";
   static const String nurseWoundCareHospital = "myrtille48x48.png";
