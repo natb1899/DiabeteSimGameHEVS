@@ -28,17 +28,19 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
   late ApricotHospital apricotHospital;
 
   // Mission steps
-  bool step1 = true;
-  bool step2 = false;
-  bool step3 = false;
-  bool step4 = false;
-  bool step5 = false;
+  bool step1 = true; // Doctor
+  bool step2 = false; // Mr. Apricot
+  bool step3 = false; // Assistant Nurse
+  bool step4 = false; // Diabetes Nurse
+  bool step5 = false; // Woundcare Nurse
+  bool step6 = false; // Done with all
 
   bool step1IsDone = false;
   bool step2IsDone = false;
   bool step3IsDone = false;
   bool step4IsDone = false;
   bool step5IsDone = false;
+  bool step6IsDone = false;
 
   // Scene component lifecycle handling section
   DiabeteGameSceneNurseOffice({
@@ -77,7 +79,7 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
       ..anchor = Anchor.center;
   }
 
-  /// Init Assc in the scene
+  /// Init Assistant Nurse in the scene
   void initAsscHospital() {
     asscHospital = AsscHospital(GameImageAssets.asscHospital)
       ..size = Vector2.all(GameParams.middleSize)
@@ -130,22 +132,22 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
       ..mapHeight = mapHeight;
   }
 
+  /// Init chests in the scene
   Future<void> initChest() async {
     final image = await Flame.images.load('gameObjects/bigChest.png');
-    QuestDialogsMission7 questDialogsMission7 = QuestDialogsMission7();
     chest1 = ChestQuest(
         sprite: Sprite(image),
         size: Vector2.all(32),
         anchor: Anchor.center,
         questName: 'Prevention',
-        questMessage: questDialogsMission7.prevention,
+        questMessage: QuestDialogsMission7.prevention,
         questType: '');
     chest2 = ChestQuest(
         sprite: Sprite(image),
         size: Vector2.all(32),
         anchor: Anchor.center,
         questName: 'Treatment',
-        questMessage: questDialogsMission7.traitement,
+        questMessage: QuestDialogsMission7.treatment,
         questType: '');
   }
 
@@ -166,26 +168,33 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
     }
 
     if (step3IsDone) {
-      add(chest1);
-      add(chest2);
-
       step3 = false;
       step3IsDone = false;
       step4 = true;
     }
 
-    if ((chest1 as ChestQuest).isOpened &&
-        (chest2 as ChestQuest).isOpened &&
-        step4) {
+    if (step4IsDone) {
       step4 = false;
       step4IsDone = false;
       step5 = true;
     }
 
-    // Done with all
     if (step5IsDone) {
       step5 = false;
       step5IsDone = false;
+
+      add(chest1);
+      add(chest2);
+
+      step6 = true;
+    }
+
+    // Done with all
+    if ((chest1 as ChestQuest).isOpened &&
+        (chest2 as ChestQuest).isOpened &&
+        step6) {
+      step6 = false;
+      step6IsDone = false;
       isDone = true;
       canChangeScene = true;
     }
