@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 
@@ -62,9 +63,6 @@ class GameScenesController extends BaseController {
     _moveToNextScene = _gameScenesController.sink;
 
     _sceneRouter = {
-
-
-
       GameScenes.startPage: StartPage(
         gameScenesController: this,
         gameSoundController: gameSoundController,
@@ -127,6 +125,14 @@ class GameScenesController extends BaseController {
         sceneName: GameScenes.atBrocoliChamber,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.brocoliChamber,
+        gameScenesController: this,
+        soundTrackName: GameAudioAssets.adventure,
+        gameSoundController: gameSoundController,
+      ),
+      GameScenes.atNurseOffice: DiabeteGameSceneNurseOffice(
+        sceneName: GameScenes.atNurseOffice,
+        previousMissionName: '',
+        sceneTmx: GameTilesAssets.nurseOffice,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
         gameSoundController: gameSoundController,

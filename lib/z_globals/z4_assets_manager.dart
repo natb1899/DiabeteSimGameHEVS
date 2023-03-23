@@ -8,6 +8,13 @@ class GameImageAssets {
   static const String myrtille = "myrtille48x48.png";
   static const String myrtilleHusband = "husbandMyrtille48x48.png";
 
+  //Situation 7
+  static const String apricotHospital = "myrtille48x48.png";
+  static const String doctorHospital = "doctor48x48.png";
+  static const String asscHospital = "myrtille48x48.png";
+  static const String nurseDiabetesHospital = "myrtille48x48.png";
+  static const String nurseWoundCareHospital = "myrtille48x48.png";
+
   static const String brocoliHospital = "brocoli48x48.png";
   static const String brocoliSon = "brocoliSon48x48.png";
   static const String moutarde = "moutarde48x48.png";
@@ -42,4 +49,6 @@ class GameTilesAssets {
   static const String brocoliChamber = "brocoli_chamber.tmx";
   static const String outsideHospital = "outside_hospital.tmx";
   static const String hospitalInterior = "hopital_Interior.tmx";
+
+  static const String nurseOffice = "nurse_office.tmx";
 }

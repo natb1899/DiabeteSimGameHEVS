@@ -35,6 +35,13 @@ class TiledObjectName {
   static const String guy02 = "Guy02";
   static const String nurse01 = "Nurse01";
 
+  //Situation 7
+  static const String apricotHospital = "ApricotHospital";
+  static const String doctorHospital = "Doctor";
+  static const String asscHospital = "ASSC";
+  static const String nurseDiabetesHospital = "NurseDiabetes";
+  static const String nurseWoundCareHospital = "NurseWoundCare";
+
   //static const String mew = "Mew";
 
   // Spawnpoint objects (SpawnPoints -> SpawnPoint)
@@ -71,10 +78,15 @@ class TiledObjectName {
 
   static const String toBrocoliHouse = "ToBrocoliHouse";
   static const String toBrocoliChamber = "ToBrocoliChamber";
+
   static const String toInsideHospital = "ToInsideHospital";
   static const String toOutsideBrocoliChamber = "ToOutsideBrocoliChamber";
+
+  //Situation 7
+  static const String toOutsideNurseOffice = "ToOutsideNurseOffice";
 
   //HopitalScene
   //static const String toBrocoliChamber = "ToBrocoliChamber"; -> will be moved here
   static const String toHospitalInterior = "ToHospitalInterior";
+  static const String toNurseOffice = "ToNurseOffice";
 }

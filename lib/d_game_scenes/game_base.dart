@@ -1,9 +1,14 @@
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/apricotHospital.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/asscHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/brocoliHospital.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/doctorHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtilleHusband.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/nurseDiabetesHospital.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/nurseWoundCareHospital.dart';
 
 import '../b_game_objects/b1_characters/brocoli.dart';
 import '../b_game_objects/b1_characters/brocoliSon.dart';
@@ -63,6 +68,13 @@ abstract class DiabeteGameBase extends FlameGame with SingleGameInstance {
   late final Nurse01 nurse01;
   late final Guy01 guy01;
   late final Guy02 guy02;
+
+  //Situation 7
+  late final ApricotHospital apricotHospital;
+  late final DoctorHospital doctorHospital;
+  late final AsscHospital asscHospital;
+  late final NurseDiabetesHospital nurseDiabetesHospital;
+  late final NurseWoundCareHospital nurseWoundCareHospital;
 
   // Game controller
   GameScenesController gameScenesController;
