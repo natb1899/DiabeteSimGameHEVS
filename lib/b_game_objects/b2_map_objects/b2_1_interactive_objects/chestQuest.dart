@@ -1,5 +1,6 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 import '../../../d_game_scenes/game_scene_generator.dart';
@@ -9,7 +10,7 @@ import '../../b1_characters/player.dart';
 class ChestQuest extends SpriteComponent
     with CollisionCallbacks, HasGameRef<DiabeteGameScene> {
   String questName;
-  String questMessage;
+  dynamic questMessage;
   String questType;
   bool isOpened = false;
   bool _hasCollided = false;
@@ -43,12 +44,19 @@ class ChestQuest extends SpriteComponent
     super.onCollisionStart(intersectionPoints, other);
     if (other is PlayerComponent) {
       if (!_hasCollided) {
-        gameRef.gameScenesController.gameDialogController.inputDialog.add(
-          DialogModel(
-            isShowDialog: true,
-            dialogMessage: questMessage,
-          ),
-        );
+        if (questType == "") {
+          gameRef.gameScenesController.gameDialogController.inputDialog.add(
+            DialogModel(
+              isShowDialog: true,
+              dialogMessage: questMessage,
+            ),
+          );
+        } else if (questType == "question") {
+          gameRef.gameScenesController.gameDialogController.inputDialog.add(
+            questMessage,
+          );
+        }
+
         gameRef.remove(this);
         isOpened = true;
 
