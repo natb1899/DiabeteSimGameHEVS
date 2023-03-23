@@ -1,8 +1,3 @@
-import 'dart:math';
-
-import 'package:flame/game.dart';
-import 'package:flame_audio/flame_audio.dart';
-import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
@@ -28,7 +23,7 @@ import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/player_bag_controller.dart';
-import 'package:seriousgame/z_globals/Z5_color_manager.dart';
+import 'package:seriousgame/z_globals/z5_color_manager.dart';
 
 Widget makeTestableWidget(Widget child) {
   return MaterialApp(

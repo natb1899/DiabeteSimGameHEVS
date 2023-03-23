@@ -34,6 +34,7 @@ class TiledObjectName {
   static const String guy01 = "Guy01";
   static const String guy02 = "Guy02";
   static const String nurse01 = "Nurse01";
+  static const String fraiseux = "Fraiseux";
 
   //Situation 7
   static const String apricotHospital = "ApricotHospital";
@@ -81,6 +82,9 @@ class TiledObjectName {
 
   static const String toInsideHospital = "ToInsideHospital";
   static const String toOutsideBrocoliChamber = "ToOutsideBrocoliChamber";
+
+  static const String toFraiseuxChamber = "ToFraiseuxChamber";
+  static const String toOutsideFraiseuxChamber = "ToOutsideFraiseuxChamber";
 
   //Situation 7
   static const String toOutsideNurseOffice = "ToOutsideNurseOffice";

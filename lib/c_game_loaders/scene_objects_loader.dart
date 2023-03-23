@@ -166,6 +166,7 @@ class GameSceneLoader {
       ObjectGroup spawnPointsGroup, DiabeteGameScene game) {
     for (var spawnPoint in spawnPointsGroup.objects) {
       switch (spawnPoint.name) {
+
         ///Player and NPC spawn points
         case TiledObjectName.player:
           game.player.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -206,6 +207,12 @@ class GameSceneLoader {
         case TiledObjectName.guy02:
           game.guy02.position = Vector2(spawnPoint.x, spawnPoint.y);
           game.addToScene(game.guy02);
+          break;
+
+        //Situation 5
+        case TiledObjectName.fraiseux:
+          game.fraiseux.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.fraiseux);
           break;
 
         //Situation 7
@@ -356,6 +363,32 @@ class GameSceneLoader {
             initObject(
               ChangeScenePoint(
                 toScene: GameScenes.atNurseOffice,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toFraiseuxChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atFraiseuxChamber,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toOutsideFraiseuxChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atHospitalInterior,
                 isHavaingCollisionShapePolygone: false,
                 polygonePoints: changeScene.polygon,
                 gameScenesController: game.gameScenesController,
