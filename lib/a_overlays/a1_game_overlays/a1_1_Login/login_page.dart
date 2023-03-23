@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 
+import '../../../z_globals/z1_game_manager.dart';
+
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key, required this.gameScenesController}) : super(key: key);
   final GameScenesController gameScenesController;
+
+  const LoginPage({Key? key, required this.gameScenesController})
+      : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -41,16 +45,16 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             const SizedBox(height: 24),
-           // actions: [
             ElevatedButton(
               onPressed: () async {
                 try {
-                  UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+                  UserCredential userCredential =
+                      await _auth.signInWithEmailAndPassword(
                     email: _usernameController.text,
                     password: _passwordController.text,
                   );
-                  // Navigate to the next screen on successful login
-                  //widget.gameScenesController.goToNextScene();
+
+                  widget.gameScenesController.openScene(GameScenes.villageCMS);
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found') {
                     const Text("Wrong Credentials");
@@ -64,30 +68,11 @@ class _LoginPageState extends State<LoginPage> {
               child: const Text('Login'),
             ),
             const SizedBox(height: 8),
-            
             TextButton(
-              onPressed: () {
-                
-              //   bool openBag =
-              //     gameScenesController.configButtonController.openConfig;
-              // gameScenesController.configButtonController.openConfig = !openBag;
-              // openBag = !openBag;
-              // if (gameScenesController.scene.sceneName ==
-              //     GameScenes.startPage) {
-              //   gameScenesController.configButtonController.inputConfig
-              //       .add(openBag);
-
-              //   gameScenesController.openScene(GameScenes.villageCMS);
-              // } else {
-              //   gameScenesController.configButtonController.inputConfig.add(
-              //       gameScenesController.configButtonController.openConfig);
-              // }
-              },
+              onPressed: () {},
               child: const Text('Forgot Password?'),
             )
-            ]
-//          ],
-          
+          ],
         ),
       ),
     );
