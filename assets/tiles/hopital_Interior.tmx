@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="75" nextobjectid="101">
+<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="75" nextobjectid="103">
  <tileset firstgid="1" source="tiles_sets/joueur.tsx"/>
  <tileset firstgid="3421" source="tiles_sets/hopital.tsx"/>
  <tileset firstgid="5986" source="tiles_sets/salle de classe.tsx"/>
@@ -2832,93 +2832,95 @@
   </layer>
  </group>
  <objectgroup id="52" name="SpawnPoints">
-  <object id="2" name="Player" class="Perso" x="640" y="656" width="16" height="16"/>
-  <object id="89" name="Nurse01" class="Spawnpoint" x="672" y="544" width="16" height="16"/>
-  <object id="91" name="Guy01" class="SpawnPoint" x="1067" y="380" width="16" height="16"/>
-  <object id="92" name="ToOutsideBrocoliChamber" class="SpawnPoint" x="574.861" y="211.756" width="27.7548" height="19.4283"/>
-  <object id="93" name="Guy02" class="SpawnPoint" x="192" y="256" width="16" height="16"/>
-  <object id="98" name="ToOutsideNurseOffice" class="SpawnPoint" x="981.123" y="228.286" width="27.7548" height="19.4283"/>
+  <object id="2" name="Player" type="Perso" x="640" y="656" width="16" height="16"/>
+  <object id="89" name="Nurse01" type="Spawnpoint" x="672" y="544" width="16" height="16"/>
+  <object id="91" name="Guy01" type="SpawnPoint" x="1067" y="380" width="16" height="16"/>
+  <object id="92" name="ToOutsideBrocoliChamber" type="SpawnPoint" x="574.861" y="211.756" width="27.7548" height="19.4283"/>
+  <object id="93" name="Guy02" type="SpawnPoint" x="192" y="256" width="16" height="16"/>
+  <object id="98" name="ToOutsideNurseOffice" type="SpawnPoint" x="981.123" y="228.286" width="27.7548" height="19.4283"/>
+  <object id="102" name="ToOutsideFraiseuxChamber" type="SpawnPoint" x="775.456" y="206.286" width="27.7548" height="19.4283"/>
  </objectgroup>
  <objectgroup id="53" name="Obstacles">
-  <object id="6" class="Obstacle" x="0" y="160" width="96" height="560"/>
-  <object id="8" class="Obstacle" x="96" y="32" width="1200" height="128"/>
-  <object id="9" class="Obstacle" x="96" y="720" width="1200" height="80"/>
+  <object id="6" type="Obstacle" x="0" y="160" width="96" height="560"/>
+  <object id="8" type="Obstacle" x="96" y="32" width="1200" height="128"/>
+  <object id="9" type="Obstacle" x="96" y="720" width="1200" height="80"/>
   <object id="11" x="1296" y="241" width="112" height="479"/>
-  <object id="12" class="Obstacle" x="496" y="656" width="16" height="64"/>
-  <object id="14" class="Obstacle" x="320" y="448" width="16" height="272"/>
-  <object id="16" class="Obstacle" x="336" y="432" width="160" height="16"/>
-  <object id="18" class="Obstacle" x="240" y="432" width="80" height="16"/>
-  <object id="19" class="Obstacle" x="96" y="432" width="80" height="16"/>
-  <object id="20" class="Obstacle" x="320" y="384" width="16" height="48"/>
-  <object id="21" class="Obstacle" x="320" y="256" width="16" height="80"/>
-  <object id="22" class="Obstacle" x="336" y="240" width="160" height="16"/>
-  <object id="23" class="Obstacle" x="496" y="256" width="16" height="176"/>
-  <object id="24" class="Obstacle" x="512" y="432" width="352" height="16"/>
-  <object id="25" class="Obstacle" x="864" y="384" width="16" height="48"/>
-  <object id="26" class="Obstacle" x="864" y="256" width="16" height="80"/>
-  <object id="27" class="Obstacle" x="512" y="240" width="352" height="16"/>
-  <object id="28" class="Obstacle" x="864" y="448" width="16" height="176"/>
-  <object id="29" class="Obstacle" x="864" y="672" width="16" height="48"/>
-  <object id="30" class="Obstacle" x="944" y="672" width="16" height="48"/>
-  <object id="31" class="Obstacle" x="944" y="480" width="16" height="144"/>
-  <object id="32" class="Obstacle" x="960" y="464" width="160" height="16"/>
-  <object id="33" class="Obstacle" x="1136" y="464" width="160" height="16"/>
-  <object id="34" class="Obstacle" x="1120" y="384" width="16" height="80"/>
-  <object id="35" class="Obstacle" x="1120" y="256" width="16" height="80"/>
-  <object id="36" class="Obstacle" x="1136" y="240" width="160" height="16"/>
-  <object id="37" class="Obstacle" x="496" y="448" width="16" height="176"/>
-  <object id="38" class="Obstacle" x="512" y="256" width="352" height="80"/>
-  <object id="39" class="Obstacle" x="336" y="256" width="160" height="64"/>
-  <object id="40" class="Obstacle" x="336" y="448" width="160" height="80"/>
-  <object id="41" class="Obstacle" x="448" y="560" width="48" height="48"/>
-  <object id="42" class="Obstacle" x="336" y="544" width="16" height="144"/>
-  <object id="43" class="Obstacle" x="336" y="688" width="32" height="32"/>
-  <object id="44" class="Obstacle" x="464" y="688" width="32" height="32"/>
-  <object id="45" class="Obstacle" x="352" y="608" width="32" height="32"/>
-  <object id="46" class="Obstacle" x="512" y="528" width="112" height="48"/>
-  <object id="48" class="Obstacle" x="512" y="576" width="16" height="48"/>
-  <object id="49" class="Obstacle" x="960" y="576" width="32" height="48"/>
-  <object id="51" class="Obstacle" x="960" y="480" width="336" height="80"/>
-  <object id="52" class="Obstacle" x="992" y="560" width="16" height="16"/>
-  <object id="53" class="Obstacle" x="1056" y="576" width="48" height="16"/>
-  <object id="54" class="Obstacle" x="1136" y="592" width="96" height="32"/>
-  <object id="55" class="Obstacle" x="1152" y="672" width="112" height="48"/>
-  <object id="56" class="Obstacle" x="1008" y="672" width="112" height="48"/>
-  <object id="57" class="Obstacle" x="960" y="688" width="32" height="32"/>
-  <object id="58" class="Obstacle" x="1264" y="624" width="32" height="32"/>
-  <object id="59" class="Obstacle" x="1024" y="128" width="64" height="48"/>
-  <object id="60" class="Obstacle" x="880" y="144" width="48" height="32"/>
-  <object id="61" class="Obstacle" x="704" y="144" width="80" height="32"/>
-  <object id="63" class="Obstacle" x="560" y="160" width="48" height="16"/>
-  <object id="64" class="Obstacle" x="368" y="144" width="80" height="32"/>
-  <object id="65" class="Obstacle" x="224" y="144" width="96" height="32"/>
-  <object id="66" class="Obstacle" x="128" y="144" width="32" height="32"/>
-  <object id="67" class="Obstacle" x="96" y="160" width="16" height="48"/>
-  <object id="68" class="Obstacle" x="336" y="400" width="32" height="32"/>
-  <object id="69" class="Obstacle" x="512" y="448" width="352" height="64"/>
-  <object id="70" class="Obstacle" x="1136" y="256" width="160" height="64"/>
-  <object id="71" class="Obstacle" x="240" y="448" width="80" height="64"/>
-  <object id="72" class="Obstacle" x="96" y="448" width="80" height="64"/>
-  <object id="73" class="Obstacle" x="96" y="512" width="48" height="176"/>
-  <object id="74" class="Obstacle" x="192" y="592" width="32" height="48"/>
-  <object id="75" class="Obstacle" x="304" y="576" width="16" height="64"/>
-  <object id="76" class="Obstacle" x="272" y="656" width="32" height="32"/>
-  <object id="77" class="Obstacle" x="208" y="688" width="96" height="32"/>
-  <object id="78" name="Pikachu" class="Interactive" x="288" y="512" width="16" height="16"/>
-  <object id="79" class="Obstacle" x="1248" y="336" width="48" height="128"/>
-  <object id="80" class="Obstacle" x="1136" y="432" width="32" height="32"/>
-  <object id="81" class="Obstacle" x="1104" y="256" width="16" height="64"/>
-  <object id="82" class="Obstacle" x="992" y="432" width="128" height="32"/>
-  <object id="83" class="Obstacle" x="288" y="400" width="32" height="32"/>
-  <object id="84" class="Obstacle" x="96" y="368" width="48" height="32"/>
-  <object id="85" class="Obstacle" x="96" y="320" width="48" height="32"/>
-  <object id="86" class="Obstacle" x="96" y="272" width="48" height="32"/>
-  <object id="87" class="Obstacle" x="96" y="224" width="48" height="32"/>
-  <object id="88" class="Obstacle" x="96" y="400" width="32" height="32"/>
-  <object id="94" name="Mew" class="Interactive" x="512" y="400" width="16" height="16"/>
+  <object id="12" type="Obstacle" x="496" y="656" width="16" height="64"/>
+  <object id="14" type="Obstacle" x="320" y="448" width="16" height="272"/>
+  <object id="16" type="Obstacle" x="336" y="432" width="160" height="16"/>
+  <object id="18" type="Obstacle" x="240" y="432" width="80" height="16"/>
+  <object id="19" type="Obstacle" x="96" y="432" width="80" height="16"/>
+  <object id="20" type="Obstacle" x="320" y="384" width="16" height="48"/>
+  <object id="21" type="Obstacle" x="320" y="256" width="16" height="80"/>
+  <object id="22" type="Obstacle" x="336" y="240" width="160" height="16"/>
+  <object id="23" type="Obstacle" x="496" y="256" width="16" height="176"/>
+  <object id="24" type="Obstacle" x="512" y="432" width="352" height="16"/>
+  <object id="25" type="Obstacle" x="864" y="384" width="16" height="48"/>
+  <object id="26" type="Obstacle" x="864" y="256" width="16" height="80"/>
+  <object id="27" type="Obstacle" x="512" y="240" width="352" height="16"/>
+  <object id="28" type="Obstacle" x="864" y="448" width="16" height="176"/>
+  <object id="29" type="Obstacle" x="864" y="672" width="16" height="48"/>
+  <object id="30" type="Obstacle" x="944" y="672" width="16" height="48"/>
+  <object id="31" type="Obstacle" x="944" y="480" width="16" height="144"/>
+  <object id="32" type="Obstacle" x="960" y="464" width="160" height="16"/>
+  <object id="33" type="Obstacle" x="1136" y="464" width="160" height="16"/>
+  <object id="34" type="Obstacle" x="1120" y="384" width="16" height="80"/>
+  <object id="35" type="Obstacle" x="1120" y="256" width="16" height="80"/>
+  <object id="36" type="Obstacle" x="1136" y="240" width="160" height="16"/>
+  <object id="37" type="Obstacle" x="496" y="448" width="16" height="176"/>
+  <object id="38" type="Obstacle" x="512" y="256" width="352" height="80"/>
+  <object id="39" type="Obstacle" x="336" y="256" width="160" height="64"/>
+  <object id="40" type="Obstacle" x="336" y="448" width="160" height="80"/>
+  <object id="41" type="Obstacle" x="448" y="560" width="48" height="48"/>
+  <object id="42" type="Obstacle" x="336" y="544" width="16" height="144"/>
+  <object id="43" type="Obstacle" x="336" y="688" width="32" height="32"/>
+  <object id="44" type="Obstacle" x="464" y="688" width="32" height="32"/>
+  <object id="45" type="Obstacle" x="352" y="608" width="32" height="32"/>
+  <object id="46" type="Obstacle" x="512" y="528" width="112" height="48"/>
+  <object id="48" type="Obstacle" x="512" y="576" width="16" height="48"/>
+  <object id="49" type="Obstacle" x="960" y="576" width="32" height="48"/>
+  <object id="51" type="Obstacle" x="960" y="480" width="336" height="80"/>
+  <object id="52" type="Obstacle" x="992" y="560" width="16" height="16"/>
+  <object id="53" type="Obstacle" x="1056" y="576" width="48" height="16"/>
+  <object id="54" type="Obstacle" x="1136" y="592" width="96" height="32"/>
+  <object id="55" type="Obstacle" x="1152" y="672" width="112" height="48"/>
+  <object id="56" type="Obstacle" x="1008" y="672" width="112" height="48"/>
+  <object id="57" type="Obstacle" x="960" y="688" width="32" height="32"/>
+  <object id="58" type="Obstacle" x="1264" y="624" width="32" height="32"/>
+  <object id="59" type="Obstacle" x="1024" y="128" width="64" height="48"/>
+  <object id="60" type="Obstacle" x="880" y="144" width="48" height="32"/>
+  <object id="61" type="Obstacle" x="704" y="144" width="80" height="32"/>
+  <object id="63" type="Obstacle" x="560" y="160" width="48" height="16"/>
+  <object id="64" type="Obstacle" x="368" y="144" width="80" height="32"/>
+  <object id="65" type="Obstacle" x="224" y="144" width="96" height="32"/>
+  <object id="66" type="Obstacle" x="128" y="144" width="32" height="32"/>
+  <object id="67" type="Obstacle" x="96" y="160" width="16" height="48"/>
+  <object id="68" type="Obstacle" x="336" y="400" width="32" height="32"/>
+  <object id="69" type="Obstacle" x="512" y="448" width="352" height="64"/>
+  <object id="70" type="Obstacle" x="1136" y="256" width="160" height="64"/>
+  <object id="71" type="Obstacle" x="240" y="448" width="80" height="64"/>
+  <object id="72" type="Obstacle" x="96" y="448" width="80" height="64"/>
+  <object id="73" type="Obstacle" x="96" y="512" width="48" height="176"/>
+  <object id="74" type="Obstacle" x="192" y="592" width="32" height="48"/>
+  <object id="75" type="Obstacle" x="304" y="576" width="16" height="64"/>
+  <object id="76" type="Obstacle" x="272" y="656" width="32" height="32"/>
+  <object id="77" type="Obstacle" x="208" y="688" width="96" height="32"/>
+  <object id="78" name="Pikachu" type="Interactive" x="288" y="512" width="16" height="16"/>
+  <object id="79" type="Obstacle" x="1248" y="336" width="48" height="128"/>
+  <object id="80" type="Obstacle" x="1136" y="432" width="32" height="32"/>
+  <object id="81" type="Obstacle" x="1104" y="256" width="16" height="64"/>
+  <object id="82" type="Obstacle" x="992" y="432" width="128" height="32"/>
+  <object id="83" type="Obstacle" x="288" y="400" width="32" height="32"/>
+  <object id="84" type="Obstacle" x="96" y="368" width="48" height="32"/>
+  <object id="85" type="Obstacle" x="96" y="320" width="48" height="32"/>
+  <object id="86" type="Obstacle" x="96" y="272" width="48" height="32"/>
+  <object id="87" type="Obstacle" x="96" y="224" width="48" height="32"/>
+  <object id="88" type="Obstacle" x="96" y="400" width="32" height="32"/>
+  <object id="94" name="Mew" type="Interactive" x="512" y="400" width="16" height="16"/>
  </objectgroup>
  <objectgroup id="54" name="ChangeScenePoints">
   <object id="5" name="ToBrocoliChamber" x="656" y="160" width="32" height="16"/>
-  <object id="100" name="ToNurseOffice" class="ToNurseOffice" x="1134" y="161.333" width="34.6667" height="14.6667"/>
+  <object id="100" name="ToNurseOffice" type="ToNurseOffice" x="1134" y="161.333" width="34.6667" height="14.6667"/>
+  <object id="101" name="ToFraiseuxChamber" type="ToNurseOffice" x="815.333" y="160.667" width="34.6667" height="14.6667"/>
  </objectgroup>
 </map>

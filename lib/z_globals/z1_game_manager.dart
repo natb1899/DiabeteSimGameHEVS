@@ -45,6 +45,8 @@ class GameScenes {
   static const String atHospitalInterior = "HospitalInterior - ";
   static const String atBrocoliChamber =
       "Mission 4 : Hospital - Hospital1 - Brocoli Chamber";
+  static const String atFraiseuxChamber =
+      "Mission 5 : Hospital - Hospital1 - Fraiseux Chamber";
 
   static const String atNurseOffice =
       "Mission 7 : Hospital - Hospital1 - Nurse Office";
@@ -63,6 +65,7 @@ class GameCharacters {
   static const String guy01 = "Guy01";
   static const String guy02 = "Guy02";
   static const String nurse01 = "Nurse01";
+  static const String fraiseux = "Fraiseux";
 }
 
 class GameInteractionTypes {

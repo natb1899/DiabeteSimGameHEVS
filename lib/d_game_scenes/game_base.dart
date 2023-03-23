@@ -12,6 +12,7 @@ import 'package:seriousgame/b_game_objects/b1_characters/nurseWoundCareHospital.
 
 import '../b_game_objects/b1_characters/brocoli.dart';
 import '../b_game_objects/b1_characters/brocoliSon.dart';
+import '../b_game_objects/b1_characters/fraiseux.dart';
 import '../b_game_objects/b1_characters/guy01.dart';
 import '../b_game_objects/b1_characters/guy02.dart';
 import '../b_game_objects/b1_characters/moutarde.dart';
@@ -68,6 +69,9 @@ abstract class DiabeteGameBase extends FlameGame with SingleGameInstance {
   late final Nurse01 nurse01;
   late final Guy01 guy01;
   late final Guy02 guy02;
+
+  //situation 5
+  late final Fraiseux fraiseux;
 
   //Situation 7
   late final ApricotHospital apricotHospital;
