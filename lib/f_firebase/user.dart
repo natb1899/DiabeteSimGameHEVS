@@ -27,26 +27,3 @@ Map<String, dynamic> _userToJson(User instance) => <String, dynamic>{
       'name': instance.name,
     };
 
-// //List all the roads from favoriteRoads
-// List<Map<String, dynamic>>? _favoriteRoads(List<Road>? roads) {
-//   if (roads == null) {
-//     return null;
-//   }
-//   final roadMap = <Map<String, dynamic>>[];
-//   roads.forEach((road) {
-//     roadMap.add(road.toJson());
-//   });
-//   return roadMap;
-// }
-
-// //List all the Roads 
-// List<Map<String, dynamic>>? _myRoadsList(List<Road>? roads) {
-//   if (roads == null) {
-//     return null;
-//   }
-//   final roadMap = <Map<String, dynamic>>[];
-//   roads.forEach((road) {
-//     roadMap.add(road.toJson());
-//   });
-//   return roadMap;
-// }

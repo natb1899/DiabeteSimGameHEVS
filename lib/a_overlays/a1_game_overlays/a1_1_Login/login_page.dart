@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 
+import '../../../z_globals/z1_game_manager.dart';
+
 class LoginPage extends StatefulWidget {
-  LoginPage({Key? key, required this.gameScenesController}) : super(key: key);
   final GameScenesController gameScenesController;
+
+  const LoginPage({Key? key, required this.gameScenesController})
+      : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -44,32 +48,41 @@ class _LoginPageState extends State<LoginPage> {
             ElevatedButton(
               onPressed: () async {
                 try {
-                  UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+                  UserCredential userCredential =
+                      await _auth.signInWithEmailAndPassword(
                     email: _usernameController.text,
                     password: _passwordController.text,
                   );
-                  // Navigate to the next screen on successful login
-                  //widget.gameScenesController.goToNextScene();
+
+                  widget.gameScenesController.openScene(GameScenes.villageCMS);
                 } on FirebaseAuthException catch (e) {
-                  if (e.code == 'user-not-found') {
-                    print('No user found for that email.');
-                  } else if (e.code == 'wrong-password') {
-                    print('Wrong password provided for that user.');
-                  }
+                  if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Wrong Credentials'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                  } 
                 }
               },
               child: const Text('Login'),
             ),
             const SizedBox(height: 8),
             TextButton(
-              onPressed: () {
-                // Handle forgot password button pressed
-              },
+              onPressed: () {},
               child: const Text('Forgot Password?'),
-            ),
+            )
           ],
         ),
       ),
     );
   }
+}
+
+String? validateEmail(String? formEmail){
+  if(formEmail == null || formEmail.isEmpty){
+    return "Enter Email Address";
+  }
+  return null;
 }
