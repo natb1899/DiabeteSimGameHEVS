@@ -56,13 +56,14 @@ class _LoginPageState extends State<LoginPage> {
 
                   widget.gameScenesController.openScene(GameScenes.villageCMS);
                 } on FirebaseAuthException catch (e) {
-                  if (e.code == 'user-not-found') {
-                    const Text("Wrong Credentials");
-                    print('No user found for that email.');
-                  } else if (e.code == 'wrong-password') {
-                    print('Wrong password provided for that user.');
-                    const Text("Wrong Credentials");
-                  }
+                  if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Wrong Credentials'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                  } 
                 }
               },
               child: const Text('Login'),
@@ -77,4 +78,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+}
+
+String? validateEmail(String? formEmail){
+  if(formEmail == null || formEmail.isEmpty){
+    return "Enter Email Address";
+  }
+  return null;
 }
