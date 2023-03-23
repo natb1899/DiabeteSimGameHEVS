@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
+import 'package:seriousgame/f_firebase/firebase.dart';
 
 import '../../../z_globals/z1_game_manager.dart';
 
@@ -54,16 +55,25 @@ class _LoginPageState extends State<LoginPage> {
                     password: _passwordController.text,
                   );
 
-                  widget.gameScenesController.openScene(GameScenes.villageCMS);
+                  FirebaseAuth auth = FirebaseAuth.instance;
+
+                  DatabaseManager db = DatabaseManager();
+                  String userLevel =
+                      await db.getUserLevel(auth.currentUser?.uid);
+                  print(userLevel);
+
+                  widget.gameScenesController.openScene(userLevel);
+                  //widget.gameScenesController.openScene(userLevel);
                 } on FirebaseAuthException catch (e) {
-                  if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+                  if (e.code == 'user-not-found' ||
+                      e.code == 'wrong-password') {
                     ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Wrong Credentials'),
-                      backgroundColor: Colors.red,
-                    ),
-                  );
-                  } 
+                      const SnackBar(
+                        content: Text('Wrong Credentials'),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  }
                 }
               },
               child: const Text('Login'),
@@ -80,8 +90,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-String? validateEmail(String? formEmail){
-  if(formEmail == null || formEmail.isEmpty){
+String? validateEmail(String? formEmail) {
+  if (formEmail == null || formEmail.isEmpty) {
     return "Enter Email Address";
   }
   return null;
