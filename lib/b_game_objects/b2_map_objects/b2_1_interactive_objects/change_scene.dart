@@ -33,7 +33,6 @@ class ChangeScenePoint extends MapObject {
       if (!_hasCollided) {
         print(
             "Trying to change scene ////////////////////////////////////////////////");
-
         if (gameRef.canChangeScene) {
           loadNextScene();
         } else {

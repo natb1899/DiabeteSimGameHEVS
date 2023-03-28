@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/f_firebase/firebase.dart';
 
 import '../../../../../d_game_scenes/game_base.dart';
@@ -9,11 +10,13 @@ import '../../../../../d_game_scenes/game_base.dart';
 class SaveOverlay extends StatefulWidget {
   final double overlaysSize;
   final DiabeteGameBase game;
+  final PlayerScoreController playerScoreController;
 
   const SaveOverlay({
     super.key,
     required this.game,
     required this.overlaysSize,
+    required this.playerScoreController,
   });
 
   @override
@@ -33,8 +36,8 @@ class _SaveOverlayState extends State<SaveOverlay> {
         color: Colors.amber.shade300,
         onPressed: () {
           DatabaseManager db = DatabaseManager();
-          print(widget.game.gameScenesController.scene.previousMissionName);
           db.saveGame(
+              currentScore: widget.playerScoreController.playerScore,
               currentLevel: widget.game.gameScenesController.scene.sceneName,
               previousMissionName:
                   widget.game.gameScenesController.scene.previousMissionName,

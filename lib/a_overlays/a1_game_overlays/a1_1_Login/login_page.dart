@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
+import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/f_firebase/firebase.dart';
 
 import '../../../z_globals/z1_game_manager.dart';
 
 class LoginPage extends StatefulWidget {
   final GameScenesController gameScenesController;
+  final PlayerScoreController playerScoreController;
 
-  const LoginPage({Key? key, required this.gameScenesController})
-      : super(key: key);
+  const LoginPage({
+    Key? key,
+    required this.gameScenesController,
+    required this.playerScoreController,
+  }) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -60,10 +65,12 @@ class _LoginPageState extends State<LoginPage> {
                   DatabaseManager db = DatabaseManager();
                   String userLevel =
                       await db.getUserLevel(auth.currentUser?.uid);
-                  print(userLevel);
 
-                  widget.gameScenesController.openScene(userLevel);
-                  //widget.gameScenesController.openScene(userLevel);
+                  widget.playerScoreController.playerScore =
+                      await db.getUserScore(auth.currentUser?.uid);
+
+                  //widget.gameScenesController.openScene("CMS - Village1 -");
+                  widget.gameScenesController.goToScene(userLevel);
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found' ||
                       e.code == 'wrong-password') {

@@ -23,7 +23,7 @@ class DatabaseManager {
     return docU.get('role');
   }
 
-  //Get User Role
+  //Get User Level
   Future<String> getUserLevel(id) async {
     String userLevel = "null";
 
@@ -38,6 +38,21 @@ class DatabaseManager {
     return userLevel;
   }
 
+  //Get User Score
+  Future<int> getUserScore(id) async {
+    int userScore = 50;
+
+    await FirebaseFirestore.instance
+        .collection('user')
+        .doc(id)
+        .get()
+        .then((data) {
+      userScore = data['currentScore'];
+    });
+
+    return userScore;
+  }
+
   //Add User to the App
   Future<void> addUser({required String email, required String? id}) async {
     final docUser = FirebaseFirestore.instance.collection('User').doc(id);
@@ -49,12 +64,14 @@ class DatabaseManager {
 
   //Save the current game level
   Future<void> saveGame(
-      {required String currentLevel,
+      {required int currentScore,
+      required String currentLevel,
       required String previousMissionName,
       required String? id}) async {
     final docUser = FirebaseFirestore.instance.collection('user').doc(id);
 
     final save = {
+      'currentScore': currentScore,
       'currentLevel': currentLevel,
       'previousMissionName': previousMissionName
     };
