@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="20" nextobjectid="208">
+<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="20" nextobjectid="208">
  <tileset firstgid="1" source="tiles_sets/village.tsx"/>
  <tileset firstgid="3421" source="tiles_sets/moutarde_home.tsx"/>
  <tileset firstgid="6841" source="tiles_sets/bigChest.tsx"/>
@@ -382,53 +382,53 @@
 </data>
  </layer>
  <objectgroup id="12" name="ChangeScenePoints">
-  <object id="84" name="ToOutsideHospital" class="ChangeScene" x="672" y="0.5" width="32" height="16.1667"/>
-  <object id="85" name="ToMyrtilleHouse" class="ChangeScene" x="683.833" y="336" width="36.6667" height="39.3333"/>
-  <object id="86" name="ToBrocoliHouse" class="ChangeScene" x="1149" y="494.5" width="38" height="39.3333"/>
-  <object id="107" name="ToMoutardeHouse" class="ChangeScene" x="285.5" y="351" width="36" height="39.1667"/>
-  <object id="202" name="ToSchool" class="ChangeScene" x="1312.5" y="63.5" width="94.5" height="34.5"/>
+  <object id="84" name="ToOutsideHospital" type="ChangeScene" x="672" y="0.5" width="32" height="16.1667"/>
+  <object id="85" name="ToMyrtilleHouse" type="ChangeScene" x="683.833" y="336" width="36.6667" height="39.3333"/>
+  <object id="86" name="ToBrocoliHouse" type="ChangeScene" x="1149" y="494.5" width="38" height="39.3333"/>
+  <object id="107" name="ToMoutardeHouse" type="ChangeScene" x="285.5" y="351" width="36" height="39.1667"/>
+  <object id="202" name="ToSchool" type="ChangeScene" x="1312.5" y="63.5" width="94.5" height="34.5"/>
  </objectgroup>
  <objectgroup id="11" name="Obstacles">
-  <object id="122" name="Fountain" class="Obstacle" x="48.1667" y="561.5" width="479.834" height="206.666"/>
-  <object id="125" name="TopRightScreen" class="Obstacle" x="704" y="0" width="704" height="16"/>
-  <object id="128" name="RightScreen" class="Obstacle" x="1331.33" y="1.33333" width="76.6667" height="798.667"/>
-  <object id="129" name="BottomScreen" class="Obstacle" x="16" y="784" width="1376" height="16"/>
-  <object id="130" name="TopLeftScreen" class="Obstacle" x="0" y="0" width="672" height="16"/>
-  <object id="131" name="LeftScreen" class="Obstacle" x="0" y="16" width="16" height="768"/>
-  <object id="133" name="MoutardeHouse" class="House" x="128" y="320" width="272" height="71.3333"/>
-  <object id="134" name="MoutardeRoof" class="Obstacle" x="112" y="256" width="304" height="92"/>
-  <object id="140" name="MyrtilleHouse" class="House" x="528.667" y="303.333" width="256" height="71.3333"/>
-  <object id="145" name="BrocoliHouse" class="House" x="1024.67" y="461.333" width="288" height="73.1667"/>
-  <object id="149" name="MyrtilleRoof" class="Obstacle" x="513.333" y="241.333" width="285.333" height="92.6667"/>
-  <object id="151" name="BrocoliRoof" class="Obstacle" x="1008" y="400.667" width="322.667" height="91.5"/>
-  <object id="153" name="MoutardeYard" class="Obstacle" x="326.667" y="179" width="97.667" height="232.833"/>
-  <object id="154" name="MyrtilleYard" class="Obstacle" x="482.167" y="288.667" width="204.5" height="160"/>
-  <object id="155" name="MoutardeYard" class="Obstacle" x="111" y="286" width="172.167" height="126.667"/>
-  <object id="166" name="Edge" class="Obstacle" x="706" y="45.6666" width="622" height="15.3334"/>
-  <object id="178" name="BrocoliYard" class="Obstacle" x="1187.17" y="458.833" width="142.667" height="84"/>
-  <object id="181" name="Tree" class="Obstacle" x="866" y="605" width="72.5" height="77"/>
-  <object id="183" name="Tree" class="Obstacle" x="528.25" y="629" width="114" height="153.5"/>
-  <object id="185" name="MyrtilleYard" class="Obstacle" x="721.25" y="288" width="94" height="160"/>
-  <object id="186" name="Tree" class="Obstacle" x="81.25" y="424.5" width="72.5" height="77"/>
-  <object id="187" name="Tree" class="Obstacle" x="47.25" y="373.5" width="72.5" height="77"/>
-  <object id="188" name="Tree" class="Obstacle" x="160.75" y="84.5" width="72.5" height="87.5"/>
-  <object id="189" name="Tree" class="Obstacle" x="17.25" y="15.5" width="72.5" height="77"/>
-  <object id="190" name="Tree" class="Obstacle" x="105.75" y="198.5" width="72.5" height="77"/>
-  <object id="191" name="Tree" class="Obstacle" x="1215.75" y="99.5" width="72.5" height="89.5"/>
-  <object id="192" name="Tree" class="Obstacle" x="1270.25" y="275.25" width="72.5" height="114.5"/>
-  <object id="193" name="Edge" class="Obstacle" x="704" y="96.8333" width="622" height="15.3334"/>
-  <object id="194" name="Tree" class="Obstacle" x="814.75" y="213.25" width="72.5" height="89.5"/>
-  <object id="195" name="Tree" class="Obstacle" x="1184.75" y="258.75" width="72.5" height="89.5"/>
-  <object id="196" name="Tree" class="Obstacle" x="1217.75" y="300.25" width="72.5" height="89.5"/>
-  <object id="197" name="Tree" class="Obstacle" x="853.25" y="150.25" width="72.5" height="114.5"/>
-  <object id="198" name="BrocoliYard" class="Obstacle" x="1007.67" y="458.5" width="142.667" height="85"/>
-  <object id="199" name="Tree" class="Obstacle" x="545.75" y="510" width="72.5" height="70.5"/>
-  <object id="200" name="Edge" class="Obstacle" x="644" y="3.5" width="26" height="140"/>
-  <object id="201" name="Edge" class="Obstacle" x="709" y="1.5" width="22.5" height="57"/>
+  <object id="122" name="Fountain" type="Obstacle" x="48.1667" y="561.5" width="479.834" height="206.666"/>
+  <object id="125" name="TopRightScreen" type="Obstacle" x="704" y="0" width="704" height="16"/>
+  <object id="128" name="RightScreen" type="Obstacle" x="1331.33" y="1.33333" width="76.6667" height="798.667"/>
+  <object id="129" name="BottomScreen" type="Obstacle" x="16" y="784" width="1376" height="16"/>
+  <object id="130" name="TopLeftScreen" type="Obstacle" x="0" y="0" width="672" height="16"/>
+  <object id="131" name="LeftScreen" type="Obstacle" x="0" y="16" width="16" height="768"/>
+  <object id="133" name="MoutardeHouse" type="House" x="128" y="320" width="272" height="71.3333"/>
+  <object id="134" name="MoutardeRoof" type="Obstacle" x="112" y="256" width="304" height="92"/>
+  <object id="140" name="MyrtilleHouse" type="House" x="528.667" y="303.333" width="256" height="71.3333"/>
+  <object id="145" name="BrocoliHouse" type="House" x="1024.67" y="461.333" width="288" height="73.1667"/>
+  <object id="149" name="MyrtilleRoof" type="Obstacle" x="513.333" y="241.333" width="285.333" height="92.6667"/>
+  <object id="151" name="BrocoliRoof" type="Obstacle" x="1008" y="400.667" width="322.667" height="91.5"/>
+  <object id="153" name="MoutardeYard" type="Obstacle" x="326.667" y="179" width="97.667" height="232.833"/>
+  <object id="154" name="MyrtilleYard" type="Obstacle" x="482.167" y="288.667" width="204.5" height="160"/>
+  <object id="155" name="MoutardeYard" type="Obstacle" x="111" y="286" width="172.167" height="126.667"/>
+  <object id="166" name="Edge" type="Obstacle" x="706" y="45.6666" width="622" height="15.3334"/>
+  <object id="178" name="BrocoliYard" type="Obstacle" x="1187.17" y="458.833" width="142.667" height="84"/>
+  <object id="181" name="Tree" type="Obstacle" x="866" y="605" width="72.5" height="77"/>
+  <object id="183" name="Tree" type="Obstacle" x="528.25" y="629" width="114" height="153.5"/>
+  <object id="185" name="MyrtilleYard" type="Obstacle" x="721.25" y="288" width="94" height="160"/>
+  <object id="186" name="Tree" type="Obstacle" x="81.25" y="424.5" width="72.5" height="77"/>
+  <object id="187" name="Tree" type="Obstacle" x="47.25" y="373.5" width="72.5" height="77"/>
+  <object id="188" name="Tree" type="Obstacle" x="160.75" y="84.5" width="72.5" height="87.5"/>
+  <object id="189" name="Tree" type="Obstacle" x="17.25" y="15.5" width="72.5" height="77"/>
+  <object id="190" name="Tree" type="Obstacle" x="105.75" y="198.5" width="72.5" height="77"/>
+  <object id="191" name="Tree" type="Obstacle" x="1215.75" y="99.5" width="72.5" height="89.5"/>
+  <object id="192" name="Tree" type="Obstacle" x="1270.25" y="275.25" width="72.5" height="114.5"/>
+  <object id="193" name="Edge" type="Obstacle" x="704" y="96.8333" width="622" height="15.3334"/>
+  <object id="194" name="Tree" type="Obstacle" x="814.75" y="213.25" width="72.5" height="89.5"/>
+  <object id="195" name="Tree" type="Obstacle" x="1184.75" y="258.75" width="72.5" height="89.5"/>
+  <object id="196" name="Tree" type="Obstacle" x="1217.75" y="300.25" width="72.5" height="89.5"/>
+  <object id="197" name="Tree" type="Obstacle" x="853.25" y="150.25" width="72.5" height="114.5"/>
+  <object id="198" name="BrocoliYard" type="Obstacle" x="1007.67" y="458.5" width="142.667" height="85"/>
+  <object id="199" name="Tree" type="Obstacle" x="545.75" y="510" width="72.5" height="70.5"/>
+  <object id="200" name="Edge" type="Obstacle" x="644" y="3.5" width="26" height="73.5"/>
+  <object id="201" name="Edge" type="Obstacle" x="709" y="1.5" width="22.5" height="57"/>
  </objectgroup>
  <objectgroup id="10" name="SpawnPoints">
-  <object id="38" name="Player" class="Perso" x="464" y="496" width="16" height="16"/>
-  <object id="204" name="Chest2" class="Chest" x="1270.91" y="213.545" width="25.4545" height="22"/>
-  <object id="203" name="Chest1" class="Chest" x="198" y="485.455" width="26.5455" height="22.9091"/>
+  <object id="38" name="Player" type="Perso" x="464" y="496" width="16" height="16"/>
+  <object id="204" name="Chest2" type="Chest" x="1270.91" y="213.545" width="25.4545" height="22"/>
+  <object id="203" name="Chest1" type="Chest" x="198" y="485.455" width="26.5455" height="22.9091"/>
  </objectgroup>
 </map>

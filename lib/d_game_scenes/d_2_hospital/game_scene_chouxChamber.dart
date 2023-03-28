@@ -1,31 +1,25 @@
 import 'package:flame/components.dart';
+import 'package:flame/src/components/core/component.dart';
 import 'package:flutter/foundation.dart';
-import 'package:seriousgame/b_game_objects/b1_characters/brocoliHospital.dart';
-import 'package:seriousgame/b_game_objects/b1_characters/fraiseux.dart';
+import 'package:seriousgame/d_game_scenes/game_scene_generator.dart';
+
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
+import '../../b_game_objects/b1_characters/choux.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import '../../z_globals/z1_game_manager.dart';
-import '../../z_globals/z4_assets_manager.dart';
-import '../game_scene_generator.dart';
 
-class DiabeteGameSceneFraiseuxChamber extends DiabeteGameScene {
-  // Scene components list
+class DiabeteGameSceneChouxChamber extends DiabeteGameScene {
   List<Component> sceneObjects = [];
 
-  late Fraiseux fraiseux;
+  // Ms Choux
+  late Choux choux;
 
-  //Scene steps
+  // Scene steps
   bool step1 = true;
-  bool step2 = false;
-  bool step3 = false;
 
   bool step1IsDone = false;
-  bool step2IsDone = false;
-  bool step3IsDone = false;
 
-  // SCENE COMPONENT LIFECYCLE HANDLING SECTION
-
-  DiabeteGameSceneFraiseuxChamber({
+  DiabeteGameSceneChouxChamber({
     required String sceneTmx,
     required String sceneName,
     required String previousMissionName,
@@ -44,41 +38,35 @@ class DiabeteGameSceneFraiseuxChamber extends DiabeteGameScene {
   /// Initiate the scene loader
   @override
   Future<void>? onLoad() async {
-    initFraiseux();
+    initChoux();
     await super.onLoad();
     continueInitialisation();
   }
 
-  ///Init Fraiseux
-  void initFraiseux() {
-    fraiseux = Fraiseux(GameImageAssets.fraiseux)
+  ///Init Choux
+  void initChoux() {
+    choux = Choux()
       ..size = Vector2.all(GameParams.middleSize)
       ..anchor = Anchor.center;
   }
 
   /// Continue the scene initialisation
   void continueInitialisation() {
-    fraiseux
-      ..debugMode = kDebugMode
+    choux
+      ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
   }
 
-  //####################################
-
+  /// Update
   @override
   void update(double dt) {
     super.update(dt);
-    //steps
     if (step1IsDone) {
       step1 = false;
-      step2 = true;
       step1IsDone = false;
-    }
-    if (step2IsDone) {
-      step2 = false;
-      step3 = true;
-      step2IsDone = false;
+      isDone = true;
+      canChangeScene = true;
     }
   }
 }

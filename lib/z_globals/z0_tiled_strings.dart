@@ -35,6 +35,7 @@ class TiledObjectName {
   static const String guy02 = "Guy02";
   static const String nurse01 = "Nurse01";
   static const String fraiseux = "Fraiseux";
+  static const String choux = "Choux";
 
   //Situation 7
   static const String apricotHospital = "ApricotHospital";
@@ -68,6 +69,10 @@ class TiledObjectName {
   static const String fridge = "Fridge";
   static const String pikachu = "Pikachu";
   static const String mew = "Mew";
+  static const String phone = "Phone";
+  static const String brochure = "Brochure";
+  static const String chocolate = "Chocolate";
+  static const String cigarettes = "Cigarettes";
 
   // Change scene area (ChangeScenePoints -> ChangeScene)
   //VillageScene
@@ -86,6 +91,8 @@ class TiledObjectName {
   static const String toFraiseuxChamber = "ToFraiseuxChamber";
   static const String toOutsideFraiseuxChamber = "ToOutsideFraiseuxChamber";
 
+  static const String toChouxChamber = "ToChouxChamber";
+  static const String toOutsideChouxChamber = "ToOutsideChouxChamber";
   //Situation 7
   static const String toOutsideNurseOffice = "ToOutsideNurseOffice";
 

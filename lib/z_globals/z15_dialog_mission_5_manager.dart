@@ -21,7 +21,8 @@ final dialogMission5part1 = <DialogModel>[
   ),
   DialogModel(
     isShowDialog: true,
-    dialogMessage: "\n",
+    dialogMessage:
+        "Récupérez les objets dispersé dans la chambre pour aider M. Fraiseux à comprendre ce qui peut augmenter ou réduire son risque de contracter le diabète.\n",
     hasNext: false,
     index: 2,
   ),

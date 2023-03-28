@@ -166,7 +166,6 @@ class GameSceneLoader {
       ObjectGroup spawnPointsGroup, DiabeteGameScene game) {
     for (var spawnPoint in spawnPointsGroup.objects) {
       switch (spawnPoint.name) {
-
         ///Player and NPC spawn points
         case TiledObjectName.player:
           game.player.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -213,6 +212,12 @@ class GameSceneLoader {
         case TiledObjectName.fraiseux:
           game.fraiseux.position = Vector2(spawnPoint.x, spawnPoint.y);
           game.addToScene(game.fraiseux);
+          break;
+
+        //Situation 6
+        case TiledObjectName.choux:
+          game.choux.position = Vector2(spawnPoint.x, spawnPoint.y);
+          game.addToScene(game.choux);
           break;
 
         //Situation 7
@@ -385,6 +390,32 @@ class GameSceneLoader {
           );
           break;
         case TiledObjectName.toOutsideFraiseuxChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atHospitalInterior,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toChouxChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atChouxChamber,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toOutsideChouxChamber:
           game.addToScene(
             initObject(
               ChangeScenePoint(
