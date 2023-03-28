@@ -17,11 +17,11 @@ class GameImageAssets {
       "myrtille48x48.png"; //temporary//////////////////////////
 
   //Situation 7
-  static const String apricotHospital = "myrtille48x48.png";
+  static const String apricotHospital = "apricot48x48.png";
   static const String doctorHospital = "doctor48x48.png";
-  static const String asscHospital = "myrtille48x48.png";
-  static const String nurseDiabetesHospital = "myrtille48x48.png";
-  static const String nurseWoundCareHospital = "myrtille48x48.png";
+  static const String asscHospital = "assc48x48.png";
+  static const String nurseDiabetesHospital = "nurseDiabetes48x48.png";
+  static const String nurseWoundCareHospital = "nurseWoundCare48x48.png";
 
   static const String brocoliHospital = "brocoli48x48.png";
   static const String brocoliSon = "brocoliSon48x48.png";
