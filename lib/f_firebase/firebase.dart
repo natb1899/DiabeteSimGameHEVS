@@ -24,16 +24,18 @@ class DatabaseManager {
   }
 
   //Get User Level
-  Future<String> getUserLevel(id) async {
-    String userLevel = "null";
 
-    await FirebaseFirestore.instance
-        .collection('user')
-        .doc(id)
-        .get()
-        .then((data) {
-      userLevel = data['currentLevel'];
-    });
+  Future<List<String>> getUserLevel(id) async {
+    var data =
+        await FirebaseFirestore.instance.collection('user').doc(id).get();
+    var userLevel = <String>[];
+
+    if (data.exists) {
+      var userData = data.data();
+      if (userData!.containsKey('completedMissions')) {
+        userLevel = List.from(userData['completedMissions']);
+      }
+    }
 
     return userLevel;
   }
@@ -64,18 +66,17 @@ class DatabaseManager {
 
   //Save the current game level
   Future<void> saveGame(
-      {required int currentScore,
-      required String currentLevel,
-      required String previousMissionName,
-      required String? id}) async {
-    final docUser = FirebaseFirestore.instance.collection('user').doc(id);
+      {required String currentLevel, required String? id}) async {
+    if (currentLevel != "CMS - Village1 -") {
+      final collectionRef = FirebaseFirestore.instance.collection('user');
+      final docRef = collectionRef.doc(id);
 
-    final save = {
-      'currentScore': currentScore,
-      'currentLevel': currentLevel,
-      'previousMissionName': previousMissionName
-    };
-
-    await docUser.set(save);
+      await docRef
+          .update({
+            'completedMissions': FieldValue.arrayUnion([currentLevel]),
+          })
+          .then((value) => print('Value added to array'))
+          .catchError((error) => print('Failed to add value to array: $error'));
+    }
   }
 }

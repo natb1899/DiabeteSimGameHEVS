@@ -157,6 +157,7 @@ Future<void> main() async {
                                       ? false
                                       : openConfig.data!,
                                   child: LoginPage(
+                                      game: game,
                                       gameScenesController: gameController,
                                       playerScoreController: scoreController),
                                 );

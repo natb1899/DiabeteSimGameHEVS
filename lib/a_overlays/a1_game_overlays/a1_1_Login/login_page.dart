@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:seriousgame/d_game_scenes/game_base.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/f_firebase/firebase.dart';
@@ -7,11 +8,13 @@ import 'package:seriousgame/f_firebase/firebase.dart';
 import '../../../z_globals/z1_game_manager.dart';
 
 class LoginPage extends StatefulWidget {
+  final DiabeteGameBase game;
   final GameScenesController gameScenesController;
   final PlayerScoreController playerScoreController;
 
   const LoginPage({
     Key? key,
+    required this.game,
     required this.gameScenesController,
     required this.playerScoreController,
   }) : super(key: key);
@@ -21,8 +24,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController =
+      TextEditingController(text: "daniel@test.ch");
+  final TextEditingController _passwordController =
+      TextEditingController(text: "123456");
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
@@ -63,14 +68,22 @@ class _LoginPageState extends State<LoginPage> {
                   FirebaseAuth auth = FirebaseAuth.instance;
 
                   DatabaseManager db = DatabaseManager();
-                  String userLevel =
+
+                  List<String> asyncList =
                       await db.getUserLevel(auth.currentUser?.uid);
 
-                  widget.playerScoreController.playerScore =
-                      await db.getUserScore(auth.currentUser?.uid);
+                  if (asyncList.isNotEmpty) {
+                    for (String item in asyncList) {
+                      widget.game.gameScenesController.sceneRouter[item]!
+                          .isDone = true;
+                    }
+                  }
 
-                  //widget.gameScenesController.openScene("CMS - Village1 -");
-                  widget.gameScenesController.goToScene(userLevel);
+                  widget.game.gameScenesController
+                      .openScene(GameScenes.villageCMS);
+
+                  //widget.gameScenesController.openScene(userLevel);
+                  //widget.gameScenesController.goToScene(userLevel);
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'user-not-found' ||
                       e.code == 'wrong-password') {

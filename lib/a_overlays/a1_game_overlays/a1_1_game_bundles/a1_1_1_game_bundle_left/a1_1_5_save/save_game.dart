@@ -37,10 +37,7 @@ class _SaveOverlayState extends State<SaveOverlay> {
         onPressed: () {
           DatabaseManager db = DatabaseManager();
           db.saveGame(
-              currentScore: widget.playerScoreController.playerScore,
               currentLevel: widget.game.gameScenesController.scene.sceneName,
-              previousMissionName:
-                  widget.game.gameScenesController.scene.previousMissionName,
               id: auth.currentUser?.uid);
         },
       ),
