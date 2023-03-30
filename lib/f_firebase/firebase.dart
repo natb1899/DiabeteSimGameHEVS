@@ -67,16 +67,14 @@ class DatabaseManager {
   //Save the current game level
   Future<void> saveGame(
       {required String currentLevel, required String? id}) async {
-    if (currentLevel != "CMS - Village1 -") {
-      final collectionRef = FirebaseFirestore.instance.collection('user');
-      final docRef = collectionRef.doc(id);
+    final collectionRef = FirebaseFirestore.instance.collection('user');
+    final docRef = collectionRef.doc(id);
 
-      await docRef
-          .update({
-            'completedMissions': FieldValue.arrayUnion([currentLevel]),
-          })
-          .then((value) => print('Value added to array'))
-          .catchError((error) => print('Failed to add value to array: $error'));
-    }
+    await docRef
+        .update({
+          'completedMissions': FieldValue.arrayUnion([currentLevel]),
+        })
+        .then((value) => print('Value added to array'))
+        .catchError((error) => print('Failed to add value to array: $error'));
   }
 }

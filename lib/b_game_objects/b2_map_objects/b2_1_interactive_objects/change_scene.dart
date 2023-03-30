@@ -12,7 +12,6 @@ import '../map_object.dart';
 
 /// Object concerning the changing scene point defined on Tiled
 class ChangeScenePoint extends MapObject {
-  final FirebaseAuth auth = FirebaseAuth.instance;
   bool _hasCollided = false;
   String toScene;
   GameScenesController gameScenesController;
@@ -37,9 +36,13 @@ class ChangeScenePoint extends MapObject {
         print(
             "Trying to change scene ////////////////////////////////////////////////");
         if (gameRef.canChangeScene) {
-          DatabaseManager db = DatabaseManager();
-          db.saveGame(
-              currentLevel: gameRef.sceneName, id: auth.currentUser?.uid);
+          if (gameRef.isDone) {
+            final FirebaseAuth auth = FirebaseAuth.instance;
+            DatabaseManager db = DatabaseManager();
+            db.saveGame(
+                currentLevel: gameScenesController.scene.sceneName,
+                id: auth.currentUser?.uid);
+          }
           loadNextScene();
         } else {
           // Display dialog that the player can't leave scene

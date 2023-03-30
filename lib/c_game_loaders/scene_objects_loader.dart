@@ -210,6 +210,12 @@ class GameSceneLoader {
           game.addToScene(game.guy02);
           break;
 
+        //Situation 5
+        //case TiledObjectName.fraiseux:
+        //  game.fraiseux.position = Vector2(spawnPoint.x, spawnPoint.y);
+        //  game.addToScene(game.fraiseux);
+        //  break;
+
         //Situation 7
         case TiledObjectName.apricotHospital:
           game.apricotHospital.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -366,6 +372,32 @@ class GameSceneLoader {
             ),
           );
           break;
+        /*case TiledObjectName.toFraiseuxChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atFraiseuxChamber,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toOutsideFraiseuxChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atHospitalInterior,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;*/
         case TiledObjectName.toHospitalInterior:
           game.addToScene(
             initObject(
