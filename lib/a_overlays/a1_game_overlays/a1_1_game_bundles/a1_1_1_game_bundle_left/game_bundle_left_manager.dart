@@ -56,10 +56,10 @@ class GameBundleLeft extends StatelessWidget {
               configButtonController: configButtonController,
             ),
             PauseOverlay(game: game, overlaysSize: overlaysSize),
-            SaveOverlay(
+            /*SaveOverlay(
                 game: game,
                 overlaysSize: overlaysSize,
-                playerScoreController: playerScoreController),
+                playerScoreController: playerScoreController),*/
             // PauseOverlay(game: game, overlaysSize: overlaysSize),
           ],
         ),
