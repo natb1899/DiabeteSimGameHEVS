@@ -37,11 +37,7 @@ class ChangeScenePoint extends MapObject {
             "Trying to change scene ////////////////////////////////////////////////");
         if (gameRef.canChangeScene) {
           if (gameRef.isDone) {
-            final FirebaseAuth auth = FirebaseAuth.instance;
-            DatabaseManager db = DatabaseManager();
-            db.saveGame(
-                currentLevel: gameScenesController.scene.sceneName,
-                id: auth.currentUser?.uid);
+            saveCurrentFinishedMission();
           }
           loadNextScene();
         } else {
@@ -54,6 +50,15 @@ class ChangeScenePoint extends MapObject {
         _hasCollided = true;
       }
     }
+  }
+
+  //save the current finished Mission in the Firebase storage
+  void saveCurrentFinishedMission() {
+    final FirebaseAuth auth = FirebaseAuth.instance;
+    DatabaseManager db = DatabaseManager();
+    db.saveGame(
+        currentLevel: gameScenesController.scene.sceneName,
+        id: auth.currentUser?.uid);
   }
 
   /// Reset values when player ends the collision
