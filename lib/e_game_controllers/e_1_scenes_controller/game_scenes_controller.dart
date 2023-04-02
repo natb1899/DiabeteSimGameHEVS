@@ -138,6 +138,7 @@ class GameScenesController extends BaseController {
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
         gameSoundController: gameSoundController,
+        playerScoreController: scoreController,
       ),
       GameScenes.atChouxChamber: DiabeteGameSceneChouxChamber(
         sceneName: GameScenes.atChouxChamber,
