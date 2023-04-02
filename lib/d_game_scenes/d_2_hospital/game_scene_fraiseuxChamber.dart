@@ -73,31 +73,37 @@ class DiabeteGameSceneFraiseuxChamber extends DiabeteGameScene {
 
   //InitChest
   Future<void> initChest() async {
-    final image = await Flame.images.load('gameObjects/marlboro-small.png');
+    final imageCigarettes =
+        await Flame.images.load('gameObjects/marlboro-small.png');
+    final imageCellphone = await Flame.images.load('gameObjects/cellphone.png');
+    final imageSportsClubBrochure =
+        await Flame.images.load('gameObjects/sports-club-magazine-small.png');
+    final imageMilkChocolate =
+        await Flame.images.load('gameObjects/milk-chocolate.png');
     QuestDialogsMission5 questDialogsMission5 = QuestDialogsMission5();
     chest1 = ChestQuest(
-        sprite: Sprite(image),
+        sprite: Sprite(imageCigarettes),
         size: Vector2.all(32),
         anchor: Anchor.center,
         questName: "Cigarette",
         questMessage: questDialogsMission5.cigarettes,
         questType: "question");
     chest2 = ChestQuest(
-        sprite: Sprite(image),
+        sprite: Sprite(imageMilkChocolate),
         size: Vector2.all(32),
         anchor: Anchor.center,
         questName: "Chocolate",
         questMessage: questDialogsMission5.milkChocolat,
         questType: "question");
     chest3 = ChestQuest(
-        sprite: Sprite(image),
+        sprite: Sprite(imageSportsClubBrochure),
         size: Vector2.all(32),
         anchor: Anchor.center,
         questName: "Brochure",
         questMessage: questDialogsMission5.sportsClubBrochure,
         questType: "question");
     chest4 = ChestQuest(
-        sprite: Sprite(image),
+        sprite: Sprite(imageCellphone),
         size: Vector2.all(32),
         anchor: Anchor.center,
         questName: "Cellphone",
