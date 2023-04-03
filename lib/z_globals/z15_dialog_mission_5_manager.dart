@@ -21,7 +21,8 @@ final dialogMission5part1 = <DialogModel>[
   ),
   DialogModel(
     isShowDialog: true,
-    dialogMessage: "\n",
+    dialogMessage:
+        "Récupérez les objets dispersé dans la chambre pour aider M. Fraiseux à comprendre ce qui peut augmenter ou réduire son risque de contracter le diabète.\n",
     hasNext: false,
     index: 2,
   ),
@@ -64,7 +65,7 @@ class QuestDialogsMission5 {
 }
 
 //End of Object quest, bag interaction
-final dialogsMission5part3 = <DialogModel>{
+final dialogMission5part3 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     dialogMessage:
@@ -78,7 +79,7 @@ final dialogsMission5part3 = <DialogModel>{
     isShowDialog: true,
     hasQuestion: true,
     index: 1,
-    dialogType: DialogType.questionRadioButton,
+    dialogType: DialogType.questionCheckbox,
     questionTitle: "Question 1, mission 5:",
     question:
         "M. Fraiseux va bientôt sortir de l'hôpital. Qui contacter pour organiser un suivi à domicile ?",
@@ -126,7 +127,7 @@ final dialogsMission5part3 = <DialogModel>{
   DialogModel(
     isShowDialog: true,
     dialogMessage: "Vous pouvez maitenant aller voir M.Choux. \n",
-    hasNext: true,
-    index: 0,
+    hasNext: false,
+    index: 2,
   ),
-};
+];

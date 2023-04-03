@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="75" nextobjectid="103">
+<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="88" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="75" nextobjectid="105">
  <tileset firstgid="1" source="tiles_sets/joueur.tsx"/>
  <tileset firstgid="3421" source="tiles_sets/hopital.tsx"/>
  <tileset firstgid="5986" source="tiles_sets/salle de classe.tsx"/>
@@ -2835,10 +2835,11 @@
   <object id="2" name="Player" type="Perso" x="640" y="656" width="16" height="16"/>
   <object id="89" name="Nurse01" type="Spawnpoint" x="672" y="544" width="16" height="16"/>
   <object id="91" name="Guy01" type="SpawnPoint" x="1067" y="380" width="16" height="16"/>
-  <object id="92" name="ToOutsideBrocoliChamber" type="SpawnPoint" x="574.861" y="211.756" width="27.7548" height="19.4283"/>
+  <object id="92" name="ToOutsideBrocoliChamber" type="SpawnPoint" x="658.861" y="211.089" width="27.7548" height="19.4283"/>
   <object id="93" name="Guy02" type="SpawnPoint" x="192" y="256" width="16" height="16"/>
-  <object id="98" name="ToOutsideNurseOffice" type="SpawnPoint" x="981.123" y="228.286" width="27.7548" height="19.4283"/>
-  <object id="102" name="ToOutsideFraiseuxChamber" type="SpawnPoint" x="775.456" y="206.286" width="27.7548" height="19.4283"/>
+  <object id="98" name="ToOutsideNurseOffice" type="SpawnPoint" x="1130.12" y="210.286" width="27.7548" height="19.4283"/>
+  <object id="102" name="ToOutsideFraiseuxChamber" type="SpawnPoint" x="818.123" y="209.619" width="27.7548" height="19.4283"/>
+  <object id="104" name="ToOutsideChouxChamber" type="SpawnPoint" x="492.789" y="212.286" width="27.7548" height="19.4283"/>
  </objectgroup>
  <objectgroup id="53" name="Obstacles">
   <object id="6" type="Obstacle" x="0" y="160" width="96" height="560"/>
@@ -2922,5 +2923,6 @@
   <object id="5" name="ToBrocoliChamber" x="656" y="160" width="32" height="16"/>
   <object id="100" name="ToNurseOffice" type="ToNurseOffice" x="1134" y="161.333" width="34.6667" height="14.6667"/>
   <object id="101" name="ToFraiseuxChamber" type="ToNurseOffice" x="815.333" y="160.667" width="34.6667" height="14.6667"/>
+  <object id="103" name="ToChouxChamber" type="ToNurseOffice" x="492" y="159.333" width="34.6667" height="14.6667"/>
  </objectgroup>
 </map>

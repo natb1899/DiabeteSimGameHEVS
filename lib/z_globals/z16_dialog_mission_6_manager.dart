@@ -23,12 +23,12 @@ final dialogsMission6part1 = <DialogModel>[
     dialogMessage: "Mme. Choux: \n\n"
         "Bonjour, madame. Je vais bien, mais j'ai très faim.\n",
     hasNext: true,
-    index: 1,
+    index: 2,
   ),
   DialogModel(
     isShowDialog: true,
     hasQuestion: true,
-    index: 2,
+    index: 3,
     dialogType: DialogType.questionRadioButton,
     questionTitle: "Question 1, mission 6:",
     question:
@@ -56,18 +56,18 @@ final dialogsMission6part1 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     hasQuestion: true,
-    index: 3,
+    index: 4,
     dialogType: DialogType.questionRadioButton,
     questionTitle: "Question 2, mission 6:",
     question:
         "Son insuline basale est basse. D'après la prescription, elle doit prendre 5 unités d'insuline chaque matin. Devez-vous lui faire une injection?",
     questions: [
       {
-        "result": false,
+        "result": true,
         "answer": "Oui, l'injection doit être faite.",
       },
       {
-        "result": true,
+        "result": false,
         "answer":
             "Non, il ne faut pas l'injecter en raison de son prochain examen.",
       },
@@ -86,7 +86,7 @@ final dialogsMission6part1 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     hasQuestion: true,
-    index: 4,
+    index: 5,
     dialogType: DialogType.questionRadioButton,
     questionTitle: "Question 3, mission 6:",
     question:
@@ -104,13 +104,14 @@ final dialogsMission6part1 = <DialogModel>[
       {
         "result": true,
         "answer":
-            "Prendre sa glycémie, lui donner une source de sucre approuvée par un médecin et reprendre sa glycémie dans 15 minutes.",
+            "En cas d'hypoglycémie, lui donner une source de sucre approuvée\n"
+                "par le médecin et revenir prendre sa glycémie 15 minutes plus tard.",
       },
     ],
     falseAswers: "Mauvaise réponse. Réessayez.",
     falseAswersContent:
         "Vous perdez 1 point sur la barre de qualité des soins.",
-    retry: true,
+    retry: false,
     trueAswers:
         "C'est correct! Vous saurez comment prendre soin de Mme. Choux.",
     trueAswersContent:
@@ -122,7 +123,7 @@ final dialogsMission6part1 = <DialogModel>[
     dialogMessage: "Bravo! Vous avez terminé les soins pour Mme. Choux.\n"
         "Vous avez appris à prendre soin de patients diabétiques en jeûne.\n\n"
         "Rendez-vous au bureau des infirmière.\n",
-    hasNext: true,
-    index: 5,
+    hasNext: false,
+    index: 6,
   ),
 ];
