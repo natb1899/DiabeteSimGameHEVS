@@ -6,7 +6,6 @@ import '../../d_game_scenes/d_2_hospital/game_scene_fraiseuxChamber.dart';
 import '../../z_globals/z15_dialog_mission_5_manager.dart';
 import '../../z_globals/z4_assets_manager.dart';
 import 'perso_base.dart';
-import '../../e_game_controllers/e_2_score_controller/player_score_controller.dart';
 
 class Fraiseux extends Perso with HasGameRef<DiabeteGameSceneFraiseuxChamber> {
   Fraiseux(String user) : super(fileNamePngCharacter: GameImageAssets.fraiseux);

@@ -7,6 +7,8 @@ class GameDialogs {
       ' et protéger mon prochain atteint. '
       '\n\nOn y GO!?';
 
+  static const String initialHospitalMesssage = "Bienvenue à l'hôpital.";
+
   static const String returnToDefaultScene =
       'Vous ne pouvez pas re-effectuer cette scène.';
 

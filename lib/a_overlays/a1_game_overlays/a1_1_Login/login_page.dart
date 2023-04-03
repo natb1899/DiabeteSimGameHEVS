@@ -1,3 +1,4 @@
+import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:seriousgame/d_game_scenes/game_base.dart';
@@ -66,8 +67,9 @@ class _LoginPageState extends State<LoginPage> {
                   );
 
                   FirebaseAuth auth = FirebaseAuth.instance;
-
                   DatabaseManager db = DatabaseManager();
+
+                  String currentWorld;
 
                   List<String> asyncList =
                       await db.getUserLevel(auth.currentUser?.uid);
@@ -79,8 +81,13 @@ class _LoginPageState extends State<LoginPage> {
                     }
                   }
 
-                  widget.game.gameScenesController
-                      .openScene(GameScenes.villageCMS);
+                  if (asyncList.contains("Outside hospital -")) {
+                    currentWorld = GameScenes.atHospitalInterior;
+                  } else {
+                    currentWorld = GameScenes.villageCMS;
+                  }
+
+                  widget.game.gameScenesController.openScene(currentWorld);
 
                   //widget.gameScenesController.openScene(userLevel);
                   //widget.gameScenesController.goToScene(userLevel);
