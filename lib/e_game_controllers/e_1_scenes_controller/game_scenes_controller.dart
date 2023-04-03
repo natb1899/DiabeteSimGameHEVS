@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_chouxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_fraiseuxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
-import 'package:seriousgame/f_firebase/firebase.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 
@@ -92,7 +90,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atMyrtilleHome: DiabeteGameSceneMyrtille(
         sceneName: GameScenes.atMyrtilleHome,
-        //TODO : change previous mission name
+        //change previous mission name
         // previousMissionName: GameScenes.atMoustardHome,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.myrtilleHome,

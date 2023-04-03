@@ -1,5 +1,4 @@
 import 'package:flame/components.dart';
-import 'package:flame/src/components/core/component.dart';
 import 'package:flutter/foundation.dart';
 import 'package:seriousgame/d_game_scenes/game_scene_generator.dart';
 

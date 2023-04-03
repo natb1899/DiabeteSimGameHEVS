@@ -1,5 +1,4 @@
 import 'package:flame_test/flame_test.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
@@ -11,7 +10,6 @@ import 'package:seriousgame/b_game_objects/b1_characters/choux.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/player.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b3_bag_objects/contact_controller.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_chouxChamber.dart';
-import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
