@@ -8,6 +8,11 @@ class PlayerScoreController extends BaseController {
   int _playerScore = PlayerBehavior.initialScore;
 
   int get playerScore => _playerScore;
+
+  set playerScore(int value) {
+    _playerScore = value;
+  }
+
   late StreamController<int> _streamScoreController;
   late Sink<int> _inputScore;
   Stream<int> get outputScore => _streamScoreController.stream;

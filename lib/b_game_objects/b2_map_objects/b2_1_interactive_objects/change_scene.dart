@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flame/components.dart';
+import 'package:seriousgame/f_firebase/firebase.dart';
 import 'package:seriousgame/z_globals/z3_strings_manager.dart';
 // ignore: depend_on_referenced_packages
 import 'package:tiled/tiled.dart';
@@ -34,6 +36,9 @@ class ChangeScenePoint extends MapObject {
         print(
             "Trying to change scene ////////////////////////////////////////////////");
         if (gameRef.canChangeScene) {
+          if (gameRef.isDone) {
+            saveCurrentFinishedMission();
+          }
           loadNextScene();
         } else {
           // Display dialog that the player can't leave scene
@@ -45,6 +50,15 @@ class ChangeScenePoint extends MapObject {
         _hasCollided = true;
       }
     }
+  }
+
+  //save the current finished Mission in the Firebase storage
+  void saveCurrentFinishedMission() {
+    final FirebaseAuth auth = FirebaseAuth.instance;
+    DatabaseManager db = DatabaseManager();
+    db.saveGame(
+        currentLevel: gameScenesController.scene.sceneName,
+        id: auth.currentUser?.uid);
   }
 
   /// Reset values when player ends the collision

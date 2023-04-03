@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/foundation.dart';
+import 'package:seriousgame/f_firebase/firebase.dart';
 import 'package:tiled/tiled.dart';
 
 import '../b_game_objects/b2_map_objects/b2_1_interactive_objects/change_scene.dart';
@@ -166,7 +168,6 @@ class GameSceneLoader {
       ObjectGroup spawnPointsGroup, DiabeteGameScene game) {
     for (var spawnPoint in spawnPointsGroup.objects) {
       switch (spawnPoint.name) {
-
         ///Player and NPC spawn points
         case TiledObjectName.player:
           game.player.position = Vector2(spawnPoint.x, spawnPoint.y);

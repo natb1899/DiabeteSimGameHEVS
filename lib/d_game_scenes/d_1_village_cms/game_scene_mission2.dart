@@ -32,7 +32,7 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
   bool step1IsDone = false;
   bool step2IsDone = false;
   bool step3IsDone = false;
-  bool step4IsDone = false;
+  bool step4IsDone = true;
 
   // Scene component lifecycle handling section
   DiabeteGameSceneMyrtille({

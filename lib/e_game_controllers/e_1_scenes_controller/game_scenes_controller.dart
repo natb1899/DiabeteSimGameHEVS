@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_fraiseuxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
+import 'package:seriousgame/f_firebase/firebase.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 
@@ -153,6 +155,7 @@ class GameScenesController extends BaseController {
   /// Load new scene with router
   void goToScene(String gameScene) {
     final nextScene = _sceneRouter[gameScene]!;
+
     final nextScenePreviousMission =
         _sceneRouter[nextScene.previousMissionName];
 
@@ -162,7 +165,6 @@ class GameScenesController extends BaseController {
     // If the scene has already been done, display dialog
     if (nextScene.isDone) {
       displayAccomplishedMissionMessage(gameScene);
-
       // The previous scene isn't done (expect if you want to go to Village)
     } else if (nextScene.previousMissionName != '' &&
         !nextScenePreviousMission!.isDone) {
