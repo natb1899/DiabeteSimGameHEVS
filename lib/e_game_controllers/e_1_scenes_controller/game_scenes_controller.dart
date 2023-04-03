@@ -314,6 +314,18 @@ class GameScenesController extends BaseController {
         scene.soundState = true;
         break;
 
+      case GameScenes.atHospitalInterior:
+        _currentScene = _sceneRouter[gameScene]!;
+        _moveToNextScene.add(_currentScene);
+        bagController.game = _currentScene;
+        gameSoundController.inputPlayMusic.add(true);
+        Future.delayed(const Duration(milliseconds: 1500), () {
+          gameDialogController
+              .sendInitialMessage(GameDialogs.initialHospitalMesssage);
+        });
+        scene.soundState = true;
+        break;
+
       case GameScenes.atBrocoliHome:
         _currentScene = _sceneRouter[gameScene]!;
         _moveToNextScene.add(_currentScene);

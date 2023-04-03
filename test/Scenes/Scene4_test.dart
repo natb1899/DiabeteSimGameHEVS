@@ -1,5 +1,3 @@
-import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -7,16 +5,14 @@ import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1
 import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_controller.dart';
 import 'package:seriousgame/a_overlays/a2_bag_overlay/measure_tool_controller.dart';
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_controller.dart';
-import 'package:seriousgame/b_game_objects/b1_characters/moutarde.dart';
+import 'package:seriousgame/b_game_objects/b1_characters/brocoliHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/player.dart';
-import 'package:seriousgame/b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b3_bag_objects/contact_controller.dart';
-import 'package:seriousgame/d_game_scenes/d_1_village_cms/game_scene_mission1.dart';
+import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_brocoliChamber.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/player_bag_controller.dart';
-import 'package:seriousgame/z_globals/z14_dialog_mission_7_manager.dart';
 import 'package:seriousgame/z_globals/z1_game_manager.dart';
 import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 
@@ -57,9 +53,9 @@ void main() {
   //configButtonController.start();
   feedBackController.start();
 
-  DiabeteGameSceneMoutarde diabeteGame = DiabeteGameSceneMoutarde(
-    sceneTmx: GameTilesAssets.moutardeHome,
-    sceneName: GameScenes.atMoutardeHome,
+  DiabeteGameSceneBrocoliChamber diabeteGame = DiabeteGameSceneBrocoliChamber(
+    sceneTmx: GameTilesAssets.brocoliChamber,
+    sceneName: GameScenes.atBrocoliChamber,
     previousMissionName: '',
     gameScenesController: gameController,
     soundTrackName: GameAudioAssets.funday,
@@ -68,25 +64,25 @@ void main() {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  group('Scene1 tests', () {
-    testWithGame<DiabeteGameSceneMoutarde>(
+  group('Scene 4 tests', () {
+    testWithGame<DiabeteGameSceneBrocoliChamber>(
         'Load correct tile', () => diabeteGame,
-        (DiabeteGameSceneMoutarde game) async {
+        (DiabeteGameSceneBrocoliChamber game) async {
       await game.ready();
-      expect(game.sceneTmx, GameTilesAssets.moutardeHome);
-      expect(game.sceneName, GameScenes.atMoutardeHome);
+      expect(game.sceneTmx, GameTilesAssets.brocoliChamber);
+      expect(game.sceneName, GameScenes.atBrocoliChamber);
     });
-    testWithFlameGame('Load player in scene 1', (game) async {
-      final player = PlayerComponent('player48x48.png')..addToParent(game);
+    testWithFlameGame('Load player in scene 4', (game) async {
+      var player = PlayerComponent('player48x48.png')..addToParent(game);
       await game.ready();
       expect(player.isMounted, true);
     });
-  });
-  group("load npc", () {
-    testWithFlameGame('Mr. Moutarde', (game) async {
-      final component = Moutarde()..addToParent(game);
-      await game.ready();
-      expect(component.isMounted, true);
+    group("load npc", () {
+      testWithFlameGame('Mr. Brocoli', (game) async {
+        final component = BrocoliHospital("")..addToParent(game);
+        await game.ready();
+        expect(component.isMounted, true);
+      });
     });
   });
 }

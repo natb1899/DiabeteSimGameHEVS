@@ -17,6 +17,8 @@ import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/player_bag_controller.dart';
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 
 Widget makeTestableWidget(Widget child) {
   return MaterialApp(
@@ -26,8 +28,6 @@ Widget makeTestableWidget(Widget child) {
 }
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-
   final GameScenesController gameController = GameScenesController();
   final GameSoundController gameSoundController = GameSoundController();
   final PlayerBagController bagController = PlayerBagController();
@@ -60,29 +60,34 @@ void main() {
   feedBackController.start();
 
   DiabeteGameSceneMyrtille diabeteGame = DiabeteGameSceneMyrtille(
-    sceneTmx: 'myrtille_home.tmx',
-    sceneName: 'scene_2',
-    previousMissionName: 'mission_2',
+    sceneTmx: GameTilesAssets.myrtilleHome,
+    sceneName: GameScenes.atMyrtilleHome,
+    previousMissionName: '',
     gameScenesController: gameController,
-    soundTrackName: 'funday.mp3',
+    soundTrackName: GameAudioAssets.funday,
     gameSoundController: gameSoundController,
   );
+  WidgetsFlutterBinding.ensureInitialized();
 
   group('Scene 2 tests', () {
+    testWithGame<DiabeteGameSceneMyrtille>(
+        'Load correct tile', () => diabeteGame,
+        (DiabeteGameSceneMyrtille game) async {
+      await game.ready();
+      expect(game.sceneTmx, GameTilesAssets.myrtilleHome);
+      expect(game.sceneName, GameScenes.atMyrtilleHome);
+    });
     testWithFlameGame('Load player in scene 2', (game) async {
       var player = PlayerComponent('player48x48.png')..addToParent(game);
       await game.ready();
       expect(player.isMounted, true);
     });
-    testWithFlameGame('Load Ms. Myrtille to game', (game) async {
-      final msMyrtille = Myrtille('Test')..addToParent(game);
-      await game.ready();
-      expect(msMyrtille.isMounted, true);
-    });
-    testWithFlameGame('Load Mr. Myrtille to game', (game) async {
-      final mrMyrtille = MyrtilleHusband('Test')..addToParent(game);
-      await game.ready();
-      expect(mrMyrtille.isMounted, true);
+    group("load npc", () {
+      testWithFlameGame('Mme. Myrtille', (game) async {
+        final component = Myrtille("")..addToParent(game);
+        await game.ready();
+        expect(component.isMounted, true);
+      });
     });
   });
 }
