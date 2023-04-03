@@ -22,7 +22,7 @@ final dialogsMission7part1 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     dialogMessage: "Allez voir M. Abricot dans sa chambre.\n",
-    hasNext: true,
+    hasNext: false,
     index: 2,
   ),
 ];
@@ -218,7 +218,7 @@ final dialogsMission7part4 = DialogModel(
       "Bravo!\n C'est correct, en tant que spécialiste, votre collègue sera la plus à même d'éduquer le patient.\n",
   trueAswersContent: "Vous gagnez 1 point sur la barre de qualité des soins !",
   index: 0,
-  hasNext: true,
+  hasNext: false,
 );
 
 //Dialog with the wound specialist nurse
@@ -242,27 +242,17 @@ final dialogsMission7part5 = <DialogModel>[
     isShowDialog: true,
     dialogMessage:
         "Vous avez terminé votre matinée. Allez collecter les coffres dispersés dans la salle. Ils contiennent des informations que vous pourrez retrouver dans votre sac à dos.\n",
-    hasNext: true,
+    hasNext: false,
     index: 2,
   ),
 ];
 
 //Chest text
 class QuestDialogsMission7 {
-  DialogModel prevention = DialogModel(
-    isShowDialog: true,
-    dialogMessage:
-        "Le dépistage du prédiabète se fait à partir de 45 ans chez les patients en surpoids avec au moins un facteur de risque.\n",
-    hasNext: false,
-    index: 0,
-  );
-  DialogModel traitement = DialogModel(
-    isShowDialog: true,
-    dialogMessage:
-        "Le traitement non pharmacologique du diabète de type II consiste en une modification du mode de vie : alimentation, exercice physique, acquisition de compétences en matière d'auto-soins.\n",
-    hasNext: false,
-    index: 0,
-  );
+  static String prevention =
+      "Le dépistage du prédiabète se fait à partir de 45 ans chez les patients en surpoids avec au moins un facteur de risque.\n";
+  static String treatment =
+      "Le traitement non pharmacologique du diabète de type II consiste en une modification du mode de vie : alimentation, exercice physique, acquisition de compétences en matière d'auto-soins.\n";
 }
 
 //End of level dialog
