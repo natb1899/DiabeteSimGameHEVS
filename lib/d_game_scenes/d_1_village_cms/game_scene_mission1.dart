@@ -170,8 +170,8 @@ class DiabeteGameSceneMoutarde extends DiabeteGameScene {
     if (currentStep == 6) {
       step5 = false;
       step5IsDone = false;
-      canChangeScene = true;
       isDone = true;
+      canChangeScene = true;
     }
   }
 }

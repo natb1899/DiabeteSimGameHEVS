@@ -129,7 +129,6 @@ class DiabeteGameScene extends DiabeteGameBase
     } catch (_) {
       // LateInitializationError :
       //if happen it will be solved by the game loop
-
     }
 
     return material.KeyEventResult.ignored;

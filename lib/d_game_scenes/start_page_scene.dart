@@ -8,7 +8,6 @@ import 'game_base.dart';
 
 /// Landing page.
 class StartPage extends DiabeteGameBase with HasTappableComponents {
-
   StartPage({
     required GameScenesController gameScenesController,
     required GameSoundController gameSoundController,
@@ -62,10 +61,9 @@ class StartPage extends DiabeteGameBase with HasTappableComponents {
           text: 'login',
           action: () {
             bool openLogin =
-            gameScenesController.loginButtonController.openConfig;
-                
-            gameScenesController.loginButtonController.openConfig =
-                !openLogin;
+                gameScenesController.loginButtonController.openConfig;
+
+            gameScenesController.loginButtonController.openConfig = !openLogin;
             openLogin = !openLogin;
             gameScenesController.loginButtonController.inputConfig.add(
               openLogin,
