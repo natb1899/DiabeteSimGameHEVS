@@ -233,17 +233,27 @@ final dialogsMission3Part3 = <DialogModel>[
 final dialogsMission3Part4 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
-    hasQuestion: true,
-    dialogType: DialogType.questionRadioButton,
     dialogMessage:
         "Au vu des résultats de l’examen clinique, que faites-vous ?",
     hasNext: true,
-    questionTitle: "Question 3, mission 3:",
-    question:
+    index: 1,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage:
         "L’examen clinique révèle que le patient somnole mais qu’il est réveillable lors de la stimulation verbale.\n"
         "Il n’est orienté ni dans le temps ni dans l’espace. \n"
-        "Cependant, il sait que vous êtes infirmière au CMS et que son fils est présent dans la salle. \n\n"
-        "Ses paramètres vitaux sont les suivants :\n"
+        "Cependant, il sait que vous êtes infirmière au CMS et que son fils est présent dans la salle.",
+    hasNext: true,
+    index: 2,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    hasQuestion: true,
+    dialogType: DialogType.questionRadioButton,
+    hasNext: true,
+    questionTitle: "Question 3, mission 3:",
+    question: "Ses paramètres vitaux sont les suivants :\n"
         "TA = 100/60 mmHg, FC= 98 bpm, FR = 22/min, sat = 90%, température = 37.5oC. La glycémie est à 40 mmol/L. \n"
         "Au vu des résultats de l’examen clinique, que faites-vous ? ",
     questions: [
@@ -260,7 +270,7 @@ final dialogsMission3Part4 = <DialogModel>[
         "answer": "Ce n’est pas urgent, aucune intervention nécessaire ",
       }
     ],
-    index: 1,
+    index: 3,
     retry: true,
     falseAswers: "Ce n’est pas la bonne réponse.\n",
     falseAswersContent:
@@ -277,7 +287,7 @@ final dialogsMission3Part4 = <DialogModel>[
     dialogMessage:
         "Devant le tableau clinique, le médecin traitant vous demande d’appeler les urgences afin d’hospitaliser le patient \n",
     hasNext: true,
-    index: 2,
+    index: 4,
   ),
   DialogModel(
     isShowDialog: true,
@@ -293,9 +303,10 @@ final dialogsMission3Part4 = <DialogModel>[
       ],
     ],
     hasNext: false,
-    index: 3,
+    index: 5,
   )
 ];
+
 final List<DialogModel> dialogsMission3Part5 = [
   DialogModel(
     isShowDialog: true,

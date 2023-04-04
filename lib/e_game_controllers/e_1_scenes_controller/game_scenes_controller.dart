@@ -101,7 +101,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atBrocoliHome: DiabeteGameSceneBrocoli(
         sceneName: GameScenes.atBrocoliHome,
-        previousMissionName: GameScenes.atMyrtilleHome,
+        previousMissionName: '',
         sceneTmx: GameTilesAssets.brocoliHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
