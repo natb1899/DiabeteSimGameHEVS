@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_apricotChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_chouxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_fraiseuxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
@@ -130,6 +131,15 @@ class GameScenesController extends BaseController {
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
         gameSoundController: gameSoundController,
+      ),
+      GameScenes.atApricotChamber: DiabeteGameSceneApricotChamber(
+        sceneName: GameScenes.atApricotChamber,
+        previousMissionName: '',
+        sceneTmx: GameTilesAssets.apricotChamber,
+        gameScenesController: this,
+        soundTrackName: GameAudioAssets.adventure,
+        gameSoundController: gameSoundController,
+        playerScoreController: scoreController,
       ),
       GameScenes.atFraiseuxChamber: DiabeteGameSceneFraiseuxChamber(
         sceneName: GameScenes.atFraiseuxChamber,

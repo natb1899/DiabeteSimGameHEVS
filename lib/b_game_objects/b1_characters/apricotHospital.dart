@@ -1,4 +1,5 @@
 import 'package:flame/components.dart';
+import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_apricotChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
 import 'package:seriousgame/z_globals/z14_dialog_mission_7_manager.dart';
 
@@ -9,7 +10,7 @@ import 'player.dart';
 
 /// This class manager Myrtille Husband. Myrtille Husband inherits from perso (perso_base.dart)
 class ApricotHospital extends Perso
-    with HasGameRef<DiabeteGameSceneNurseOffice> {
+    with HasGameRef<DiabeteGameSceneApricotChamber> {
   ApricotHospital(String user)
       : super(fileNamePngCharacter: GameImageAssets.apricotHospital);
   bool _hasCollided = false;

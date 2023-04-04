@@ -25,7 +25,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
   late AsscHospital asscHospital;
   late NurseDiabetesHospital nurseDiabetesHospital;
   late NurseWoundCareHospital nurseWoundCareHospital;
-  late ApricotHospital apricotHospital;
 
   // Mission steps
   bool step1 = true; // Doctor
@@ -66,7 +65,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
     initAsscHospital();
     initNurseDiabetesHospital();
     initNurseWoundCareHospital();
-    initApricotHospital();
     await initChest();
     await super.onLoad();
     continueInitialisation();
@@ -102,13 +100,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
           ..anchor = Anchor.center;
   }
 
-  /// Init Mr. Apricot in the scene
-  void initApricotHospital() {
-    apricotHospital = ApricotHospital(GameImageAssets.apricotHospital)
-      ..size = Vector2.all(GameParams.middleSize)
-      ..anchor = Anchor.center;
-  }
-
   void continueInitialisation() {
     doctorHospital
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
@@ -123,10 +114,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
     nurseWoundCareHospital
-      ..debugMode = kDebugMode // Only true on debug mode (dev work)
-      ..mapWidth = mapWidth
-      ..mapHeight = mapHeight;
-    apricotHospital
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;

@@ -375,6 +375,32 @@ class GameSceneLoader {
             ),
           );
           break;
+        case TiledObjectName.toApricotChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atApricotChamber,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toOutsideApricotChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atHospitalInterior,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
         case TiledObjectName.toFraiseuxChamber:
           game.addToScene(
             initObject(
