@@ -2,7 +2,6 @@ import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/foundation.dart';
 import 'package:seriousgame/z_globals/z10_dialog_mission_1_manager.dart';
-
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../b_game_objects/b1_characters/moutarde.dart';
 import '../../b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
@@ -172,6 +171,7 @@ class DiabeteGameSceneMoutarde extends DiabeteGameScene {
       step5IsDone = false;
       isDone = true;
       canChangeScene = true;
+      gameScenesController.level1done = true;
     }
   }
 }
