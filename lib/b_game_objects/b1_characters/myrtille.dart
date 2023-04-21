@@ -2,7 +2,6 @@ import 'package:flame/components.dart';
 import 'package:seriousgame/z_globals/z10_dialog_mission_2_manager.dart';
 
 import '../../d_game_scenes/d_1_village_cms/game_scene_mission2.dart';
-import '../../z_globals/z10_dialog_mission_1_manager.dart';
 import '../../z_globals/z4_assets_manager.dart';
 import 'perso_base.dart';
 import 'player.dart';

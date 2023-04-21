@@ -55,6 +55,7 @@ class GameTilesAssets {
 
   static const String brocoliHome = "brocoli_home.tmx";
   static const String brocoliChamber = "brocoli_chamber.tmx";
+  static const String apricotChamber = "apricot_chamber.tmx";
   static const String fraiseuxChamber = "fraiseux_chamber.tmx";
   static const String chouxChamber = "choux_chamber.tmx";
   static const String outsideHospital = "outside_hospital.tmx";
