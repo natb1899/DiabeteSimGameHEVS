@@ -120,7 +120,7 @@ final dialogsMission6part1 = <DialogModel>[
   ),
   DialogModel(
     isShowDialog: true,
-    dialogMessage: "Bravo! Vous avez terminé les soins pour Mme. Choux.\n"
+    dialogMessage: "Bravo! Vous avez terminé le sixième niveau!\n"
         "Vous avez appris à prendre soin de patients diabétiques en jeûne.\n\n"
         "Rendez-vous au bureau des infirmière.\n",
     hasNext: false,

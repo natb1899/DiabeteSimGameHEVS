@@ -73,7 +73,7 @@ final dialogsMission2part4 = DialogModel(
   isShowDialog: true,
   dialogMessage:
       "Bien joué! Dans cette situation, vous avez identifié les complications du diabète à long terme.\n"
-      "Vous pouvez maintenant vous rendre chez M. Moutarde.\n",
+      "Vous avez terminé le second niveau et pouvez maintenant vous rendre chez M. Brocoli!\n",
   index: 1,
 );
 

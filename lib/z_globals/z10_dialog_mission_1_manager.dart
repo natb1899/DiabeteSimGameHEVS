@@ -568,7 +568,8 @@ final dialogsMission1Part4 = <DialogModel>[
   DialogModel(
     isShowDialog: true,
     dialogMessage:
-        "Vous pouvez sortir de la maison de Monsieur Moutard et poursuivre votre matinée !",
+        "Vous pouvez sortir de la maison de Monsieur Moutard et poursuivre votre matinée !\n"
+        "Vous avez terminé le premier niveau !",
     index: 3,
     hasNext: true,
   ),

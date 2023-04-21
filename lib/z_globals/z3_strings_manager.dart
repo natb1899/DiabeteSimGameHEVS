@@ -75,7 +75,7 @@ class Planning {
   static const String chambresTitle = "Chambres des patients a l'hôpital";
   static const String chambre23 = "Chambre 23 – Monsieur Brocoli";
   static const String chambre24 = "Chambre 24 – Monsieur Fraiseux";
-  static const String chambre25 = "Chambre 25 – Madame Laitue";
+  static const String chambre25 = "Chambre 25 – Madame Choux";
   static const String chambre26 = "Chambre 26 – Monsieur Abricot";
 }
 
