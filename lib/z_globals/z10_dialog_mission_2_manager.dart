@@ -1,3 +1,6 @@
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z3_strings_manager.dart';
+
 import '../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 
 /// all dialogs for the situation 1
@@ -67,13 +70,29 @@ final dialogsMission2part2 = <DialogModel>[
   ),
 ];
 
-final dialogsMission2part4 = DialogModel(
-  isShowDialog: true,
-  dialogMessage:
-      "Bien joué! Dans cette situation, vous avez identifié les complications du diabète à long terme.\n"
-      "Vous avez terminé le second niveau et pouvez maintenant vous rendre chez M. Brocoli!\n",
-  index: 1,
-);
+final dialogsMission2part4 = <DialogModel>[
+  DialogModel(
+    isShowDialog: true,
+    hasNext: true,
+    dialogMessage:
+        "Bien joué! Dans cette situation, vous avez identifié les complications du diabète à long terme.\n"
+        "Vous avez terminé le second niveau et pouvez maintenant vous rendre chez M. Brocoli!\n",
+    index: 0,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: GameDialogs.transmissionMyrtille,
+    index: 1,
+    hasInteraction: true,
+    dialogInteractions: [
+      [
+        GameInteractionTypes.notes,
+        GameCharacters.myrtille,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ligula sed libero varius tempor eget ut neque."
+      ],
+    ],
+  ),
+];
 
 class QuestDialogsMission2 {
   DialogModel neuropathy = DialogModel(
@@ -107,7 +126,7 @@ class QuestDialogsMission2 {
     falseAswers: "Vous n'avez pas trouvé tous les symptômes, retentez !",
     falseAswersContent:
         "Vous perdez 1 point sur la barre de qualité des soins.",
-    retry: false, ///////////////////////////////////////////////To change
+    retry: false,
     trueAswers:
         "Bravo!\n Vous avez trouvé tous les symptômes de la neuropathie!\n"
         "Parce que la neuropathie n'est pas un symptôme cardiovasculaire, la température des membres ne change pas.\n",

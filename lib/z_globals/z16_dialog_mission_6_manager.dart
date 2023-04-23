@@ -1,3 +1,6 @@
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z3_strings_manager.dart';
+
 import '../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 
 //Dialog With Mme. Choux
@@ -123,5 +126,18 @@ final dialogsMission6part1 = <DialogModel>[
         "Rendez-vous au bureau des infirmière.\n",
     hasNext: false,
     index: 6,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: GameDialogs.transmissionChoux,
+    index: 7,
+    hasInteraction: true,
+    dialogInteractions: [
+      [
+        GameInteractionTypes.notes,
+        GameCharacters.choux,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ligula sed libero varius tempor eget ut neque."
+      ],
+    ],
   ),
 ];

@@ -40,6 +40,14 @@ class GameDialogs {
       'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Brocoli.';
   static const String transmissionMoutarde =
       'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Moutarde.';
+  static const String transmissionMyrtille =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Madame Myrtille.';
+  static const String transmissionFraiseux =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Fraiseux.';
+  static const String transmissionChoux =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Madame Choux.';
+  static const String transmissionAbricot =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Abricot.';
 }
 
 class GameChests {
