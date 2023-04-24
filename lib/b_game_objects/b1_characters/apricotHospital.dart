@@ -23,11 +23,9 @@ class ApricotHospital extends Perso
     if (other is PlayerComponent) {
       if (!_hasCollided) {
         if (gameRef.step1) {
-          gameRef.gameScenesController.gameDialogController.onDialog(
-            DialogModel(
-                isShowDialog: true,
-                dialogMessage: 'You should talk to the doctor first'),
-          );
+          gameRef.gameScenesController.gameDialogController
+              .onDialogList(dialogsMission7part2);
+          gameRef.step2IsDone = true;
         } else if (gameRef.step2) {
           gameRef.gameScenesController.gameDialogController
               .onDialogList(dialogsMission7part2);
