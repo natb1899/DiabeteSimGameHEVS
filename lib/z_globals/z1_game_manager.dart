@@ -73,6 +73,7 @@ class GameCharacters {
   static const String nurse01 = "Nurse01";
   static const String fraiseux = "Fraiseux";
   static const String choux = "Choux";
+  static const String apricot = "Apricot";
 }
 
 class GameInteractionTypes {

@@ -27,4 +27,13 @@ class Choux extends Perso with HasGameRef<DiabeteGameSceneChouxChamber> {
       }
     }
   }
+
+  /// Reset values when player ends the collision
+  @override
+  void onCollisionEnd(PositionComponent other) {
+    super.onCollisionEnd(other);
+    if (other is PlayerComponent) {
+      _hasCollided = false;
+    }
+  }
 }

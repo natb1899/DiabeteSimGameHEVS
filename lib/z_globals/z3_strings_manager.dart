@@ -40,6 +40,14 @@ class GameDialogs {
       'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Brocoli.';
   static const String transmissionMoutarde =
       'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Moutarde.';
+  static const String transmissionMyrtille =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Madame Myrtille.';
+  static const String transmissionFraiseux =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Fraiseux.';
+  static const String transmissionChoux =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Madame Choux.';
+  static const String transmissionAbricot =
+      'De nouvelles transmissions écrites sont disponibles dans les notes chez Monsieur Abricot.';
 }
 
 class GameChests {
@@ -70,13 +78,23 @@ class MapCollisionInteractWith {
 class Planning {
   static const String patientsTitle = "Patients du village";
   static const String patient1 = "Patient 1 – 8h00-9h00 – Monsieur Moutarde";
+  static const String patient1Done =
+      "Patient 1 – 8h00-9h00 – Monsieur Moutarde (Fait)";
   static const String patient2 = "Patient 2 – 9h00-10h00 – Madame Myrtille";
+  static const String patient2Done =
+      "Patient 2 – 9h00-10h00 – Madame Myrtille (Fait)";
   static const String patient3 = "Patient 3 – 10h00-11h00 – Monsieur Brocoli";
+  static const String patient3Done =
+      "Patient 3 – 10h00-11h00 – Monsieur Brocoli (Fait)";
   static const String chambresTitle = "Chambres des patients a l'hôpital";
   static const String chambre23 = "Chambre 23 – Monsieur Brocoli";
+  static const String chambre23Done = "Chambre 23 – Monsieur Brocoli (Fait)";
   static const String chambre24 = "Chambre 24 – Monsieur Fraiseux";
-  static const String chambre25 = "Chambre 25 – Madame Laitue";
+  static const String chambre24Done = "Chambre 24 – Monsieur Fraiseux (Fait)";
+  static const String chambre25 = "Chambre 25 – Madame Choux";
+  static const String chambre25Done = "Chambre 25 – Madame Choux (Fait)";
   static const String chambre26 = "Chambre 26 – Monsieur Abricot";
+  static const String chambre26Done = "Chambre 26 – Monsieur Abricot (Fait)";
 }
 
 /// It's in this class that the Patients situation are defined

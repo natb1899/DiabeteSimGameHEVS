@@ -76,6 +76,7 @@ class DiabeteGameSceneBrocoliChamber extends DiabeteGameScene {
     if (BroHopStep2IsDone) {
       BroHopStep2 = false;
       BroHopStep2IsDone = false;
+      gameScenesController.level4done = true;
     }
   }
 }

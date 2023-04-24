@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:seriousgame/a_overlays/a2_bag_overlay/measure_tool_model.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
@@ -17,7 +19,7 @@ class PlayerBag extends StatelessWidget {
   final GameScenesController gameScenesController;
   final PlayerBagController playerBagController;
 
-  const PlayerBag({
+  PlayerBag({
     super.key,
     required this.game,
     required this.gameScenesController,
@@ -63,7 +65,7 @@ class PlayerBag extends StatelessWidget {
                   SafeArea(
                       child: Column(children: [
                     Row(
-                      children: <Widget>[
+                      children: const <Widget>[
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text("Outils de mesure :",
@@ -116,7 +118,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(Planning.patientsTitle,
@@ -127,14 +129,18 @@ class PlayerBag extends StatelessWidget {
                           )
                         ],
                       ),
+                      //List of patients
                       Flexible(
                           child: ListView(
-                        children: const [
+                        children: [
                           Card(
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.patient1,
+                                child: Text(
+                                    gameScenesController.level1done
+                                        ? Planning.patient1Done
+                                        : Planning.patient1,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -144,7 +150,10 @@ class PlayerBag extends StatelessWidget {
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.patient2,
+                                child: Text(
+                                    gameScenesController.level2done
+                                        ? Planning.patient2Done
+                                        : Planning.patient2,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -154,7 +163,10 @@ class PlayerBag extends StatelessWidget {
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.patient3,
+                                child: Text(
+                                    gameScenesController.level3done
+                                        ? Planning.patient3Done
+                                        : Planning.patient3,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -162,8 +174,9 @@ class PlayerBag extends StatelessWidget {
                           ),
                         ],
                       )),
+                      //List of rooms
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(Planning.chambresTitle,
@@ -176,12 +189,15 @@ class PlayerBag extends StatelessWidget {
                       ),
                       Flexible(
                           child: ListView(
-                        children: const [
+                        children: [
                           Card(
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.chambre23,
+                                child: Text(
+                                    gameScenesController.level4done
+                                        ? Planning.chambre23Done
+                                        : Planning.chambre23,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -191,7 +207,10 @@ class PlayerBag extends StatelessWidget {
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.chambre24,
+                                child: Text(
+                                    gameScenesController.level5done
+                                        ? Planning.chambre24Done
+                                        : Planning.chambre24,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -201,7 +220,10 @@ class PlayerBag extends StatelessWidget {
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.chambre25,
+                                child: Text(
+                                    gameScenesController.level6done
+                                        ? Planning.chambre25Done
+                                        : Planning.chambre25,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -211,7 +233,10 @@ class PlayerBag extends StatelessWidget {
                             elevation: 2.0,
                             child: Padding(
                                 padding: EdgeInsets.all(8.0),
-                                child: Text(Planning.chambre26,
+                                child: Text(
+                                    gameScenesController.level7done
+                                        ? Planning.chambre26Done
+                                        : Planning.chambre26,
                                     style: TextStyle(
                                       fontSize: FontSizeManager.s12,
                                       fontFamily: FontFamily.pixelSansSerif,
@@ -225,7 +250,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(2.0),
                             child:
@@ -328,7 +353,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text("collection d'apprentissage",

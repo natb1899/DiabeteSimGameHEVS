@@ -59,6 +59,15 @@ class GameScenesController extends BaseController {
 
   Map<String, DiabeteGameBase> get sceneRouter => _sceneRouter;
 
+  //progression int the game
+  bool level1done = false;
+  bool level2done = false;
+  bool level3done = false;
+  bool level4done = false;
+  bool level5done = false;
+  bool level6done = false;
+  bool level7done = false;
+
   /// Launch the controller
   @override
   void start() {
