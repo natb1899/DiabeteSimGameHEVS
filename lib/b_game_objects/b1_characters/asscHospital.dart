@@ -48,6 +48,10 @@ class AsscHospital extends Perso with HasGameRef<DiabeteGameSceneNurseOffice> {
                 isShowDialog: true,
                 dialogMessage: 'You should talk to the woundcare nurse'),
           );
+        } else if (gameRef.step7) {
+          gameRef.gameScenesController.gameDialogController
+              .onDialogList(endOfLevelDialogMission7);
+          gameRef.step7IsDone = true;
         }
         _hasCollided = true;
       }
