@@ -1,10 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/foundation.dart';
-import 'package:seriousgame/f_firebase/firebase.dart';
-import 'package:tiled/tiled.dart';
 
 import '../b_game_objects/b2_map_objects/b2_1_interactive_objects/change_scene.dart';
 import '../b_game_objects/b2_map_objects/b2_1_interactive_objects/fountain.dart';
@@ -370,6 +367,32 @@ class GameSceneLoader {
             initObject(
               ChangeScenePoint(
                 toScene: GameScenes.atNurseOffice,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toApricotChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atApricotChamber,
+                isHavaingCollisionShapePolygone: false,
+                polygonePoints: changeScene.polygon,
+                gameScenesController: game.gameScenesController,
+              ),
+              changeScene,
+            ),
+          );
+          break;
+        case TiledObjectName.toOutsideApricotChamber:
+          game.addToScene(
+            initObject(
+              ChangeScenePoint(
+                toScene: GameScenes.atHospitalInterior,
                 isHavaingCollisionShapePolygone: false,
                 polygonePoints: changeScene.polygon,
                 gameScenesController: game.gameScenesController,

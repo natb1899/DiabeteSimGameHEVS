@@ -1,5 +1,3 @@
-import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
 import 'package:flame_test/flame_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,14 +7,12 @@ import 'package:seriousgame/a_overlays/a2_bag_overlay/measure_tool_controller.da
 import 'package:seriousgame/a_overlays/a4_feedback/feedback_controller.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/moutarde.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/player.dart';
-import 'package:seriousgame/b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b3_bag_objects/contact_controller.dart';
 import 'package:seriousgame/d_game_scenes/d_1_village_cms/game_scene_mission1.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/notes_controller.dart';
 import 'package:seriousgame/e_game_controllers/e_3_bag_controller/player_bag_controller.dart';
-import 'package:seriousgame/z_globals/z14_dialog_mission_7_manager.dart';
 import 'package:seriousgame/z_globals/z1_game_manager.dart';
 import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 

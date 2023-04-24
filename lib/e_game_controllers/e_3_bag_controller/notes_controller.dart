@@ -11,6 +11,12 @@ class NotesController extends BaseController {
         NotesModel(character: GameCharacters.myrtille, notes: []),
     GameCharacters.brocoli:
         NotesModel(character: GameCharacters.brocoli, notes: []),
+    GameCharacters.fraiseux:
+        NotesModel(character: GameCharacters.fraiseux, notes: []),
+    GameCharacters.choux:
+        NotesModel(character: GameCharacters.choux, notes: []),
+    GameCharacters.apricot:
+        NotesModel(character: GameCharacters.apricot, notes: []),
   };
 
   Map<String, NotesModel> get notes => _notes;

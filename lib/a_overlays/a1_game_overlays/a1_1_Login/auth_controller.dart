@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_Login/login_page.dart';
-import 'package:seriousgame/c_game_loaders/scene_objects_loader.dart';
 
 import '../../../f_firebase/firebase.dart';
 

@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_apricotChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_chouxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_fraiseuxChamber.dart';
 import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
-import 'package:seriousgame/f_firebase/firebase.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_Login/login_button_controller.dart';
 
@@ -60,6 +59,15 @@ class GameScenesController extends BaseController {
 
   Map<String, DiabeteGameBase> get sceneRouter => _sceneRouter;
 
+  //progression int the game
+  bool level1done = false;
+  bool level2done = false;
+  bool level3done = false;
+  bool level4done = false;
+  bool level5done = false;
+  bool level6done = false;
+  bool level7done = false;
+
   /// Launch the controller
   @override
   void start() {
@@ -92,7 +100,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atMyrtilleHome: DiabeteGameSceneMyrtille(
         sceneName: GameScenes.atMyrtilleHome,
-        //TODO : change previous mission name
+        //change previous mission name
         // previousMissionName: GameScenes.atMoustardHome,
         previousMissionName: '',
         sceneTmx: GameTilesAssets.myrtilleHome,
@@ -102,7 +110,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atBrocoliHome: DiabeteGameSceneBrocoli(
         sceneName: GameScenes.atBrocoliHome,
-        previousMissionName: GameScenes.atMyrtilleHome,
+        previousMissionName: '',
         sceneTmx: GameTilesAssets.brocoliHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -132,6 +140,15 @@ class GameScenesController extends BaseController {
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
         gameSoundController: gameSoundController,
+      ),
+      GameScenes.atApricotChamber: DiabeteGameSceneApricotChamber(
+        sceneName: GameScenes.atApricotChamber,
+        previousMissionName: '',
+        sceneTmx: GameTilesAssets.apricotChamber,
+        gameScenesController: this,
+        soundTrackName: GameAudioAssets.adventure,
+        gameSoundController: gameSoundController,
+        playerScoreController: scoreController,
       ),
       GameScenes.atFraiseuxChamber: DiabeteGameSceneFraiseuxChamber(
         sceneName: GameScenes.atFraiseuxChamber,

@@ -79,7 +79,6 @@ class StartPage extends DiabeteGameBase with HasTappableComponents {
   late final TextComponent _logo;
   late final RoundedButton _button1;
   late final RoundedButton _button2;
-  late final RoundedButton _loginButton;
   late final RoundedButton _button3;
 
   @override

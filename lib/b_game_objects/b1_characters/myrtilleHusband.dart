@@ -34,7 +34,7 @@ class MyrtilleHusband extends Perso with HasGameRef<DiabeteGameSceneMyrtille> {
           gameRef.step2IsDone = true;
         } else if (gameRef.step4) {
           gameRef.gameScenesController.gameDialogController
-              .onDialog(dialogsMission2part4);
+              .onDialogList(dialogsMission2part4);
           gameRef.step4IsDone = true;
         }
         _hasCollided = true;

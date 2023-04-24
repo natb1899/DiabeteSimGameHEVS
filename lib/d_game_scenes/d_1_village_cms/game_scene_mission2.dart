@@ -4,12 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtille.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/myrtilleHusband.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
-import 'package:seriousgame/z_globals/z10_dialog_mission_1_manager.dart';
 import 'package:seriousgame/z_globals/z10_dialog_mission_2_manager.dart';
 import 'package:seriousgame/z_globals/z4_assets_manager.dart';
 
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
-import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import '../../z_globals/z1_game_manager.dart';
 import '../game_scene_generator.dart';

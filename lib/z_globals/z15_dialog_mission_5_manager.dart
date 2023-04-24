@@ -1,6 +1,7 @@
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z3_strings_manager.dart';
+
 import '../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
-import 'z1_game_manager.dart';
-import 'z3_strings_manager.dart';
 
 //Dialog with M. Fraiseux
 final dialogMission5part1 = <DialogModel>[
@@ -126,8 +127,22 @@ final dialogMission5part3 = <DialogModel>[
   ),
   DialogModel(
     isShowDialog: true,
-    dialogMessage: "Vous pouvez maitenant aller voir M.Choux. \n",
-    hasNext: false,
+    dialogMessage:
+        "Vous avez terminé le cinquième niveau et pouvez maitenant aller voir M.Choux. \n",
+    hasNext: true,
     index: 2,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: GameDialogs.transmissionFraiseux,
+    index: 3,
+    hasInteraction: true,
+    dialogInteractions: [
+      [
+        GameInteractionTypes.notes,
+        GameCharacters.fraiseux,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ligula sed libero varius tempor eget ut neque."
+      ],
+    ],
   ),
 ];

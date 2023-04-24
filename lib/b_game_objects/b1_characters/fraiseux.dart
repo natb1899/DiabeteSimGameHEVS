@@ -1,6 +1,5 @@
 import 'package:flame/components.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/player.dart';
-import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 
 import '../../d_game_scenes/d_2_hospital/game_scene_fraiseuxChamber.dart';
 import '../../z_globals/z15_dialog_mission_5_manager.dart';
