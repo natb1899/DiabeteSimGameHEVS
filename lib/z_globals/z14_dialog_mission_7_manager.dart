@@ -1,3 +1,6 @@
+import 'package:seriousgame/z_globals/z1_game_manager.dart';
+import 'package:seriousgame/z_globals/z3_strings_manager.dart';
+
 import '../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_4_game_dialogs/dialog_model.dart';
 
 //Dialog with doctor
@@ -254,11 +257,26 @@ class QuestDialogsMission7 {
 }
 
 //End of level dialog
-final endOfLevelDialogMission7 = DialogModel(
-  isShowDialog: true,
-  dialogMessage: "Bravo!\n\n"
-      "Vous avez collecté les 2 coffres. Vous obtenez 1 points sur la barre de qualité des soins !\n"
-      "Il est essentiel de rester à jour quant aux connaissances et aux compétences en matière de soins infirmiers. Vous pouvez retrourner chez vous pour vous reposer.\n",
-  hasNext: false,
-  index: 0,
-);
+final endOfLevelDialogMission7 = <DialogModel>[
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: "Bravo!\n\n"
+        "Vous avez collecté les 2 coffres. Vous obtenez 1 points sur la barre de qualité des soins !\n"
+        "Il est essentiel de rester à jour quant aux connaissances et aux compétences en matière de soins infirmiers. Vous pouvez retrourner chez vous pour vous reposer.\n",
+    hasNext: true,
+    index: 0,
+  ),
+  DialogModel(
+    isShowDialog: true,
+    dialogMessage: GameDialogs.transmissionAbricot,
+    index: 1,
+    hasInteraction: true,
+    dialogInteractions: [
+      [
+        GameInteractionTypes.notes,
+        GameCharacters.apricot,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ligula sed libero varius tempor eget ut neque."
+      ],
+    ],
+  ),
+];

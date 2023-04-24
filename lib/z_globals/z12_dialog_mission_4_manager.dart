@@ -155,11 +155,12 @@ final dialogsMission4Part1 = <DialogModel>[
   ),
   DialogModel(
     isShowDialog: true,
-    dialogMessage: " Vous allez à présent recevoir un feedback. ",
+    dialogMessage:
+        "Vous avez maintenant terminé le niveau 4! Allez à présent voir M. Fraiseux!",
     hasNext: true,
     index: 9,
   ),
-  DialogModel(
+  /*DialogModel(
     isShowDialog: true,
     dialogMessage: " Vous allez à présent recevoir un feedback. ",
     hasNext: false,
@@ -175,7 +176,7 @@ final dialogsMission4Part1 = <DialogModel>[
         }
       ]
     ],
-  ),
+  ),*/
 ];
 final dialogsMission4Part2 = <DialogModel>[
   DialogModel(
