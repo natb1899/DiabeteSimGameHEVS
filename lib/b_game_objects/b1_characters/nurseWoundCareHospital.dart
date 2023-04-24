@@ -49,6 +49,10 @@ class NurseWoundCareHospital extends Perso
           gameRef.gameScenesController.gameDialogController
               .onDialogList(dialogsMission7part5);
           gameRef.step5IsDone = true;
+        } else if (gameRef.step7) {
+          gameRef.gameScenesController.gameDialogController
+              .onDialogList(endOfLevelDialogMission7);
+          gameRef.step7IsDone = true;
         }
         _hasCollided = true;
       }

@@ -268,15 +268,20 @@ final endOfLevelDialogMission7 = <DialogModel>[
   ),
   DialogModel(
     isShowDialog: true,
-    dialogMessage: GameDialogs.transmissionAbricot,
-    index: 1,
+    dialogMessage:
+        "Merci d'avoir joué au jeu! Vous allez à présent recevoir un feedback.",
+    hasNext: false,
     hasInteraction: true,
+    index: 1,
     dialogInteractions: [
       [
-        GameInteractionTypes.notes,
-        GameCharacters.apricot,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at ligula sed libero varius tempor eget ut neque."
-      ],
+        "feedback",
+        {
+          "ms+": "bravo bla bla blab",
+          "ms": "pas trop mal",
+          "ms-": "catastrophique"
+        }
+      ]
     ],
   ),
 ];
