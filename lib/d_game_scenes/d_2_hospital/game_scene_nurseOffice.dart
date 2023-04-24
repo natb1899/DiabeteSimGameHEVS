@@ -145,10 +145,11 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
     if (step1IsDone) {
       step1 = false;
       step1IsDone = false;
-      step2 = true;
+      step3 = true;
       canChangeScene = true;
     }
 
+    // Mr. Apricot
     // if (step2IsDone) {
     //   step2 = false;
     //   step2IsDone = false;
@@ -159,6 +160,7 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
       step3 = false;
       step3IsDone = false;
       step4 = true;
+      canChangeScene = false;
     }
 
     if (step4IsDone) {
