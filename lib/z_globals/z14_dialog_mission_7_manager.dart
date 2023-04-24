@@ -263,7 +263,7 @@ final endOfLevelDialogMission7 = <DialogModel>[
     dialogMessage: "Bravo!\n\n"
         "Vous avez collecté les 2 coffres. Vous obtenez 1 points sur la barre de qualité des soins !\n"
         "Il est essentiel de rester à jour quant aux connaissances et aux compétences en matière de soins infirmiers. Vous pouvez retrourner chez vous pour vous reposer.\n",
-    hasNext: false,
+    hasNext: true,
     index: 0,
   ),
   DialogModel(

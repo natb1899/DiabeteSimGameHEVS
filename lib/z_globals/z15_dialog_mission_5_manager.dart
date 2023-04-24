@@ -129,7 +129,7 @@ final dialogMission5part3 = <DialogModel>[
     isShowDialog: true,
     dialogMessage:
         "Vous avez terminé le cinquième niveau et pouvez maitenant aller voir M.Choux. \n",
-    hasNext: false,
+    hasNext: true,
     index: 2,
   ),
   DialogModel(
