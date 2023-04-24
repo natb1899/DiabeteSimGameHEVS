@@ -1,6 +1,7 @@
 import 'package:flame/components.dart';
 import 'package:flutter/foundation.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/apricotHospital.dart';
+import 'package:seriousgame/d_game_scenes/d_2_hospital/game_scene_nurseOffice.dart';
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
 import '../../a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import '../../e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
@@ -8,7 +9,7 @@ import '../../z_globals/z1_game_manager.dart';
 import '../../z_globals/z4_assets_manager.dart';
 import '../game_scene_generator.dart';
 
-class DiabeteGameSceneApricotChamber extends DiabeteGameScene {
+class DiabeteGameSceneApricotChamber extends DiabeteGameSceneNurseOffice {
   // Scene components list
   List<Component> sceneObjects = [];
 
@@ -16,15 +17,14 @@ class DiabeteGameSceneApricotChamber extends DiabeteGameScene {
   PlayerScoreController playerScoreController;
 
   //Scene steps
-  bool step1 = true;
-  bool step2 = false;
-  bool step3 = false;
-  bool step4 = false;
-  bool step5 = false;
-
-  bool step1IsDone = false;
-  bool step2IsDone = false;
-  bool step3IsDone = false;
+  // bool step1 = false;
+  // bool step2 = true;
+  // bool step3 = false;
+  // bool step4 = false;
+  // bool step5 = false;
+  // bool step1IsDone = true;
+  // bool step2IsDone = false;
+  // bool step3IsDone = false;
 
   // SCENE COMPONENT LIFECYCLE HANDLING SECTION
 
@@ -73,12 +73,20 @@ class DiabeteGameSceneApricotChamber extends DiabeteGameScene {
   @override
   void update(double dt) {
     super.update(dt);
+    canChangeScene = true;
     //steps
-    if (step1IsDone) {
-      step1 = false;
-      step2 = true;
-      step1IsDone = false;
+    // if (step1IsDone) {
+    //   step1 = false;
+    //   step1IsDone = false;
+    //   step2 = true;
+    // }
+
+    if (step2IsDone) {
+      step2 = false;
+      step2IsDone = false;
+      step3 = true;
     }
+
     if (step3IsDone) {
       //Add 5 points to the score
       for (int i = 0; i < 5; i++) {
@@ -87,7 +95,6 @@ class DiabeteGameSceneApricotChamber extends DiabeteGameScene {
       step3 = false;
       step3IsDone = false;
       isDone = true;
-      canChangeScene = true;
     }
   }
 }

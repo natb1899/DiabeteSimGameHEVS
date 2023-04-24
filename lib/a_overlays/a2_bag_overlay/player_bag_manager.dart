@@ -62,7 +62,7 @@ class PlayerBag extends StatelessWidget {
                 children: [
                   SafeArea(
                       child: Column(children: [
-                    const Row(
+                    Row(
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.all(8.0),
@@ -115,7 +115,7 @@ class PlayerBag extends StatelessWidget {
                   SafeArea(
                       child: Column(
                     children: [
-                      const Row(
+                      Row(
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
@@ -162,7 +162,7 @@ class PlayerBag extends StatelessWidget {
                           ),
                         ],
                       )),
-                      const Row(
+                      Row(
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
@@ -224,7 +224,7 @@ class PlayerBag extends StatelessWidget {
                   SafeArea(
                       child: Column(
                     children: [
-                      const Row(
+                      Row(
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(2.0),
@@ -327,7 +327,7 @@ class PlayerBag extends StatelessWidget {
                   SafeArea(
                       child: Column(
                     children: [
-                      const Row(
+                      Row(
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
