@@ -95,6 +95,8 @@ class DiabeteGameSceneApricotChamber extends DiabeteGameSceneNurseOffice {
       step3 = false;
       step3IsDone = false;
       isDone = true;
+      canChangeScene = true;
+      gameScenesController.level7done = true;
     }
   }
 }

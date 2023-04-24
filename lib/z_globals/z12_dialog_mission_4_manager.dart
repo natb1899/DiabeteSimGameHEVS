@@ -157,7 +157,7 @@ final dialogsMission4Part1 = <DialogModel>[
     isShowDialog: true,
     dialogMessage:
         "Vous avez maintenant terminé le niveau 4! Allez à présent voir M. Fraiseux!",
-    hasNext: true,
+    hasNext: false,
     index: 9,
   ),
   /*DialogModel(

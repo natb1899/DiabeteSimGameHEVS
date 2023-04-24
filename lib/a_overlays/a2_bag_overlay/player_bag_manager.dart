@@ -65,7 +65,7 @@ class PlayerBag extends StatelessWidget {
                   SafeArea(
                       child: Column(children: [
                     Row(
-                      children: <Widget>[
+                      children: const <Widget>[
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text("Outils de mesure :",
@@ -118,7 +118,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(Planning.patientsTitle,
@@ -174,8 +174,9 @@ class PlayerBag extends StatelessWidget {
                           ),
                         ],
                       )),
+                      //List of rooms
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(Planning.chambresTitle,
@@ -249,7 +250,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(2.0),
                             child:
@@ -352,7 +353,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: <Widget>[
+                        children: const <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text("collection d'apprentissage",

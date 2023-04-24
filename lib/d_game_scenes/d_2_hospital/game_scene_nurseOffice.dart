@@ -32,7 +32,8 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
   bool step3 = false; // Assistant Nurse
   bool step4 = false; // Diabetes Nurse
   bool step5 = false; // Woundcare Nurse
-  bool step6 = false; // Done with all
+  bool step6 = false; // Done with chests
+  bool step7 = false; // Done with all
 
   bool step1IsDone = false;
   bool step2IsDone = false;
@@ -40,6 +41,7 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
   bool step4IsDone = false;
   bool step5IsDone = false;
   bool step6IsDone = false;
+  bool step7IsDone = false;
 
   // Scene component lifecycle handling section
   DiabeteGameSceneNurseOffice({
@@ -185,8 +187,15 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
         step6) {
       step6 = false;
       step6IsDone = false;
+      step7 = true;
+    }
+
+    if (step7IsDone) {
+      step7 = false;
+      step7IsDone = false;
       isDone = true;
       canChangeScene = true;
+      gameScenesController.level7done = true;
     }
   }
 }

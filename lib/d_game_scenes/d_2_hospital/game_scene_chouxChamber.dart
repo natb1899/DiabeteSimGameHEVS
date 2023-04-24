@@ -66,6 +66,7 @@ class DiabeteGameSceneChouxChamber extends DiabeteGameScene {
       step1IsDone = false;
       isDone = true;
       canChangeScene = true;
+      gameScenesController.level6done = true;
     }
   }
 }
