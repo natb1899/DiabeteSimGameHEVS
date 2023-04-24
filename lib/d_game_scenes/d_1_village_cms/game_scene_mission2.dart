@@ -161,6 +161,7 @@ class DiabeteGameSceneMyrtille extends DiabeteGameScene {
       step4IsDone = false;
       isDone = true;
       canChangeScene = true;
+      gameScenesController.level2done = true;
     }
   }
 }

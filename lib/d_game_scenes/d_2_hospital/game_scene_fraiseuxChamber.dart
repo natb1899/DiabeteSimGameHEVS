@@ -143,6 +143,7 @@ class DiabeteGameSceneFraiseuxChamber extends DiabeteGameScene {
       step3IsDone = false;
       isDone = true;
       canChangeScene = true;
+      gameScenesController.level5done = true;
     }
   }
 }

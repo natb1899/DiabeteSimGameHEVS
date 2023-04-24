@@ -88,6 +88,7 @@ class DiabeteGameSceneApricotChamber extends DiabeteGameScene {
       step3IsDone = false;
       isDone = true;
       canChangeScene = true;
+      gameScenesController.level7done = true;
     }
   }
 }
