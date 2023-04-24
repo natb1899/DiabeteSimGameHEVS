@@ -88,6 +88,9 @@ class TiledObjectName {
   static const String toInsideHospital = "ToInsideHospital";
   static const String toOutsideBrocoliChamber = "ToOutsideBrocoliChamber";
 
+  static const String toApricotChamber = "ToApricotChamber";
+  static const String toOutsideApricotChamber = "ToOutsideApricotChamber";
+
   static const String toFraiseuxChamber = "ToFraiseuxChamber";
   static const String toOutsideFraiseuxChamber = "ToOutsideFraiseuxChamber";
 

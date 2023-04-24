@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seriousgame/a_overlays/a1_game_overlays/a1_1_game_bundles/a1_1_1_game_bundle_left/a1_1_1_1_sound/sound_button_controller.dart';
 import 'package:seriousgame/a_overlays/a2_bag_overlay/measure_tool_model.dart';
 import 'package:seriousgame/e_game_controllers/e_1_scenes_controller/game_scenes_controller.dart';
 import 'package:seriousgame/z_globals/z3_strings_manager.dart';
@@ -64,7 +63,7 @@ class PlayerBag extends StatelessWidget {
                   SafeArea(
                       child: Column(children: [
                     Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text("Outils de mesure :",
@@ -117,7 +116,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: const <Widget>[
+                        children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(Planning.patientsTitle,
@@ -164,7 +163,7 @@ class PlayerBag extends StatelessWidget {
                         ],
                       )),
                       Row(
-                        children: const <Widget>[
+                        children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text(Planning.chambresTitle,
@@ -226,7 +225,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: const <Widget>[
+                        children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(2.0),
                             child:
@@ -329,7 +328,7 @@ class PlayerBag extends StatelessWidget {
                       child: Column(
                     children: [
                       Row(
-                        children: const <Widget>[
+                        children: <Widget>[
                           Padding(
                             padding: EdgeInsets.all(8.0),
                             child: Text("collection d'apprentissage",

@@ -25,7 +25,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
   late AsscHospital asscHospital;
   late NurseDiabetesHospital nurseDiabetesHospital;
   late NurseWoundCareHospital nurseWoundCareHospital;
-  late ApricotHospital apricotHospital;
 
   // Mission steps
   bool step1 = true; // Doctor
@@ -66,7 +65,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
     initAsscHospital();
     initNurseDiabetesHospital();
     initNurseWoundCareHospital();
-    initApricotHospital();
     await initChest();
     await super.onLoad();
     continueInitialisation();
@@ -102,13 +100,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
           ..anchor = Anchor.center;
   }
 
-  /// Init Mr. Apricot in the scene
-  void initApricotHospital() {
-    apricotHospital = ApricotHospital(GameImageAssets.apricotHospital)
-      ..size = Vector2.all(GameParams.middleSize)
-      ..anchor = Anchor.center;
-  }
-
   void continueInitialisation() {
     doctorHospital
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
@@ -123,10 +114,6 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
     nurseWoundCareHospital
-      ..debugMode = kDebugMode // Only true on debug mode (dev work)
-      ..mapWidth = mapWidth
-      ..mapHeight = mapHeight;
-    apricotHospital
       ..debugMode = kDebugMode // Only true on debug mode (dev work)
       ..mapWidth = mapWidth
       ..mapHeight = mapHeight;
@@ -158,19 +145,22 @@ class DiabeteGameSceneNurseOffice extends DiabeteGameScene {
     if (step1IsDone) {
       step1 = false;
       step1IsDone = false;
-      step2 = true;
+      step3 = true;
+      canChangeScene = true;
     }
 
-    if (step2IsDone) {
-      step2 = false;
-      step2IsDone = false;
-      step3 = true;
-    }
+    // Mr. Apricot
+    // if (step2IsDone) {
+    //   step2 = false;
+    //   step2IsDone = false;
+    //   step3 = true;
+    // }
 
     if (step3IsDone) {
       step3 = false;
       step3IsDone = false;
       step4 = true;
+      canChangeScene = false;
     }
 
     if (step4IsDone) {

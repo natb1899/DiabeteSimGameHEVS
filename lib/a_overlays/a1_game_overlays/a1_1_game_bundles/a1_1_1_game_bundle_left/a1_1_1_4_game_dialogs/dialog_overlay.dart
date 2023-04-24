@@ -439,7 +439,6 @@ class DialogOverlay extends StatelessWidget {
       DialogModel(isShowDialog: false),
     );
     game.player.canMove = hasNext ? false : true;
-    print("Player can move :" + game.player.canMove.toString());
   }
 
   _getCheckBoxAnswersElement() {
@@ -465,10 +464,6 @@ class DialogOverlay extends StatelessWidget {
   }
 
   bool _isResultTrue(String answer) {
-    print(answer);
-    print((dialog.questions!
-        .where((element) => element.containsValue(answer))
-        .first["result"]));
     return ((dialog.questions!
         .where((element) => element.containsValue(answer))
         .first["result"]));
@@ -528,7 +523,6 @@ class DialogOverlay extends StatelessWidget {
           break;
         case GameInteractionTypes.feedback:
           final Map<String, String> objectInteraction = interactionList[1];
-          print("testend");
           gameDialogController
               .gameSceneController.feedBackController.inputfeedback
               .add(true);

@@ -1,7 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/foundation.dart';
-import 'package:seriousgame/b_game_objects/b1_characters/brocoliHospital.dart';
 import 'package:seriousgame/b_game_objects/b1_characters/fraiseux.dart';
 import 'package:seriousgame/b_game_objects/b2_map_objects/b2_1_interactive_objects/chestQuest.dart';
 import 'package:seriousgame/e_game_controllers/e_2_score_controller/player_score_controller.dart';
