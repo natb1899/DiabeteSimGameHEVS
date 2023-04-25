@@ -28,6 +28,10 @@ class GameDialogs {
       'Vous devez ouvrir tous les coffres du CMS avant d\'accéder à l\'hôpital.';
   static const String visitMoutardeBefore =
       'Vous devez rendre visite à Mr Moutarde avant.';
+  static const String visitBrocoliChamberBefore =
+      'Vous devez rendre visite à Mr Brocoli avant.';
+  static const String visitFraiseuxChamberBefore =
+      'Vous devez rendre visite à MrFraiseux avant.';
 
   // Dialogs
   static const String initialBrocoliHome = 'Début de la mission 3 :\n\n'

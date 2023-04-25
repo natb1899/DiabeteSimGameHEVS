@@ -101,8 +101,7 @@ class GameScenesController extends BaseController {
       GameScenes.atMyrtilleHome: DiabeteGameSceneMyrtille(
         sceneName: GameScenes.atMyrtilleHome,
         //change previous mission name
-        // previousMissionName: GameScenes.atMoustardHome,
-        previousMissionName: '',
+        previousMissionName: GameScenes.atMoutardeHome,
         sceneTmx: GameTilesAssets.myrtilleHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -110,7 +109,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atBrocoliHome: DiabeteGameSceneBrocoli(
         sceneName: GameScenes.atBrocoliHome,
-        previousMissionName: '',
+        previousMissionName: GameScenes.atMyrtilleHome,
         sceneTmx: GameTilesAssets.brocoliHome,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -118,8 +117,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.outsideHospital: DiabeteGameSceneOutsideHospital(
         sceneName: GameScenes.outsideHospital,
-        previousMissionName: '', //GameScenes.villageCMS,
-        // '', to go faster
+        previousMissionName: GameScenes.villageCMS,
         sceneTmx: GameTilesAssets.outsideHospital,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -143,7 +141,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atApricotChamber: DiabeteGameSceneApricotChamber(
         sceneName: GameScenes.atApricotChamber,
-        previousMissionName: '',
+        previousMissionName: GameScenes.atChouxChamber,
         sceneTmx: GameTilesAssets.apricotChamber,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -152,7 +150,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atFraiseuxChamber: DiabeteGameSceneFraiseuxChamber(
         sceneName: GameScenes.atFraiseuxChamber,
-        previousMissionName: '',
+        previousMissionName: GameScenes.atBrocoliChamber,
         sceneTmx: GameTilesAssets.fraiseuxChamber,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -161,7 +159,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atChouxChamber: DiabeteGameSceneChouxChamber(
         sceneName: GameScenes.atChouxChamber,
-        previousMissionName: '',
+        previousMissionName: GameScenes.atFraiseuxChamber,
         sceneTmx: GameTilesAssets.chouxChamber,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -169,7 +167,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atNurseOffice: DiabeteGameSceneNurseOffice(
         sceneName: GameScenes.atNurseOffice,
-        previousMissionName: '',
+        previousMissionName: GameScenes.atChouxChamber,
         sceneTmx: GameTilesAssets.nurseOffice,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -262,6 +260,27 @@ class GameScenesController extends BaseController {
           DialogModel(
               isShowDialog: true,
               dialogMessage: GameDialogs.visitMoutardeBefore),
+        );
+        break;
+      case GameScenes.atMyrtilleHome:
+        gameDialogController.onDialog(
+          DialogModel(
+              isShowDialog: true,
+              dialogMessage: GameDialogs.visitMoutardeBefore),
+        );
+        break;
+      case GameScenes.atFraiseuxChamber:
+        gameDialogController.onDialog(
+          DialogModel(
+              isShowDialog: true,
+              dialogMessage: GameDialogs.visitBrocoliChamberBefore),
+        );
+        break;
+      case GameScenes.atChouxChamber:
+        gameDialogController.onDialog(
+          DialogModel(
+              isShowDialog: true,
+              dialogMessage: GameDialogs.visitFraiseuxChamberBefore),
         );
         break;
       case GameScenes.outsideHospital:
