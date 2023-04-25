@@ -100,24 +100,10 @@ class DiabeteGameSceneBrocoli extends DiabeteGameScene {
       etape2IsDone = false;
     }
     if (etape3IsDone) {
-      etape3 = false;
-      etape4 = true;
-      etape3IsDone = false;
-    }
-    if (etape4IsDone) {
-      etape4 = false;
-      etape5 = true;
-      etape4IsDone = false;
-    }
-    if (etape5IsDone) {
       etape5 = false;
       etape5IsDone = false;
       canChangeScene = true;
       isDone = true;
-    }
-    if (etape6IsDone) {
-      etape6 = false;
-      etape6IsDone = false;
       gameScenesController.level3done = true;
     }
   }
