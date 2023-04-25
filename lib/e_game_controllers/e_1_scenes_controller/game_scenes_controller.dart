@@ -141,7 +141,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atApricotChamber: DiabeteGameSceneApricotChamber(
         sceneName: GameScenes.atApricotChamber,
-        previousMissionName: GameScenes.atChouxChamber,
+        previousMissionName: GameScenes.atNurseOffice,
         sceneTmx: GameTilesAssets.apricotChamber,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -167,7 +167,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atNurseOffice: DiabeteGameSceneNurseOffice(
         sceneName: GameScenes.atNurseOffice,
-        previousMissionName: GameScenes.atChouxChamber,
+        previousMissionName: '',
         sceneTmx: GameTilesAssets.nurseOffice,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
