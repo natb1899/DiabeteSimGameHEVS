@@ -32,6 +32,8 @@ class GameDialogs {
       'Vous devez rendre visite à Mr Brocoli avant.';
   static const String visitFraiseuxChamberBefore =
       'Vous devez rendre visite à MrFraiseux avant.';
+  static const String visitNurseOfficeBefore =
+      'Vous devez rendre visite à MrFraiseux avant.';
 
   // Dialogs
   static const String initialBrocoliHome = 'Début de la mission 3 :\n\n'

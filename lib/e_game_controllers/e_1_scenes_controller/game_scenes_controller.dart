@@ -141,7 +141,7 @@ class GameScenesController extends BaseController {
       ),
       GameScenes.atApricotChamber: DiabeteGameSceneApricotChamber(
         sceneName: GameScenes.atApricotChamber,
-        previousMissionName: GameScenes.atNurseOffice,
+        previousMissionName: GameScenes.atChouxChamber,
         sceneTmx: GameTilesAssets.apricotChamber,
         gameScenesController: this,
         soundTrackName: GameAudioAssets.adventure,
@@ -277,6 +277,13 @@ class GameScenesController extends BaseController {
         );
         break;
       case GameScenes.atChouxChamber:
+        gameDialogController.onDialog(
+          DialogModel(
+              isShowDialog: true,
+              dialogMessage: GameDialogs.visitFraiseuxChamberBefore),
+        );
+        break;
+      case GameScenes.atApricotChamber:
         gameDialogController.onDialog(
           DialogModel(
               isShowDialog: true,
